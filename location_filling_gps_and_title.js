@@ -18,11 +18,11 @@
             $("#FromGps").val(values["Gps_coordinates"]);   // Fills fictitious field "GpsFrom".
             console.log("FromLocation es: " + FromLocation + " GPS: " + FromGps);
 
-            //let googlemap = 'https://www.google.com/maps/@' + GpsFrom
-            //let googlemap = 'https://www.google.com/maps/@?api=1&map_action=map&center=' + GpsFrom + '&zoom=12'
-            //window.open(googlemap, '_blank');
-          
+            //shows google class
+            document.getElementsByClassName('google')[0].style.display = "block";
+            // builds google map string with gps coordinates
             let googlemap = 'https://www.google.com/maps/@?api=1&map_action=map&center=' + GpsFrom + '&zoom=12'
+            // sets link as href
             document.querySelector('#the-link').setAttribute('href', googlemap);
 
         }
@@ -43,6 +43,8 @@
                 $("#R4884209").val('');
                 $("#FromLocation").val('');
                 $("#FromGps").val('');
+                // hides google class
+                document.getElementsByClassName('google')[0].style.display = "none";
             }
             else
             {
