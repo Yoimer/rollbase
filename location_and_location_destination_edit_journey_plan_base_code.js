@@ -93,10 +93,13 @@
         }
   
     // If there is a change on  From Location and To Location(related) then calls processFromLocInfo or processToLocInfo .
-        $("#R3935993").change(processFromLocInfo);
+        $("#R3935993").change(processFromLocInfo); //good
 
-        $("#R4666334").change(processToLocInfo);  
-         if($("#R3935993").val() !== "")    processLocInfo();
+        $("#R4666334").change(processToLocInfo);
+        
+        if($("#R3935993").val() !== "")    processFromLocInfo();
+        
+        if($("#R4666334").val() !== "")    processToLocInfo();
   
     });
       
