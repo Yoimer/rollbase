@@ -55,7 +55,7 @@ font-size :10px;
 </table>
 <br>
 <!-- tablesiezer -->
-<style type="text/css">
+<!-- <style type="text/css">
 	table.tableizer-table {
 		font-size: 12px;
 		border: 1px solid #CCC; 
@@ -75,4 +75,26 @@ font-size :10px;
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th>Departure Date</th><th>Vehicle Number</th></tr></thead><tbody>
  <tr><td>{!R3935993.Description}</td><td>{!R3935993}</td></tr>
+</tbody></table> -->
+
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 12px;
+		border: 1px solid #CCC; 
+		font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #104E8B; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Journey plan number</th><th>Journey manager</th><th> Location</th><th>From Location</th><th>Location Destination</th><th>To Location</th></tr></thead><tbody>
+ <tr><td>{!Journey_plan_number_READ_ONLY}</td><td>{!R1187419}</td><td>{!R3935993}</td><td>{!R3935993.Description}</td><td>{!R4666334}</td><td>{!R4666334.Description}</td></tr>
 </tbody></table>
