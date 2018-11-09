@@ -54,28 +54,7 @@ font-size :10px;
 
 </table>
 <br>
-<!-- tablesiezer -->
-<!-- <style type="text/css">
-	table.tableizer-table {
-		font-size: 12px;
-		border: 1px solid #CCC; 
-		font-family: Arial, Helvetica, sans-serif;
-	} 
-	.tableizer-table td {
-		padding: 4px;
-		margin: 3px;
-		border: 1px solid #CCC;
-	}
-	.tableizer-table th {
-		background-color: #104E8B; 
-		color: #FFF;
-		font-weight: bold;
-	}
-</style>
-<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><th>Departure Date</th><th>Vehicle Number</th></tr></thead><tbody>
- <tr><td>{!R3935993.Description}</td><td>{!R3935993}</td></tr>
-</tbody></table> -->
+
 
 <style type="text/css">
 	table.tableizer-table {
@@ -94,7 +73,17 @@ font-size :10px;
 		font-weight: bold;
 	}
 </style>
+
+<!-- Journey plan number, Journey manager, Location, From Location, Location Destination, To Location -->
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th>Journey plan number</th><th>Journey manager</th><th> Location</th><th>From Location</th><th>Location Destination</th><th>To Location</th></tr></thead><tbody>
  <tr><td>{!Journey_plan_number_READ_ONLY}</td><td>{!R1187419}</td><td>{!R3935993}</td><td>{!R3935993.Description}</td><td>{!R4666334}</td><td>{!R4666334.Description}</td></tr>
+</tbody></table>
+
+<br>
+
+<!-- Departure Date/Time, Vehicule Plate, Driver name, Driver Licence Number, Comments of Vehicle Inspection, Driver Mobile -->
+<table class="tableizer-table">
+<thead><tr class="tableizer-secondrow"><th>Departure Date/Time</th><th>Vehicule Plate</th><th>Driver name</th><th>Driver Licence Number</th><th>Comments of Vehicle Inspection</th><th>Driver Mobile #</th></tr></thead><tbody>
+<tr><td>{!Estimated_Arrival_date}</td><td>{!Vehicule_Plate}</td><td>{!Driver_name}</td><td>{!Driver_Licence_Number}</td><td>{!Comments_of_Vehicle_Inspection}</td><td>{!Driver_Mobile__}</td></tr>
 </tbody></table>
