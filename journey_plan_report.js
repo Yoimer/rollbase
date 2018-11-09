@@ -74,5 +74,5 @@ font-size :10px;
 </style>
 <table class="tableizer-table">
 <thead><tr class="tableizer-firstrow"><th>Departure Date</th><th>Vehicle Number</th></tr></thead><tbody>
- <tr><td>{!Departure_date}</td><td>{!Vehicule_Plate}</td></tr>
+ <tr><td>{!R3935993.Description}</td><td>{!R3935993}</td></tr>
 </tbody></table>
