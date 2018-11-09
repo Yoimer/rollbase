@@ -85,5 +85,13 @@ font-size :10px;
 <!-- Departure Date/Time, Vehicule Plate, Driver name, Driver Licence Number, Comments of Vehicle Inspection, Driver Mobile -->
 <table class="tableizer-table">
 <thead><tr class="tableizer-secondrow"><th>Departure Date/Time</th><th>Vehicule Plate</th><th>Driver name</th><th>Driver Licence Number</th><th>Comments of Vehicle Inspection</th><th>Driver Mobile #</th></tr></thead><tbody>
-<tr><td>{!Estimated_Arrival_date}</td><td>{!Vehicule_Plate}</td><td>{!Driver_name}</td><td>{!Driver_Licence_Number}</td><td>{!Comments_of_Vehicle_Inspection}</td><td>{!Driver_Mobile__}</td></tr>
+<tr><td>{!Departure_date}</td><td>{!Vehicule_Plate}</td><td>{!Driver_name}</td><td>{!Driver_Licence_Number}</td><td>{!Comments_of_Vehicle_Inspection}</td><td>{!Driver_Mobile__}</td></tr>
+</tbody></table>
+
+<br>
+
+<!-- No. of passengers, Route description, Estimated Km. ,Estimated Arrival Date/Time, Additional Comments, NIGHT driving permit, Authorizing person for ND, Estimated Arrival Date/Time -->
+<table class="tableizer-table">
+<thead><tr class="tableizer-thirdrow"><th>No. of passengers</th><th>Route description</th><th>Estimated Km.</th><th>Additional Comments</th><th>NIGHT driving permit</th><th>Authorizing person for ND</th><th>Estimated Arrival Date/Time</th></tr></thead><tbody>
+<tr><td>{!No__of_passengers}</td><td>{!Route_place_names}</td><td>{!Estimated_Km}</td><td>{!Additional_Comments_open_journey_plan}</td><td>{!Night_driving_permit}</td><td>{!Authorizing_person_for_ND}</td><td>{!Estimated_Arrival_date}</td></tr>
 </tbody></table>
