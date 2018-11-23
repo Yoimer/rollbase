@@ -10,6 +10,9 @@ if(startDate > endDate){
   
   return "Warning: 'End date' can't be less or equal to today. Please, check the 'End Field'";
 }
-  
+
+if (endDate === '') {
+  return "PRUEBA";
+}
 
 return null;
