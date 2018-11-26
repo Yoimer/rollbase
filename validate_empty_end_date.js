@@ -20,6 +20,7 @@
 //         if(document.getElementsByName("End_Date")[0].value == "") {
 //             //alert("on script"); for debugging
 //             rbf_setField("Location_Control", 4665029, "End_Date", "01/01/2023", false);
+               window.location.reload(true);
 //         }
 //     });
 // </script>
