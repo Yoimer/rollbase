@@ -19,7 +19,7 @@
 //     document.getElementsByName("End_Date")[0].addEventListener("change", function() {
 //         if(document.getElementsByName("End_Date")[0].value == "") {
 //             //alert("on script"); for debugging
-//             rbf_setField("Location_Control", 4665029, "End_Date", "01/01/2023", false);
+//             rbf_setField("Location_Control", {!id}, "End_Date", "01/01/2023", false);
                window.location.reload(true);
 //         }
 //     });
@@ -35,7 +35,7 @@
 //     document.getElementsByName("End_Date")[0].addEventListener("change", function() {
 //         if(document.getElementsByName("End_Date")[0].value == "") {
 //             //alert("on script"); for debugging
-//             rbf_updateRecord("Location_Control", 4665029, {"End_Date":"01/01/2024"}, false);
+//             rbf_updateRecord("Location_Control", {!id}, {"End_Date":"01/01/2024"}, false);
 //         }
 //     });
 // </script>
