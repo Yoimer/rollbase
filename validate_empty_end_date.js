@@ -1,42 +1,21 @@
-/* ------------------------------------------------------- */
-/* using pure javascript, it updates immediately */
+/* validates when changing*/
 <script>
     document.getElementsByName("End_Date")[0].addEventListener("change", function() {
         if(document.getElementsByName("End_Date")[0].value == "") {
             //alert("on script"); for debugging
-            document.getElementsByName("End_Date")[0].value = "01/01/2022";
+            document.getElementsByName("End_Date")[0].value = "12/31/2049";
+            document.getElementsByClassName('end_date')[0].style.display = "block";
+        } else {
+            document.getElementsByClassName('end_date')[0].style.display = "none";
         }
     });
 </script>
-/* ------------------------------------------------------- */
 
-
-/* ------------------------------------------------------- */
-//using rbf_setField with hardcoded id
-//user has to load page in order to update
-/* ------------------------------------------------------- */
-// <script>
-//     document.getElementsByName("End_Date")[0].addEventListener("change", function() {
-//         if(document.getElementsByName("End_Date")[0].value == "") {
-//             //alert("on script"); for debugging
-//             rbf_setField("Location_Control", {!id}, "End_Date", "01/01/2023", false);
-               window.location.reload(true);
-//         }
-//     });
-// </script>
-/* ------------------------------------------------------- */
-
-
-/* ------------------------------------------------------- */
-//using rbf_updateRecord with hardcoded id
-//user has to load page in order to update
-/* ------------------------------------------------------- */
-// <script>
-//     document.getElementsByName("End_Date")[0].addEventListener("change", function() {
-//         if(document.getElementsByName("End_Date")[0].value == "") {
-//             //alert("on script"); for debugging
-//             rbf_updateRecord("Location_Control", {!id}, {"End_Date":"01/01/2024"}, false);
-//         }
-//     });
-// </script>
-/* ------------------------------------------------------- */
+/* validates when page loading*/
+<script>
+    if(document.getElementsByName("End_Date")[0].value == "12/31/2049") {
+        document.getElementsByClassName('end_date')[0].style.display = "block";
+    } else {
+        document.getElementsByClassName('end_date')[0].style.display = "none";
+    }
+</script>
