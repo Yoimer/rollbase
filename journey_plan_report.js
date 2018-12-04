@@ -21,7 +21,7 @@
             h5
             {
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            font-size :10px;    
+            font-size :20px;
             }
             .columns {
                 table-layout: fixed; 
@@ -61,14 +61,14 @@
         <!(Journey Manager - Departure Date/Time - Estimated Arrival Date/Time - Estimated Km) -->
         <table width="100%" cellspacing="0" cellpadding="0">
             <div class="columns">
-                <tr>
+                <tr style="font-weight:bold">
                     <td>Journey Manager</td>
                     <td>Departure Date/Time</td>
                     <td>Estimated Arrival Date/Time</td>
                     <td>Estimated Km</th>
                 </tr>
                 <tr>
-                    <td>{!Journey_plan_number_READ_ONLY}</td>
+                    <td>{!R1187419}</td>
                     <td>{!Departure_date}</td>
                     <td>{!Estimated_Arrival_date}</td>
                     <td>{!Estimated_Km}</td>
@@ -76,5 +76,21 @@
             </div>
         </table>
         <br>
+        <!-- Block 2 Table with columns class -->
+        <!(From Location - To Location - No of Passengers) -->
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <div class="columns">
+                <tr style="font-weight:bold">
+                    <td>From Location</td>
+                    <td>To Location/Time</td>
+                    <td>No of Passengers</td>
+                </tr>
+                <tr>
+                    <td>{!R3935993.Title}</td>
+                    <td>{!R4666334.Title}</td>
+                    <td>{!No__of_passengers}</td>
+                </tr>
+            </div>
+        </table>
     </body>
 </html>
