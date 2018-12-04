@@ -116,5 +116,10 @@
                 </tr>
             </div>
         </table>
+        <br>
+        Route Description
+        <textarea style="overflow:hidden" rows="11" cols="73">
+{!Route_place_names}
+        </textarea>
     </body>
 </html>
