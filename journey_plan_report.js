@@ -28,6 +28,9 @@
                 text-align: center;
                 overflow: hidden;
             }
+            .make_bold {
+                font-weight:bold;
+            }
         </style>
     </head>
     <br>
@@ -61,7 +64,7 @@
         <!(Journey Manager - Departure Date/Time - Estimated Arrival Date/Time - Estimated Km) -->
         <table width="100%" cellspacing="0" cellpadding="0">
             <div class="columns">
-                <tr style="font-weight:bold">
+                <tr class="make_bold">
                     <td>Journey Manager</td>
                     <td>Departure Date/Time</td>
                     <td>Estimated Arrival Date/Time</td>
@@ -80,15 +83,36 @@
         <!(From Location - To Location - No of Passengers) -->
         <table width="100%" cellspacing="0" cellpadding="0">
             <div class="columns">
-                <tr style="font-weight:bold">
+                <tr class="make_bold">
                     <td>From Location</td>
-                    <td>To Location/Time</td>
+                    <td>To Location</td>
                     <td>No of Passengers</td>
                 </tr>
                 <tr>
                     <td>{!R3935993.Title}</td>
                     <td>{!R4666334.Title}</td>
                     <td>{!No__of_passengers}</td>
+                </tr>
+            </div>
+        </table>
+        <br>
+        <!-- Block 3 Table with columns class -->
+        <!(Vehicle Plate - Driver Name - Driver License Number - Driver Mobile - Company Number) -->
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <div class="columns">
+                <tr class="make_bold">
+                    <td>Vehicle Plate</td>
+                    <td>Driver Name</td>
+                    <td>Driver License Number</td>
+                    <td>Driver Mobile</td>
+                    <td>Company Number</td>
+                </tr>
+                <tr>
+                    <td>{!Vehicule_Plate}</td>
+                    <td>{!Driver_name}</td>
+                    <td>{!Driver_Licence_Number}</td>
+                    <td>{!Driver_Mobile__}</td>
+                    <td>{!Company_Number}</td>
                 </tr>
             </div>
         </table>
