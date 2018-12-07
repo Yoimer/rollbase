@@ -157,7 +157,32 @@
         </textarea>
         <pd4ml:page.break>
         <br>
-<!-- ----------------------------------------Close Journey Plan ----------------------------------------------->
+<!-- ----------------------------------------Close Journey Plan ------------------------------------------------------->
+
+<!-- ----------------------------------------Journey Manager Remarks---------->
+        <table class="tableizer-table">
+            <thead>
+                <tr class="tableizer-firstrow">
+                    <th style="text-align: left;">Journey Manager Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Driver Complaint {!Driver_Complaint}</td>
+                <tr>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Vehicle Compliant {!Vehicle Compliant}</td>
+                <tr>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Other Complain</td>
+                <tr>
+            </tbody>
+        </table>
+        <br>
+<!-- ----------------------------------------Comment for Driver ----------------------------------------------->
+        Comment for Driver
+        <textarea style="overflow:hidden" rows="11" cols="73">
+        </textarea>
+        <br>
+<!-- ----------------------------------------Journey Plan Close -------------></br></br>
         <table class="tableizer-table">
             <thead>
                 <tr class="tableizer-firstrow">
@@ -166,11 +191,27 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="overflow: auto; width: 600px; text-align: left;">Date/Time</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Date/Time</td>
                 <tr>
-                    <td style="overflow: auto; width: 600px; text-align: left;">Name</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Name</td>
                 <tr>
-                    <td style="overflow: auto; width: 600px; text-align: left;">Signature</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Signature</td>
+            </tbody>
+        </table>
+        <br>
+<!-- ----------------------------------------Journey Manager's Detail ------------->
+        <table class="tableizer-table">
+            <thead>
+                <tr class="tableizer-firstrow">
+                    <th style="text-align: left;">Journey Manager's Detail </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Name</td>
+                <tr>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Signature</td>
+                <tr>
             </tbody>
         </table>
     </body>
