@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <title>Journey Plan Report {!R1671927#text} </title>
         <style>
-            td 
+            td,input
             {
             border: 1px solid black;
             font-size :15px;
@@ -127,5 +127,20 @@
         <textarea style="overflow:hidden" rows="11" cols="73">
 {!Route_place_names}
         </textarea>
+        <pd4ml:page.break>
+        <br>
+        Journey Manager Remarks
+        <br>
+        <br>
+        <form class="make_bold">
+            Driver Complaint<br>
+            <input type="text" name="driver_complaint" value="{!Driver_Complaint}">
+            <br>
+            Vehicle Compliant<br>
+            <input type="text" name="vehicle_compliant" value="{!Vehicle_Compliant}"><br>
+            Other Complaint<br>
+            <input type="text" name="other_complaint_1" value=""><br>
+            <input type="text" name="other_complaint_2" value="Signature"><br>
+        </form>
     </body>
 </html>
