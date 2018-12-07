@@ -12,30 +12,56 @@
         <meta charset="UTF-8">
         <title>Journey Plan Report {!R1671927#text} </title>
         <style>
+
+/****************************************td and input***************************************************/
             td,input
             {
             border: 1px solid black;
             font-size :15px;
             text-align: center;
             }
+/****************************************h5*************************************************************/
             h5
             {
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
             font-size :20px;
             }
+/****************************************columns*************************************************************/
             .columns {
                 table-layout: fixed; 
                 text-align: center;
                 overflow: hidden;
             }
+/****************************************make_bold*************************************************************/
             .make_bold {
                 font-weight:bold;
+            }
+/****************************************Close Journe Plan Style*************************************************************/
+            table.tableizer-table {
+                font-size: 12px;
+                /* border: 1px solid;  */
+                font-family: Arial, Helvetica, sans-serif;
+            } 
+            .tableizer-table td {
+                padding: 4px;
+                margin: 3px;
+                border: 1px solid;
+            }
+            .tableizer-table th {
+                /* background-color: #104E8B;  */
+                background-color: white;
+                /* color: #FFF; */
+                color:black;
+                font-weight: bold;
+            }
+            .example {
+                text-align: left;                
             }
         </style>
     </head>
     <br>
     <body>
-        <!-- start -->
+<!------------------------------------------------------------ start -------------------------------------------->
         <table style="border: 0px solid black;" width="100%" bgcolor="#7BD2F6">
             <tr>
                 <td width="60%" style="border: 0px solid black;"><img src="http://castillolk.com.ve/ray-oil-gas.png" width=20% ></td>
@@ -60,7 +86,7 @@
             </table>
         </div>
         <br>
-        <!-- Block 1 Table with columns class -->
+<!--------------------------------------- Block 1 Table with columns class ----------------------------------->
         <!(Journey Manager - Departure Date/Time - Estimated Arrival Date/Time - Estimated Km) -->
         <table width="100%" cellspacing="0" cellpadding="0">
             <div class="columns">
@@ -79,7 +105,7 @@
             </div>
         </table>
         <br>
-        <!-- Block 2 Table with columns class -->
+<!------------------------------------Block 2 Table with columns class ------------------------------------>
         <!(From Location - To Location - No of Passengers) -->
         <table width="100%" cellspacing="0" cellpadding="0">
             <div class="columns">
@@ -96,7 +122,7 @@
             </div>
         </table>
         <br>
-        <!-- Block 3 Table with columns class -->
+<!-- ----------------------------------------Block 3 Table with columns class ------------------------------->
         <!(Vehicle Plate - Driver Name - Driver License Number - Driver Mobile - Company Number) -->
         <table width="100%" cellspacing="0" cellpadding="0">
             <div class="columns">
@@ -117,30 +143,35 @@
             </div>
         </table>
         <br>
+<!-- ----------------------------------------Block 4 Passenger ----------------------------------------------->
         Passengers
         <textarea style="overflow:hidden" rows="11" cols="73">
 {!Passenger}
         </textarea>
         <br>
         <br>
+<!-- ----------------------------------------Block 5 Route Description ----------------------------------------------->
         Route Description
         <textarea style="overflow:hidden" rows="11" cols="73">
 {!Route_place_names}
         </textarea>
         <pd4ml:page.break>
         <br>
-        Journey Manager Remarks
-        <br>
-        <br>
-        <form class="make_bold">
-            Driver Complaint<br>
-            <input type="text" name="driver_complaint" value="{!Driver_Complaint}">
-            <br>
-            Vehicle Compliant<br>
-            <input type="text" name="vehicle_compliant" value="{!Vehicle_Compliant}"><br>
-            Other Complaint<br>
-            <input type="text" name="other_complaint_1" value=""><br>
-            <input type="text" name="other_complaint_2" value="Signature"><br>
-        </form>
+<!-- ----------------------------------------Close Journey Plan ----------------------------------------------->
+        <table class="tableizer-table">
+            <thead>
+                <tr class="tableizer-firstrow">
+                    <th style="text-align: left;">Journey Plan - Closed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="overflow: auto; width: 600px; text-align: left;">Date/Time</td>
+                <tr>
+                    <td style="overflow: auto; width: 600px; text-align: left;">Name</td>
+                <tr>
+                    <td style="overflow: auto; width: 600px; text-align: left;">Signature</td>
+            </tbody>
+        </table>
     </body>
 </html>
