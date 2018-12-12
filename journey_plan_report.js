@@ -168,11 +168,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Driver Complaint {!Driver_Complaint}</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Driver Complaint: {!Driver_Complaint}</td>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Vehicle Compliant {!Vehicle Compliant}</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Vehicle Compliant: {!Vehicle_Complaint}</td>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Other Complain</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Other Complain: {!Other_Complaint}</td>
                 <tr>
             </tbody>
         </table>
@@ -180,6 +180,7 @@
 <!-- ----------------------------------------Comment for Driver ----------------------------------------------->
         Comment for Driver
         <textarea style="overflow:hidden" rows="11" cols="73">
+{!Comment_for_Driver}
         </textarea>
         <br>
 <!-- ----------------------------------------Journey Plan Close -------------></br></br>
@@ -191,11 +192,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Date/Time</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Date/Time: {!Journey_plan_close_date}</td>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Name</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Name: {!R1671927}</td>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Signature</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Signature:</td>
             </tbody>
         </table>
         <br>
@@ -210,7 +211,7 @@
                 <tr>
                     <td style="overflow: auto; width: 650px; text-align: left;">Name: {!R1187419}</td>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Signature</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Signature:</td>
                 <tr>
             </tbody>
         </table>
