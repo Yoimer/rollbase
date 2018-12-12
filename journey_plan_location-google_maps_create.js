@@ -102,5 +102,8 @@
          // hides google class to location
         document.getElementsByClassName('google-to-location')[0].style.display = "none";
 
+        // fills Passenger field
+        document.getElementsByName("Passenger")[0].value = "Passenger 1: \r\nPassenger 2: \r\nPassenger 3:\r\n";
+
     });
 </script>
