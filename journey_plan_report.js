@@ -208,7 +208,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Name</td>
+                    <td style="overflow: auto; width: 650px; text-align: left;">Name: {!R1187419}</td>
                 <tr>
                     <td style="overflow: auto; width: 650px; text-align: left;">Signature</td>
                 <tr>
