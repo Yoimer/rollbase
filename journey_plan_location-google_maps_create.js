@@ -105,5 +105,8 @@
         // fills Passenger field
         document.getElementsByName("Passenger")[0].value = "Passenger 1: \r\nPassenger 2: \r\nPassenger 3:\r\n";
 
+        // fills Router Place Names field
+        document.getElementsByName("Route_place_names")[0].value = "Route Place Names:\r\nTime Arrive-Time Depart:\r\nRest-Tick:\r\nSleep-Motel Name/Cab/Other:\r\nDriver Called:\r\nCall JM:";
+
     });
 </script>
