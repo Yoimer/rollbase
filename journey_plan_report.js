@@ -148,7 +148,7 @@
         <textarea style="overflow:hidden" rows="11" cols="73">
 {!Passengers}
         </textarea>
-        <br>
+        <br> &nbsp;
         <br>
 <!-- ----------------------------------------Block 5 Route Description ----------------------------------------------->
         Route Description
@@ -165,26 +165,26 @@
         <textarea style="overflow:hidden" rows="7" cols="73">
 {!Driver_Complaint}
         </textarea>
-        <br>
+        <br><br>
 
         Vehicle Compliant:
         <textarea style="overflow:hidden" rows="7" cols="73">
 {!Vehicle_Complaint}
         </textarea>
-        <br>
+        <br><br>
 
         Other Complaint:
         <textarea style="overflow:hidden" rows="7" cols="73">
 {!Other_Complaint}
         </textarea>
-        <br>
-
+        <br><br>
 <!-- ----------------------------------------Comment for Driver ----------------------------------------------->
         Comment for Driver
-        <textarea style="overflow:hidden" rows="11" cols="73">
+        <textarea style="overflow:hidden" rows="7" cols="73">
 {!Comment_for_Driver}
         </textarea>
-        <br>
+        <br> &nbsp;
+
 <!-- ----------------------------------------Journey Plan Close -------------></br></br>
         <table class="tableizer-table">
             <thead>
@@ -200,7 +200,7 @@
                 <tr>
                     <td style="overflow: auto; width: 650px; text-align: left;">Signature:</td>
             </tbody>
-        </table>
+        </table> 
         <br>
 <!-- ----------------------------------------Journey Manager's Detail ------------->
         <table class="tableizer-table">
