@@ -160,23 +160,25 @@
 <!-- ----------------------------------------Close Journey Plan ------------------------------------------------------->
 
 <!-- ----------------------------------------Journey Manager Remarks---------->
-        <table class="tableizer-table">
-            <thead>
-                <tr class="tableizer-firstrow">
-                    <th style="text-align: left;">Journey Manager Remarks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Driver Complaint: {!Driver_Complaint}</td>
-                <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Vehicle Compliant: {!Vehicle_Complaint}</td>
-                <tr>
-                    <td style="overflow: auto; width: 650px; text-align: left;">Other Complain: {!Other_Complaint}</td>
-                <tr>
-            </tbody>
-        </table>
+
+        Driver Complaint:
+        <textarea style="overflow:hidden" rows="7" cols="73">
+{!Driver_Complaint}
+        </textarea>
         <br>
+
+        Vehicle Compliant:
+        <textarea style="overflow:hidden" rows="7" cols="73">
+{!Vehicle_Complaint}
+        </textarea>
+        <br>
+
+        Other Complaint:
+        <textarea style="overflow:hidden" rows="7" cols="73">
+{!Other_Complaint}
+        </textarea>
+        <br>
+
 <!-- ----------------------------------------Comment for Driver ----------------------------------------------->
         Comment for Driver
         <textarea style="overflow:hidden" rows="11" cols="73">
