@@ -116,7 +116,7 @@
                 </tr>
                 <tr>
                     <td>{!R3935993.Title}</td>
-                    <td>{!R4666334.Title}</td>
+                    <td>{!R4667213.Title}</td>
                     <td>{!No__of_passengers}</td>
                 </tr>
             </div>
@@ -146,7 +146,7 @@
 <!-- ----------------------------------------Block 4 Passenger ----------------------------------------------->
         Passengers
         <textarea style="overflow:hidden" rows="11" cols="73">
-{!Passenger}
+{!Passengers}
         </textarea>
         <br>
         <br>
