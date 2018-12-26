@@ -55,7 +55,7 @@
                 font-weight: bold;
             }
             .example {
-                text-align: left;                
+                text-align: left;
             }
         </style>
     </head>
@@ -64,7 +64,7 @@
 <!------------------------------------------------------------ start -------------------------------------------->
         <table style="border: 0px solid black;" width="100%" bgcolor="#7BD2F6">
             <tr>
-                <td width="60%" style="border: 0px solid black;"><img src="http://castillolk.com.ve/ray-oil-gas.png" width=20% ></td>
+                <td width="60%" style="border: 0px solid black; text-align: left"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1794941&fileName=tmp_9205817000344785515.png&contentType=image%2Fpng&suggestedName=Ray+logo+original.png" width=20% ></td>
                 <td  style="border: 0px solid black;">
                     <div align=center>
                         <b>Ray International Oil & gas<br>Daily Operational Report <br>
