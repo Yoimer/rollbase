@@ -79,6 +79,7 @@
         <div style="background:#d5d5d5;" align=center>
             <h5 style="margin-top: 20px;">Title</h5>
         </div>
+        <br>
 
         <!--------------------------------------- Block 1 Table with columns class ----------------------------------->
         <!(Action Type, Standar Reference Created at) -->
@@ -145,6 +146,29 @@
                 <tr>
                     <td>NO EXISTE EN CAPA</td>
                     <td>{!Close_Date}</td>
+                </tr>
+            </div>
+        </table>
+        <br>
+
+        <!--------------------------------------- Block 5 Tool Selection ----------------------------------->
+        <div style="background:#d5d5d5;" align=center>
+            <h5 style="margin-top: 20px;">Tool Selection</h5>
+        </div>
+        <br>
+        <!--------------------------------------- Block 6 Table with columns class ----------------------------------->
+        <!(Asset, Service Line, NPT)-->
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <div class="columns">
+                <tr class="make_bold">
+                    <td>Asset</td>
+                    <td>Service Line</td>
+                    <td>NPT</td>
+                </tr>
+                <tr>
+                    <td>{!Asset_Formula}</td>
+                    <td>{!Service_Lines_Formula}</td>
+                    <td>{!NPT}</td>
                 </tr>
             </div>
         </table>
