@@ -72,13 +72,30 @@
                 </td>
             </tr>
         </table>
-        <br>
+        <br> &nbsp;
 
-<!-- CAPA field (name) -->
-<b>{!name}</b>
+        <!-- CAPA field (name) -->
+        <b>{!name}</b>
         <div style="background:#d5d5d5;" align=center>
-            <h5>Title</h5>
+            <h5 style="margin-top: 20px;">Title</h5>
         </div>
+
+        <!--------------------------------------- Block 1 Table with columns class ----------------------------------->
+        <!(Action Type, Standar Reference Created at) -->
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <div class="columns">
+                <tr class="make_bold">
+                    <td>Action Type</td>
+                    <td>Standard Reference</td>
+                    <td>Created at</th>
+                </tr>
+                <tr>
+                    <td>{!Departure_date}</td>
+                    <td>{!Estimated_Arrival_date}</td>
+                    <td>{!Estimated_Km}</td>
+                </tr>
+            </div>
+        </table>
         <br>
 
     </body>
