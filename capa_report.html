@@ -329,5 +329,30 @@ CAMPO VACÌO DE PRUEBA 4
         </table>
         <br>
 
+        <!--------------------------------------- Block 17 ----------------------------------->
+        <div style="background:#d5d5d5;" align=center>
+            <h5 style="margin-top: 20px;">Effectiveness</h5>
+        </div>
+        <br>
+
+        <!--------------------------------------- Block 18 Table with columns class ----------------------------------->
+        <!(Will this Action prevent Recurrence?  Yes/No, Close Date, Effectiveness of Actions Taken, Implementation Date)-->
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <div class="columns">
+                <tr class="make_bold">
+                    <td>Will this Action prevent Recurrence?  Yes/No</td>
+                    <td>Close Date</td>
+                    <td>Effectiveness of Actions Taken</td>
+                    <td>Implementation Date</td>
+                </tr>
+                <tr>
+                    <td>{!Will_this_Action_Prevent_Recurrence}</td>
+                    <td>{!Close_Date}</td>
+                    <td>{!Effectiveness_of_Actions_Taken}</td>
+                    <td>{!Implementation_Date}</td>
+                </tr>
+            </div>
+        </table>
+        <br>
     </body>
 </html>
