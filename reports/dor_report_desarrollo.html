@@ -1,0 +1,450 @@
+<!-- ======================================================================================== -->
+<!-- Page Name..: Daily Operational Report                                                    -->
+<!-- Application: LongView Plus                                                               -->
+<!-- Object.....: LongView/DOR #                                                              -->
+<!-- Purpose....: Template for generic Tab "DOR Report" ("Template View" view).             -->
+<!-- Date.......: 02/10/2017                                                                  -->
+<!-- Programmer.: SQP delevopment team (Nextwells):                                           -->
+<!--              Jose Portillo, Nestor Tobon, Brianth Marquez, Luis Castillo ,Juan Ortiz     -->
+<!-- ======================================================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DOR Report {!name#text} </title>
+<style>
+     td , th {border: 0px solid black; }
+    .det{font-weight: bold;} 
+
+body {
+    font: normal 10px Verdana, Arial, sans-serif;
+}
+</style>
+</head>
+
+<body>
+<!-- start -->
+<!-------  DATOS RAY --------->
+<table style="border: 0px solid black;" width="100%" bgcolor="#7BD2F6"> 
+    <tr> 
+    <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1794941&fileName=tmp_9205817000344785515.png&contentType=image%2Fpng&suggestedName=Ray+logo+original.png" width=20% ></td>
+    <td  style="border: 0px solid black;"><div align=center> <b>Ray International Oil & gas<br>Daily Operational Report Directional <br>
+    <font color=red>{!DOR_expression}</font></b> 
+    </div></td>
+    </tr>
+</table>
+
+<!-------  DATOS SOS ---------
+ <table style="border: 0px solid black;" width="100%"> 
+    <tr> 
+    <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1794941&fileName=tmp_6615320518035872419.jpg&contentType=image%2Fjpeg&suggestedName=SOS+logo.jpg" width=20% ></td>
+    <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>Daily Operational Report Directional <br>
+    <font color=red>{!DOR_expression}</font></b> 
+    </div></td>
+    </tr>
+</table>-->
+
+<br>
+
+<div style="background:#d5d5d5;" align=center>  
+<br>
+<h3>Daily Operational Report Directional Information</h3>
+<br>
+</div>
+<br>    
+
+<table  width = "100%"> 
+    <tr> <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="40%">&nbsp;DOR Number: </td> <td>&nbsp;{!DOR_expression}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="40%" >&nbsp;DOR Date:</td> <td>&nbsp;{!DOR_Date_DATE}</td></tr></table></td>
+    </tr>
+
+    <tr> <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="40%">&nbsp;Customer name:</td> <td>&nbsp;{!Customer_name_RELATED}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="40%" >&nbsp;Customer Contact:</td> <td>&nbsp;{!Customer_Contact}</td></tr></table></td>
+    </tr>
+    
+    <tr> <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="40%">&nbsp;Customer Supervisor:</td> <td>&nbsp;{!Customer_Supervisor_related_event}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="40%" >&nbsp;Company Supervisor:</td> <td>&nbsp;{!Company_Supervisor_related_event}</td></tr></table></td>
+    </tr>
+    
+</table>
+<br>
+<table width = "100%">  
+  <tr>
+    <td style="border: 1px solid black;"width="23%">&nbsp;Process Safety Remarks:</td><br> 
+    <td> <table style="border: 1px solid black;" width="100%"  >
+          <tr> <td>&nbsp;{!Process_Safety_Remarks}</td></tr>
+         </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td style="border: 1px solid black;" width="23%">&nbsp;HSE Summary:</td><br>
+    <td> <table style="border: 1px solid black;" width="100%"  > 
+          <tr> <td>&nbsp;{!HSE_Summary}</td></tr>
+         </table>
+    </td>
+  </tr>
+
+<tr>
+    <td style="border: 1px solid black;" width="23%">&nbsp;Additional Ope Comments:</td><br>
+      <td> <table style="border: 1px solid black;" width="100%"  > 
+      <tr> <td>&nbsp;{!Additional_Ope_Comments}</td></tr>
+           </table>
+      </td>
+</tr>
+<tr>
+    <td style="border: 1px solid black;"width="23%" >&nbsp;Remarks next operation:</td><br>
+      <td> <table style="border: 1px solid black;" width="100%"  > 
+      <tr> <td>&nbsp;{!Remarks_for_next_operation}</td></tr>
+           </table>
+      </td>
+</tr> 
+</table>
+<br><br>
+<div style="background:#d5d5d5;" align=center>  
+<table  style="border: 0px solid black;"width = "100%"><tr><td align=center> 
+<h5>Operational Summary (24 hrs)</h5><br> 
+</td></tr></table>
+</div>
+<br><br>    
+<table width = "100%"> 
+    <tr>
+        <td width="25%" ><table style="border: 0px solid black;" width="100%"> <tr><td width="30%">&nbsp;Operational Summary (24 hrs):</td></tr> </table></td>
+    <td>
+        <table style="border: 1px solid black;" width="100%"> 
+            <tr><td>&nbsp;00:00&nbsp;{!H00_00}<br>&nbsp;01:00&nbsp;{!H_01_00}<br>&nbsp;02:00&nbsp;{!H_02_00}<br>&nbsp;03:00&nbsp;{!H_03_00}<br>&nbsp;04:00&nbsp;{!H_04_00}<br>&nbsp;05:00&nbsp;{!H_05_00}<br>&nbsp;06:00&nbsp;{!H_06_00}<br>&nbsp;07:00&nbsp;{!H_07_00}<br>&nbsp;08:00&nbsp;{!H_08_00}<br>&nbsp;09:00&nbsp;{!H_09_00}<br>&nbsp;10:00&nbsp;{!H_10_00}<br>&nbsp;11:00&nbsp;{!H_11_00}<br>&nbsp;12:00&nbsp;{!H_12_00}<br>&nbsp;13:00&nbsp;{!H_13_00}<br>&nbsp;14:00&nbsp;{!H_14_00}<br>&nbsp;15:00&nbsp;{!H_15_00}<br>&nbsp;16:00&nbsp;{!H_16_00}<br>&nbsp;17:00&nbsp;{!H_17_00}<br>&nbsp;18:00&nbsp;{!H_18_00}<br>&nbsp;19:00&nbsp;{!H_19_00}<br>&nbsp;20:00&nbsp;{!H_20_00}<br>&nbsp;21:00&nbsp;{!H_21_00}<br>&nbsp;22:00&nbsp;{!H_22_00}<br>&nbsp;23:00&nbsp;{!H_23_00}<br>
+            </td></tr>
+        </table>
+    </td>
+    </tr>
+    
+
+</table>
+<pd4ml:page.break>
+<div style="background:#d5d5d5;" align=center>  
+<table  style="border: 0px solid black;"width = "100%"><tr><td align=center> 
+<h5>Additional Data for Well Placement</h5><br> 
+</td></tr></table>
+</div>  
+<table  style="border: 0px solid black;"width = "100%">
+
+<!--  Sección Well Placement  -->   
+    
+<table style="border: 0px solid black;"width = "100%">
+    
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Run Number:</td> <td>&nbsp;{!Run_Number}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;In Hole Date:</td> <td>&nbsp;{!In_Hole_Date}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Out Hole Date:</td><td>&nbsp;{!Out_Hole_Date}
+            </td></tr></table></td>
+    </tr>
+    
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Oper Hrs:</td> <td>&nbsp;{!Oper_Hrs}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Circulation Hrs:</td> <td>&nbsp;{!Circulation_Hrs}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Drilling_Hrs:</td><td>&nbsp;{!Drilling_Hrs}
+            </td></tr></table></td>
+    </tr>   
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;MD Start:</td> <td>&nbsp;{!MD_Start}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;MD End:</td> <td>&nbsp;{!MD_End}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;TVD Start:</td><td>&nbsp;{!TVD_Start}
+            </td></tr></table></td>
+    </tr>   
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;TVD End:</td> <td>&nbsp;{!TVD_End}</td></tr></table></td> 
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Hole Size:</td> <td>&nbsp;{!Hole_Size}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Bit Type:</td><td>&nbsp;{!Bit_Type}
+            </td></tr></table></td>
+    </tr>   
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Bit Vendor:</td> <td>&nbsp;{!Bit_Vendor}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Nozzels:</td> <td>&nbsp;{!Nozzels}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Max Temp (C):</td><td>&nbsp;{!Max_Temp}
+            </td></tr></table></td>
+    </tr>       
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Mud type:</td> <td>&nbsp;{!Mud_type}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Mud Density (kpa):</td> <td>&nbsp;{!Mud_Density}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Max Dogleg Rotating (deg/30 M):</td><td>&nbsp;{!Max_Dogleg_Rotating}
+            </td></tr></table></td>
+    </tr>       
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Max Dogleg Sliding (deg/30 M):</td> <td>&nbsp;{!Max_Dogleg_Sliding}</td></tr></table></td>    
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Max Inc (deg):</td> <td>&nbsp;{!Max_Inc}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Motor Size (in):</td><td>&nbsp;{!Motor_Size}
+            </td></tr></table></td>
+    </tr>       
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Motor Length (M):</td> <td>&nbsp;{!Motor_Length}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Motor Type:</td> <td>&nbsp;{!Motor_Type}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Manufacturer:</td><td>&nbsp;{!Manufacturer}
+            </td></tr></table></td>
+    </tr>       
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Lobes R:S:</td> <td>&nbsp;{!Lobes}</td></tr></table></td> 
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Rented/Own:</td> <td>&nbsp;{!Rented_Own}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Surface RPM:</td><td>&nbsp;{!Surface_RPM}
+            </td></tr></table></td>
+    </tr>       
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Motor On Bottom (Kpa):</td> <td>&nbsp;{!Motor_On_Bottom}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Motor Differential (kpa):</td> <td>&nbsp;{!Motor_Differential}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Max Observed Pressure (Kpa):</td><td>&nbsp;{!Max_Observed_Pressure}
+            </td></tr></table></td>
+    </tr>       
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Average ROP:</td> <td>&nbsp;{!Average_ROP}</td></tr></table></td> 
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Planed Time per section:</td> <td>&nbsp;{!Planed_Time_per_section}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Actual time per section:</td><td>&nbsp;{!Actual_time_per_section}
+            </td></tr></table></td>
+    </tr>       
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;BCT:</td> <td>&nbsp;{!BCT}</td></tr></table></td> 
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Planed metrage per section:</td> <td>&nbsp;{!Planed_metrage_per_section}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;Actual metrage per section:</td><td>&nbsp;{!Actual_metrage_per_section}
+            </td></tr></table></td>
+    </tr>           
+
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="60%">&nbsp;Section KPI:</td> <td>&nbsp;{!Section_KPI}</td></tr></table></td> 
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="63%">&nbsp;Reason of POOH:</td> <td>&nbsp;{!Reason_of_POOH}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="63%">&nbsp;</td><td>&nbsp;
+            </td></tr></table></td>
+    </tr>           
+    
+</table>    
+<br>
+
+#EVAL[
+function f1()
+{
+var buff = '<table style="border: 0px solid black;"width = "100%"><tr><th>Type</th><th>Equipment Code</th><th></td>Serial Number></th><th>Technical_Specs:</th></td></tr>';
+
+    var arr1 = rbv_api.selectQuery("SELECT name, Equipment_Code_no_hyperlink, serial_number, Technical_Specs FROM Service_Tools WHERE name= '{!R3621131#value}'", 999);
+    if (arr1.length > 0) 
+    {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Motor:</td><td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td><td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td><td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td></tr>';
+    }
+    else {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Motor:</td><td width="8%" style="border: 1px solid black;">&nbsp; Not Information</td><td width="8%" style="border: 1px solid black;">.</td><td width="15%" style="border: 1px solid black;">.</td></tr>';
+    }
+        
+    var arr2 = rbv_api.selectQuery("SELECT name, Equipment_Code_no_hyperlink, serial_number, Technical_Specs FROM Service_Tools WHERE name= '{!R3621145#value}'", 999); 
+    if (arr2.length > 0) 
+    {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">NMDC:</td><td width="8%" style="border: 1px solid black;">' +arr2[0][1]+ '</td><td width="8%" style="border: 1px solid black;">' +arr2[0][2]+ '</td><td width="15%" style="border: 1px solid black;">' +arr2[0][3]+ '</td></tr>';
+    }
+    else {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">NMDC:</td><td width="8%" style="border: 1px solid black;">&nbsp; Not Information</td><td width="8%" style="border: 1px solid black;">.</td><td width="15%" style="border: 1px solid black;">.</td></tr>';
+    }
+
+    var arr3 = rbv_api.selectQuery("SELECT name, Equipment_Code_no_hyperlink, serial_number, Technical_Specs FROM Service_Tools WHERE name= '{!R3621149#value}'", 999); 
+    if (arr3.length > 0) 
+    {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Flow Sub:</td><td width="8%" style="border: 1px solid black;">' +arr3[0][1]+ '</td><td width="8%" style="border: 1px solid black;">' +arr3[0][2]+ '</td><td width="15%" style="border: 1px solid black;">' +arr3[0][3]+ '</td></tr>';
+    }   
+    else {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Flow Sub:</td><td width="8%" style="border: 1px solid black;">&nbsp; Not Information</td><td width="8%" style="border: 1px solid black;">.</td><td width="15%" style="border: 1px solid black;">.</td></tr>';
+    }
+    
+    var arr4 = rbv_api.selectQuery("SELECT name, Equipment_Code_no_hyperlink, serial_number, Technical_Specs FROM Service_Tools WHERE name= '{!R3621152#value}'", 999); 
+    if (arr4.length > 0) 
+    {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">MWD:</td><td width="8%" style="border: 1px solid black;">' +arr4[0][1]+ '</td><td width="8%" style="border: 1px solid black;">' +arr4[0][2]+ '</td><td width="15%" style="border: 1px solid black;">' +arr4[0][3]+ '</td></tr>';
+    } 
+    else {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">MWD:</td><td width="8%" style="border: 1px solid black;">&nbsp; Not Information</td><td width="8%" style="border: 1px solid black;">.</td><td width="15%" style="border: 1px solid black;">.</td></tr>';
+    }
+    
+    var arr5 = rbv_api.selectQuery("SELECT name, Equipment_Code_no_hyperlink, serial_number, Technical_Specs FROM Service_Tools WHERE name= '{!R3621155#value}'", 999); 
+    if (arr5.length > 0) 
+    {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Gamma Ray:</td><td width="8%" style="border: 1px solid black;">' +arr5[0][1]+ '</td><td width="8%" style="border: 1px solid black;">' +arr5[0][2]+ '</td><td width="15%" style="border: 1px solid black;">' +arr5[0][3]+ '</td></tr>';
+    }
+    else {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Gamma Ray:</td><td width="8%" style="border: 1px solid black;">&nbsp; Not Information</td><td width="8%" style="border: 1px solid black;">.</td><td width="15%" style="border: 1px solid black;">.</td></tr>';
+    }
+        
+    var arr6 = rbv_api.selectQuery("SELECT name, Equipment_Code_no_hyperlink, serial_number, Technical_Specs FROM Service_Tools WHERE name= '{!R3621161#value}'", 999);
+    if (arr6.length > 0) 
+    {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Pulsar Sub:</td><td width="8%" style="border: 1px solid black;">' +arr6[0][1]+ '</td><td width="8%" style="border: 1px solid black;">' +arr6[0][2]+ '</td><td width="15%" style="border: 1px solid black;">' +arr6[0][3]+ '</td></tr>';
+    }
+    else {
+        buff += '<tr><td width="5%" style="border: 1px solid black;">Pulsar Sub:</td><td width="8%" style="border: 1px solid black;">&nbsp; Not Information</td><td width="8%" style="border: 1px solid black;">.</td><td width="15%" style="border: 1px solid black;">.</td></tr>';
+    }
+            
+    buff += '</table><hr>';
+    
+    buff += '';
+    return buff;
+}
+f1();
+]
+
+
+
+
+
+
+
+<!-- Extraer datos de EVENT R1671559 -->
+<pd4ml:page.break>
+<div style="background:#d5d5d5;" align=center>  
+<br>
+<h3>Event Information</h3>
+<br></div>
+<br>
+<table style="border: 0px solid black;"width = "100%">
+
+    {!#LOOP_BEGIN.R3598524}
+
+    <tr>
+        <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="30%">&nbsp;Event Number:</td> <td>&nbsp;{!R3598524.name}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="30%">&nbsp;Event title:</td> <td>&nbsp;{!R3598524.Event_title}</td></tr></table></td>
+    </tr>   
+    
+    <tr>
+        <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="30%">&nbsp;Service Line:</td> <td>&nbsp;{!R3598524.Service_Line_Event}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="30%">&nbsp;Service Line Type:</td> <td>&nbsp;{!R3598524.Service_Line_Type_Event}</td></tr></table></td>
+    </tr>   
+    
+    <tr>
+        <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="30%">&nbsp;Job Number:</td> <td>&nbsp;{!Job_Number_related}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="30%">&nbsp;Project title:</td> <td>&nbsp;{!R3598524.Project_title}</td></tr></table></td>
+    </tr>   
+
+    <tr>
+        <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="30%">&nbsp;Location:</td> <td>&nbsp;{!R3598524.Location_job}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="30%">&nbsp;Well:</td> <td>&nbsp;{!R3598524.Well}</td></tr></table></td>
+    </tr>       
+
+    <tr>
+        <td colspan="2" style="border: 1px solid black;"><table width="100%"><td width="100%">&nbsp;Objective:<br>&nbsp;{!R3598524.Objective}</td></tr></table></td>
+
+    <tr>
+        <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="30%">&nbsp;Event Start Date:</td> <td>&nbsp;{!R3598524.Event_start_date}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="30%">&nbsp;Closing Date:</td> <td>&nbsp;{!R3598524.End_date}</td></tr></table></td>
+    </tr>     
+
+    <tr>
+        <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="30%">&nbsp;Est.Duration(Days):</td> <td>&nbsp;{!R3598524.Est__Duration__Days_}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="30%">&nbsp;Days on Location:</td> <td>&nbsp;{!R3598524.Days_on_Location}</td></tr></table></td>
+    </tr>       
+
+    <tr>
+        <td width="50%"  style="border: 1px solid black;"><table width="100%"> <tr><td width="30%">&nbsp;Days to Release:</td> <td>&nbsp;{!R3598524.Days_to_Release}</td></tr></table></td>
+        <td width="50%"  style="border: 1px solid black;"> <table width="100%"> <tr><td width="30%">&nbsp;Spud Date:</td> <td>&nbsp;{!R3598524.Original_spud_date}</td></tr></table></td>
+    </tr>   
+<br>    
+<table style="border: 0px solid black;"width = "100%">
+    
+    <tr>        
+        <td width="40%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="50%">&nbsp;Event duration(hrs):</td> <td>&nbsp;{!R3598524.Event_Total_Time}</td></tr></table></td>   
+        <td  width="30%" style="border: 1px solid black;"><table width="100%">
+            <tr><td width="50%">&nbsp;Total NPT(hrs):</td> <td>&nbsp;{!R3598524.NPT_Total}
+            </td></tr></table></td>
+        <td  width="30%" style="border: 1px solid black;"> <table width="100%">
+            <tr><td width="50%">&nbsp;percentNPT:</td><td>&nbsp;{!R3598524.percentNPT}
+            </td></tr></table></td>
+    </tr>
+</table>    
+
+     {!#LOOP_END.R3598524}
+    
+
+</table>
+
+<!-- Mostrar información del NPT del evento seleccionado en el DOR  --> 
+#EVAL[
+function f1()
+{
+    var arr = rbv_api.selectQuery("SELECT Event_Nro, Type_of_NPT_Report#value, name, Project, Event_Start_Date_rf, Event_end_date, Event_start_date, Event_end_date, Net_time, Percent_NPT FROM NPT_Report WHERE Event_Nro ='{!Event_expression}'", 999);
+    
+    var buff = '<br> <div style="background:#d5d5d5;" align=center><br><h3>Nro. of NPT founds  : &nbsp; <font color=red>'+arr.length+'</font></h3><br></div><br> ';
+    var j;
+    for (var k=0; k<arr.length; k++)
+    {
+    j=k+1;
+    buff += '<table width = "100%">'+
+            '<tr><td width="50%"  style="border: 1px solid black;"><table width="100%"><tr><td width="25%">Nro:&nbsp;</td><td>' +j+ ' of ' +arr.length+ '</td></tr></table></td><td width="50%" style="border: 1px solid black;"><table width="100%"> <tr><td width="25%" >Type of Finding:</td><td>' +arr[k][1]+ '</td></tr></table></td></tr>\n'+
+
+'<table style="border: 0px solid black;"width = "100%"><tr><td width="40%" style="border: 1px solid black;"><table width="100%"><tr><td width="50%">NPT Number:&nbsp;</td><td>' +arr[k][2]+ '</td></tr></table></td><td  width="30%" style="border: 1px solid black;"><table width="100%"><tr><td width="50%">Net time (hrs):&nbsp;</td><td>&nbsp;' +arr[k][8]+ '</td></tr></table></td><td  width="30%" style="border: 1px solid black;"> <table width="100%"><tr><td width="50%">% NPT:&nbsp;</td><td>' +arr[k][9]+ '</td></tr></table></td></tr></table>\n'+
+        
+'<table width = "100%">+<tr><td width="50%"  style="border: 1px solid black;"><table width="100%"><tr><td width="25%"> NPT Start Date:</td><td>' +arr[k][6]+ '</td></tr></table></td><td width="50%" style="border: 1px solid black;"><table width="100%"> <tr><td width="25%" >NPT End Date:</td><td>' +arr[k][7]+ '</td></tr></table></td></tr></table>\n'+
+
+'<table width = "100%"><td colspan="2" style="border: 1px solid black;"><table width="100%"><tr><td width="100%">NPT Description:<br>' +arr[k][3]+ '</td></tr></table></td></table></table><hr>';   
+    }
+    buff += '';
+    return buff;
+}
+f1();
+]
+    
+
+</body>
+</html>
