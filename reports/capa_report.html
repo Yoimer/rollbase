@@ -53,6 +53,7 @@
                 </tr>
             </table>
         </div>
+        <br>
 
         <!(Action Type, Standar Reference Created at) -->
         <table style="border: 0px solid black;"width = "100%">
@@ -69,8 +70,7 @@
                 <table width="100%">
                     <tr>
                         <td width="63%">&nbsp;Standard Reference:</td>
-                        <td>&nbsp;{!Standard_Reference}
-                        </td>
+                        <td>&nbsp;{!Standard_Reference}</td>
                     </tr>
                 </table>
             </td>
@@ -78,13 +78,43 @@
                 <table width="100%">
                     <tr>
                         <td width="63%">&nbsp;Created at:</td>
-                        <td>&nbsp;{!createdAt}
-                        </td>
+                        <td>&nbsp;{!createdAt}</td>
                     </tr>
                 </table>
             </td>
         </tr>
-        <table>
+        </table>
+        <br>
+
+        <!(Department, Procedure Reference, Target Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="40%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Department:</td>
+                        <td>&nbsp;{!Department_No_Hyperlinked}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="30%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Procedure Reference:</td>
+                        <td>&nbsp;{!Procedure_Reference}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="30%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Target Date:</td>
+                        <td>&nbsp;{!Target_Date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
 
     </body>
 </html>
