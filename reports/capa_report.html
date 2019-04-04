@@ -78,7 +78,7 @@
         </table>
         <br>
 
-        <!(department, procedure reference) -->
+        <!(department, reason for the capa) -->
         <table style="border: 0px solid black;"width = "100%">
         <tr>
             <td width="40%" style="border: 1px solid black;">
@@ -92,8 +92,8 @@
             <td  width="30%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
-                        <td width="63%">&nbsp;Target Date:</td>
-                        <td>&nbsp;{!Target_Date}</td>
+                        <td width="63%">&nbsp;Reason for the capa:</td>
+                        <td>&nbsp;{!Reason_for_the_CAPA_Formula}</td>
                     </tr>
                 </table>
             </td>
@@ -101,7 +101,7 @@
         </table>
         <br>
 
-        <!(action type, standard reference) -->
+        <!(action type, asset, service line) -->
         <table style="border: 0px solid black;"width = "100%">
         <tr>
             <td width="40%" style="border: 1px solid black;">
@@ -115,8 +115,70 @@
             <td  width="30%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
-                        <td width="63%">&nbsp;Standard Reference:</td>
+                        <td width="63%">&nbsp;Asset:</td>
+                        <td>&nbsp;{!Asset_Formula}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="30%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Service Line:</td>
+                        <td>&nbsp;{!Service_Lines_Formula}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+        <br>
+
+        <!(standard reference, procedure reference, clause number) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="40%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Standard Reference:</td>
                         <td>&nbsp;{!Standard_Reference}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="30%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Procedure Reference:</td>
+                        <td>&nbsp;{!Procedure_Reference}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="30%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Clause Number:</td>
+                        <td>&nbsp;{!Clause_Number}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+        <br>
+
+        <!(job number, npt) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="40%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Job Number:</td>
+                        <td>&nbsp;{!Job_Number_Formula}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="30%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;NPT:</td>
+                        <td>&nbsp;{!NPT}</td>
                     </tr>
                 </table>
             </td>
