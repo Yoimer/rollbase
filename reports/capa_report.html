@@ -55,20 +55,27 @@
         </div>
         <br>
 
-        <!(initiator, created at) -->
+        <!(initiator, created at, target date) -->
         <table style="border: 0px solid black;"width = "100%">
         <tr>
-            <td width="40%" style="border: 1px solid black;">
+            <td width="26%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
                         <td width="60%">&nbsp;Initiator: &nbsp;{!Initiator_READ_ONLY}</td>
                     </tr>
                 </table>
             </td>
-            <td  width="30%" style="border: 1px solid black;">
+            <td  width="37%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
                         <td width="63%">&nbsp;Created At: &nbsp;{!createdAt}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="37%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Target Date: &nbsp;{!Target_Date}</td>
                     </tr>
                 </table>
             </td>
@@ -83,14 +90,14 @@
         <!(department, reason for the capa) -->
         <table style="border: 0px solid black;"width = "100%">
         <tr>
-            <td width="40%" style="border: 1px solid black;">
+            <td width="26%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
                         <td width="60%">&nbsp;Department: &nbsp;{!Department_No_Hyperlinked}</td>
                     </tr>
                 </table>
             </td>
-            <td  width="30%" style="border: 1px solid black;">
+            <td  width="74%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
                         <td width="63%">&nbsp;Reason for the capa: &nbsp;{!Reason_for_the_CAPA_Formula}</td>
@@ -172,14 +179,14 @@
         <!(job number, npt) -->
         <table style="border: 0px solid black;"width = "100%">
         <tr>
-            <td width="40%" style="border: 1px solid black;">
+            <td width="26%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
                         <td width="60%">&nbsp;Job Number: &nbsp;{!Job_Number_Formula}</td>
                     </tr>
                 </table>
             </td>
-            <td  width="30%" style="border: 1px solid black;">
+            <td  width="74%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
                         <td width="63%">&nbsp;NPT: &nbsp;{!NPT}</td>
@@ -188,7 +195,27 @@
             </td>
         </tr>
         </table>
-        <br>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Description of the problem
+        <textarea style="overflow:hidden" rows="02" cols="73">
+<!--    Lookup (Reason for the CAPA Type)R4692505 -->
+{!Description_of_the_Problem}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Objective Evidence
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Objective_Evidence}
+        </textarea>
 
         <!-- Tool Selection Header -->
         <div style="background:#d5d5d5;" align=center>
@@ -257,7 +284,7 @@
         <br>
 
         <!-- Reason for the CAPA Header -->
-        <div style="background:#d5d5d5;" align=center>
+<!--         <div style="background:#d5d5d5;" align=center>
             <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
                 <tr>
                     <td align=center>
@@ -266,13 +293,9 @@
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> -->
         <br>
 
-        <textarea style="overflow:hidden" rows="11" cols="73">
-<!--    Lookup (Reason for the CAPA Type)R4692505 -->
-{!Reason_for_the_CAPA_Formula}
-        </textarea>
         <pd4ml:page.break>
 
         <!-- Description of the problem Header -->
@@ -375,9 +398,6 @@
         </div>
         <br>
 
-        <textarea style="overflow:hidden" rows="11" cols="73">
-{!Objective_Evidence}
-        </textarea>
         <br>
         <br>
 
