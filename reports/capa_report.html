@@ -217,6 +217,11 @@ Objective Evidence
 {!Objective_Evidence}
         </textarea>
 
+        <!-- break line after a textearea -->
+        <div style="line-height:100%;">
+            <br>
+        </div>
+
         <!-- Tool Selection Header -->
         <div style="background:#d5d5d5;" align=center>
             <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
@@ -229,6 +234,48 @@ Objective Evidence
             </table>
         </div>
         <br>
+
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <th>Type</th>
+                <th>Code</th>
+                <th>Serial Number</th>
+                <th>Short Description</th>
+
+                <tr>
+                    <td width="5%" style="border: 1px solid black; "><strong>Product&Material</strong></td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
+                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                </tr>
+
+                <tr>
+                    <td width="5%" style="border: 1px solid black;"><strong>Equipment</strong></td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
+                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                </tr>
+
+                <tr>
+                    <td width="5%" style="border: 1px solid black;"><strong>Service Tools</strong></td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
+                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                </tr>
+
+                <tr>
+                    <td width="5%" style="border: 1px solid black;"><strong>Tools</strong></td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
+                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                </tr>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
 
         <!(product & material, equipment) -->
         <table style="border: 0px solid black;"width = "100%">
