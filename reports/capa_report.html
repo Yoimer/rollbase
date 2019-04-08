@@ -475,5 +475,38 @@ Effectiveness of Actions Taken
 {!Effectiveness_of_Actions_Taken}
         </textarea>
 
+        <!-- break line after a textearea -->
+        <div style="line-height:100%;">
+            <br>
+        </div>
+
+        #EVAL[
+
+            <!-- check existing rejection function -->
+            function check_existing_rejection() {
+
+                <!-- R226176 is Rejection relationship with CAPA -->
+                <!-- We only want to get title, observations and attachments field values -->
+                var rejection = rbv_api.selectQuery("SELECT Title_READ_ONLY, Observations, Attachment FROM Rejection WHERE name= '{!R226176#value}'", 999);
+
+                <!-- if there is any rejection, show fields values on report, else don't do it -->
+                if(rejection.length > 0) {
+                    var build_report = '<div style="background:#d5d5d5;" align=center>'+
+                    '            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
+                    '                <tr>'+
+                    '                    <td align=center>'+
+                    '                        <h5>Rejection</h5>'+
+                    '                        <br> '+
+                    '                    </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </div>';
+                    build_report += '';
+                    return build_report;
+                }
+            }
+            check_existing_rejection();
+        ]
+
     </body>
 </html>
