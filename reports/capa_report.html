@@ -244,38 +244,77 @@ Objective Evidence
 
                 <tr>
                     <td width="5%" style="border: 1px solid black; "><strong>Product&Material</strong></td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
-                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">{!Product_Code}</td>
+                    <td width="8%" style="border: 1px solid black;">{!Product_Serial_Number}</td>
+                    <td width="15%" style="border: 1px solid black;">no existe(revisar variable)</td>
                 </tr>
 
                 <tr>
                     <td width="5%" style="border: 1px solid black;"><strong>Equipment</strong></td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
-                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">{!Equipment_Code}</td>
+                    <td width="8%" style="border: 1px solid black;">{!Equipment_Serial_Number}</td>
+                    <td width="15%" style="border: 1px solid black;">no existe(revisar variable)</td>
                 </tr>
 
                 <tr>
                     <td width="5%" style="border: 1px solid black;"><strong>Service Tools</strong></td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
-                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">no existe(revisar variable)</td>
+                    <td width="8%" style="border: 1px solid black;">no existe(revisar variable)</td>
+                    <td width="15%" style="border: 1px solid black;">no existe(revisar variable)</td>
                 </tr>
 
                 <tr>
                     <td width="5%" style="border: 1px solid black;"><strong>Tools</strong></td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][1]+ '</td>
-                    <td width="8%" style="border: 1px solid black;">' +arr1[0][2]+ '</td>
-                    <td width="15%" style="border: 1px solid black;">' +arr1[0][3]+ '</td>
+                    <td width="8%" style="border: 1px solid black;">{!Tool_Code}</td>
+                    <td width="8%" style="border: 1px solid black;">{!Tool_Serial_Number}</td>
+                    <td width="15%" style="border: 1px solid black;">no existe(revisar variable)</td>
                 </tr>
             </tr>
         </table>
 
-        <!-- smaller br -->
-        <div style="line-height:25%;">
+        <br>
+
+
+        <!-- Validation Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Validation</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(case worker) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="26%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Case Worker: &nbsp;{!Case_Worker_Formula}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+Validation Comments
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Validation_comments}
+        </textarea>
+
+        <pd4ml:page.break>
+
+        
+        <!-- break line after a textearea -->
+<!--         <div style="line-height:900%;">
             <br>
         </div>
+
+ -->
 
         <!(product & material, equipment) -->
         <table style="border: 0px solid black;"width = "100%">
