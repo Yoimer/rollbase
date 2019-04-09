@@ -32,8 +32,11 @@ if (employeeID.length > 0){
     // arr.Operation           = "I";
     arr["Operation"]                        = "I";
     // arr.Sent                = "1"; 
-    arr["Sent"]                             = "1";
-
+    arr["Sent"]                             = 1;
+    arr["Checkbox_Prueba"]                             = "False";
+  
+  
+  
     //rbv_api.println ("arr.Competency_Code " + arr.Competency_Code);
     rbv_api.println ("Competency_Code " + arr["Competency_Code"]);
     //rbv_api.println ("arr.name " + arr.name);
@@ -48,6 +51,7 @@ if (employeeID.length > 0){
     rbv_api.println ("Operation " + arr["Operation"]);
     //rbv_api.println ("arr.Sent " + arr.Sent);
     rbv_api.println ("Sent " + arr["Sent"]);
+    rbv_api.println ("Checkbox_Prueba " + arr["Checkbox_Prueba"]);
 
     var newId = rbv_api.createRecord("API_Personnel_Competency", arr);
 
