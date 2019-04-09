@@ -489,56 +489,57 @@ Effectiveness of Actions Taken
                 <!-- We only want to get title, observations and attachments field values -->
                 var rejection = rbv_api.selectQuery("SELECT Title_READ_ONLY, Observations, Attachment_Read_Only FROM Rejection WHERE name= '{!R226176#value}'", 999);
 
-                <!-- 
-                user has to create a expression field returning the values they want to get on this query.
-                on rejection object the field Attachment_Read_Only is a expression field
-                returning return '{!Attachment#origFileName}';.
-                this is because the Attachment object returns while quering a string like:
-                "#Mon Apr 08 14:31:58 UTC 2019\nfileSize=116225\norigFileName=Las aves de Pan.doc\ncontentType=application/msword\nfileName=74/tmp_1200242532873688438.doc\n";.
-                we only want to get the name of the attached file.
-                -->
-
                 <!-- if there is any rejection, show fields values on report, else don't do it -->
                 if(rejection.length > 0) {
 
                     <!-- Rejection Header -->
-                    build_report =
-                    '<div style="background:#d5d5d5;" align=center>'+
-                    '    <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
+                    var build_report = '<!-- Rejection Header -->'+
+                    '        <div style="background:#d5d5d5;" align=center>'+
+                    '            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
+                    '                <tr>'+
+                    '                    <td align=center>'+
+                    '                        <h5>Rejection</h5>'+
+                    '                        <br> '+
+                    '                    </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </div>'+
+                    '        <br>'+
+                    ''+
+                    '        <!(title, attachment, observation) -->'+
+                    '        <table style="border: 0px solid black;"width = "100%">'+
                     '        <tr>'+
-                    '            <td align=center>'+
-                    '                <h5>Rejection Attachment_Formula</h5>'+
-                    '                <br> '+
+                    '            <td width="50%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="60%">Title:&nbsp;' +rejection[0][0]+ '</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '            <td  width="50%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="63%">Attachment:&nbsp;' +rejection[0][2]+ '</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
                     '            </td>'+
                     '        </tr>'+
-                    '    </table>'+
-                    '</div>'+
-                    '<br>'+
-                    '<table style="border: 0px solid black;"width = "100%">'+
-                    '    <tr>'+
-                    '        <td width="40%" style="border: 1px solid black;">'+
-                    '            <table width="100%">'+
-                    '                <tr>'+
-                    '                    <td width="60%"> Title: &nbsp; ' +rejection[0][0]+ '</td>'+
-                    '                </tr>'+
-                    '            </table>'+
-                    '        </td>'+
-                    '        <td  width="30%" style="border: 1px solid black;">'+
-                    '            <table width="100%">'+
-                    '                <tr>'+
-                    '                    <td width="63%"> Observation: &nbsp; ' +rejection[0][1]+ ' </td>'+
-                    '                </tr>'+
-                    '            </table>'+
-                    '        </td>'+
-                    '        <td  width="30%" style="border: 1px solid black;">'+
-                    '            <table width="100%">'+
-                    '                <tr>'+
-                    '                    <td width="63%"> Attachment: &nbsp;  ' +rejection[0][2]+ ' </td>'+
-                    '                </tr>'+
-                    '            </table>'+
-                    '        </td>'+
-                    '    </tr>'+
-                    '</table>';
+                    '        </table>'+
+                    '        <!-- smaller br -->'+
+                    '        <div style="line-height:25%;">'+
+                    '            <br>'+
+                    '        </div>'+
+                    '        <table style="border: 0px solid black;"width = "100%">'+
+                    '            <tr>'+
+                    '                <td width="26%" style="border: 1px solid black;">'+
+                    '                    <table width="100%">'+
+                    '                        <tr>'+
+                    '                            <td width="60%">Observations: &nbsp;' +rejection[0][1]+ '</td>'+
+                    '                        </tr>'+
+                    '                    </table>'+
+                    '                </td>'+
+                    '            </tr>'+
+                    '        </table>';
 
                     build_report += '';
                     return build_report;
