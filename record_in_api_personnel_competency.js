@@ -32,8 +32,8 @@ if (employeeID.length > 0){
     // arr.Operation           = "I";
     arr["Operation"]                        = "I";
     // arr.Sent                = "1"; 
-    arr["Sent"]                             = 1;
-    arr["Checkbox_Prueba"]                             = "False";
+    arr["Sent"]                             = "True";
+    arr["Checkbox_Prueba"]                             = "True";
   
   
   
