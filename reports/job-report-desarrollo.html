@@ -1,0 +1,2583 @@
+<!-- ================================================== -->
+<!-- Page Name..: Job's information Report              -->
+<!-- Application: LongView Plus                         -->
+<!-- Object.....: LongView/JOB                          -->
+<!-- Purpose....: Template for Job's information report -->
+<!-- Date.......: 08/07/2018                            -->
+<!-- Programmer.: Nextwells delevopment team            -->
+<!-- ================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JOB Report {!name#text} </title>
+        <style>
+            td 
+            {
+            border: 1px solid black;
+            font-size :10px;
+            }
+            h5
+            {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size :10px;    
+            }
+        </style>
+    </head>
+    <br>
+    <body>
+        <!-- start -->
+        <table style="border: 0px solid black;" width="100%" bgcolor="#7BD2F6">
+            <tr>
+                <td width="60%" style="border: 0px solid black;"><img src="http://castillolk.com.ve/ray-oil-gas.png" width=20% ></td>
+                <td  style="border: 0px solid black;">
+                    <div align=center> <b>Ray International Oil & gas<br>Daily Operational Report <br>
+                        <font color=red>{!Job_Number_no_hyperlink}</font></b> 
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Job information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table  style="border: 0px solid black;"width = "100%">
+            <!-- Información del JOB -->
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Job Number: </td>
+                            <td>{!Job_Number_no_hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Call Out Number: </td>
+                            <td>{!Call_Out_Number_no_hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Open Date: </td>
+                            <td>{!Open_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Location: </td>
+                            <td>&nbsp;{!Location_rf}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Field: </td>
+                            <td>&nbsp;{!Field}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Well:</td>
+                            <td>&nbsp;{!Well}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">RIG/Hoist/Unit:</td>
+                            <td>&nbsp;{!RIG_Hoist_Unit}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Received By:</td>
+                            <td>&nbsp;{!Received_By_no_hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Notify To:</td>
+                            <td>&nbsp;{!Notify_To}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Reviewer By: </td>
+                            <td>&nbsp;{!Reviewer_no_hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Approver By: </td>
+                            <td>&nbsp;{!Approver_no_hiperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="20%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Job Progress:</td>
+                            <td>{!Job_Progress}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Work Description:<br>&nbsp;{!Work_Description}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Call Out Description:<br>&nbsp;{!Call_Out_Description}</td>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Client/Contract Information - JOB: {!Job_Number_no_hyperlink} </h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table  style="border: 0px solid black;"width = "100%">
+            <!--  Sección del Cliente y contrato  -->   
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer Number: </td>
+                            <td>&nbsp;{!Customer_No_Hyperlinked}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Customer Name:</td>
+                            <td>&nbsp;{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer Contact:</td>
+                            <td>&nbsp;{!Customer_Contact}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >AFE Number:</td>
+                            <td>&nbsp;{!AFE_Number}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Contact Details:<br>&nbsp;{!Contact_Details}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">PO Number:</td>
+                            <td>&nbsp;{!PO_Number}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number:</td>
+                            <td>&nbsp;{!Contract_no_hiperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Contract Name:</td>
+                            <td>&nbsp;{!Contract_Name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Starting Date:</td>
+                            <td>&nbsp;{!Contract_Starting_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Expiration Date:</td>
+                            <td>&nbsp;{!Contract_Expiration_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Revised By:</td>
+                            <td>&nbsp;{!Revised_by_call_out}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Contract Description:<br>&nbsp;{!Contract_Description}</td>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+        </table>
+        <div style="background:#d5d5d5;" align=Left>
+            <table  style="border: 0px solid black; "width = "100%">
+                <tr>
+                    <td style="background:#d5d5d5;" align=Left>
+                        <h5>Contract Review</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table  style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Date of Request:</td>
+                            <td>&nbsp;{!Date_of_Request}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Clarification_Date:</td>
+                            <td>&nbsp;{!Clarification_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Notify To:</td>
+                            <td>&nbsp;{!Notify_To}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Approved By:</td>
+                            <td>&nbsp;{!Approved_By_no_hyperlink_contract}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer Approval:</td>
+                            <td>&nbsp;{!Customer_Approval_by}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Approval Date:</td>
+                            <td> &nbsp;{!Date_of_Customer_Approval}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Scope_Changes:<br>&nbsp;{!Scope_Changes}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Clarifications:<br>&nbsp;{!Clarifications}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Clarification Request:<br>&nbsp;{!Clarification_Request}</td>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- Extraer datos de Servicios R107796 -->
+        <pd4ml:page.break>
+        <br>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Service Information - JOB: {!Job_Number_no_hyperlink} </h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00></font></td>
+                <td style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;{!R107796.name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <!-- Job's Service related Document -->
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number: </td>
+                            <td>&nbsp;{!R1479526#value}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Description:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <!-- Service related Job -->
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!R107796.Description}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Related Position:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!Related_Position_No_Hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Desc. Related Position:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!Description_of_Related_Position}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Contingency Title:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!R107796.Contingency_Title}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Contingency Description:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <!-- Service related Job -->
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!R107796.Contingency_Description}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Service Lines:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <!-- Job's Service related Service Line -->
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!R784969#value}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            #EVAL[
+            var j=0;
+            var buff   = ' ';   
+            // PORTILLO change.
+            // var arr = rbv_api.selectQuery("SELECT name, Reference_Number, Title, Type_RF, Description, Revision, Revision_Date, Rejection_Reasons FROM  Procedure where name= '{!R1479526#value}'", 999);
+            // Get information from Job's Service related Document.
+            var arr = rbv_api.selectQuery("SELECT name, Reference_Number, Title, Type_RF, Description, Revision, Revision_Date, Rejection_Reasons FROM  Procedure where R1479526 = ?", 999, {!id});
+            if (arr.length >0) 
+            {
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Reference Number: </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Title:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Type RF:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr[0][3]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Description: </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr[0][4]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Revision: </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr[0][5]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';      
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Revision Date: </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr[0][6]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';  
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Rejection_Reasons:  </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr[0][7]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            }
+            return buff;        
+            ]   
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Risk Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--   Informacion de Riesgos - (R1479526) -->
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            #EVAL[
+            var j=0;
+            var buff ;
+            var serv = "{!R107796.name}";
+            // PORTILLO change.
+            // var arr = rbv_api.selectQuery("SELECT  xRISK, name FROM Procedure WHERE name= '{!R1479526#value}'", 999);
+            var arr = rbv_api.selectQuery("SELECT  xRISK, name FROM Procedure WHERE R1479526 = ?", 999, {!id});
+            if (arr.length >0) 
+            {
+            // PORTILLO change.
+            var riesgos = arr[0][j].split(", ");
+            // var riesgos = arr[j].split(", ");
+            var yy = riesgos.length;
+            var l =0;
+            for (var k=0; k<riesgos.length; k++)    
+            {
+            l = l+1;
+            // PORTILLO change.
+            var arr1 =rbv_api.selectQuery("SELECT  name, Risk_Type_READ_ONLY#value,  Proposed_Controls  FROM  Risk  where  name=?",1,riesgos[k]);
+            docum = riesgos[k];
+            buff   += '
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;'+serv+'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number:</td>
+                            <td>&nbsp;'+docum+'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>'+yy+' Risk</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Risk No:  '+l+' </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][0]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';  
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Risk Type:  </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';  
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Proposed Controls: </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';  
+            buff   += '
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            ';
+            } 
+            }
+            return buff;        
+            ]       
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5> Additional JOB Risk Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--   Informacion Adicional de Riesgos del JOB - (R2698230) -->
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Risks -->
+            {!#LOOP_BEGIN.R2698230}
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Additional Job Risk: </td>
+                            <td>{!name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Risk Type:</td>
+                            <td>{!Risk_Type_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Risk Level: </td>
+                            <td>{!Risk_Level}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Asset:</td>
+                            <td>{!Asset_Related}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Hazard:<br>&nbsp;{!Risk_Hazard}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Task or Proposed Change:<br>&nbsp;{!Task_or_Proposed_Change_General}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Service Line:<br>&nbsp;{!Service_Line_No_Hyperlinked}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            return buff;        
+            {!#LOOP_END.R2698230}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Disruption Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <!-- Informacion de Disruption (R2120119)-->
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;{!name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number: </td>
+                            <td>&nbsp;{!R1479526#value}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Iterates through Job's Service related Disruption -->
+            {!#LOOP_BEGIN.R2120119}
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>Disruption</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            <tr>
+                <td width="15%" valign="top">Disruption: </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">{!Disruption}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%" valign="top">Possible Disruptions:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">{!Possible_Disruptions}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%" valign="top">Trigger:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">{!Trigger}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="15%" valign="top">Contingency Action:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">{!Contingency_Action}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            {!#LOOP_END.R2120119}
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Deliverables Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->   
+            {!#LOOP_BEGIN.R107796}
+            <!-- Job's Service related Deliverables -->
+            #EVAL[
+            var j=0;
+            var zz = "{!R134104#value}".split(", ");
+            var yy;
+            var buff ;
+            var serv = "{!R107796.name}";
+            docum = "{!R1479526#value}";
+            // PORTILLO change.
+            if (zz[0] === ''){ yy = 0; }
+            else { yy = zz.length; }
+            if (yy > 0) {
+            buff   += '
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;'+serv+'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number:</td>
+                            <td>&nbsp;'+docum+'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>'+yy+' Deliverables</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            ';  
+            for (var k=0; k <zz.length; k++) {  
+            j = j + 1;
+            var arr1 =rbv_api.selectQuery("SELECT  name, Deliverable_Type_READ_ONLY,  Description, Service_Line_No_Hyperlinked FROM  Deliverable  where  name=?",1,zz[k]);
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Deliverable: <b>'+j+'</b> </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][0]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';  
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Deliverable Type:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';  
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Description:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';                  
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Service Lines:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][3]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            ';  
+            }  }
+            return buff;
+            ]           
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Additional Deliverables Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Job related Deliverables -->   
+            {!#LOOP_BEGIN.R127907}
+            <tr>
+                <td  style="border: 1px solid black;" width="15%"> Additional Deliverable:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!name}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Deliverable Type:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!Deliverable_Type_rf}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Description:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!Description}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;" width="15%">Service Line:</td>
+                <td>
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td style="border: 0px solid black;">&nbsp;{!Service_Line_No_Hyperlinked}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            return buff;        
+            {!#LOOP_END.R127907}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Master Equipment Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            #EVAL[
+            var j=0;
+            var zz = "{!R2157839#value}".split(", ");   // Get all Job's Service related Master Master Equipments.
+            var yy;
+            var buff ;
+            var serv = "{!R107796.name}";
+            docum = "{!R1479526#value}";
+            // PORTILLO change.
+            if (zz[0] === ''){ yy = 0; }
+            else { yy = zz.length; }
+            if (yy > 0) {
+            buff   += '
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;'+serv+'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number:</td>
+                            <td>&nbsp;'+docum+'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>'+yy+' Equipments</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            ';
+            for (var k = 0; k < zz.length; k++) {   
+            j = j + 1;
+            var arr1 =rbv_api.selectQuery("SELECT name, Title, Description FROM Master_Equipment1 WHERE name = ?", 1, zz[k]);
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Equipment Code: <b>'+j+'</b> </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][0]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Title:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Description:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            ';
+            }  }
+            return buff;
+            ]           
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Master Service Tools - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            #EVAL[
+            var j=0;
+            var zz = "{!R2160601#value}".split(", ");  // Get all Job's Service related Master Service Tools.
+            var yy;
+            var buff ;
+            var serv = "{!R107796.name}";
+            docum = "{!R1479526#value}";
+            // PORTILLO change.
+            if (zz[0] === ''){ yy = 0; }
+            else { yy = zz.length; }
+            if (yy > 0) {
+            buff   += '
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;'+serv+'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number:</td>
+                            <td>&nbsp;'+docum+'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>'+yy+' Service Tools</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            ';
+            for (var k = 0; k < zz.length; k++) {   
+            j = j + 1;
+            var arr1 =rbv_api.selectQuery("SELECT name, Title, Description FROM Master_Service_Tool WHERE name=?", 1, zz[k]);
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Service Tool Code: <b>'+j+'</b> </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][0]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Title:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Description:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            ';
+            }  }
+            return buff;
+            ]           
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Master Hand Tools Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            #EVAL[
+            var j=0;
+            var zz = "{!R2157836#value}".split(", ");  // Get all Job's Service related Master Tools.
+            var yy;
+            var buff ;
+            var serv = "{!R107796.name}";
+            docum = "{!R1479526#value}";
+            // PORTILLO change.
+            if (zz[0] === ''){ yy = 0; }
+            else { yy = zz.length; }
+            if (yy > 0) {
+            buff   += '
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;'+serv+'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number:</td>
+                            <td>&nbsp;'+docum+'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>'+yy+' Hand Tools</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            ';
+            for (var k = 0; k < zz.length; k++) {
+            j = j + 1;
+            var arr1 =rbv_api.selectQuery("SELECT name, Title, Description FROM Master_Tool1 WHERE name=?", 1, zz[k]);
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Hand Tools Code: <b>'+j+'</b> </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][0]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Title:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Description:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            ';  
+            }  }
+            return buff;
+            ]           
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Master MDEs Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            #EVAL[
+            var j=0;
+            var zz = "{!R2157847#value}".split(", ");  // Get all Job's Service related Master MDEs.
+            var yy;
+            var buff ;
+            var serv = "{!R107796.name}";
+            docum = "{!R1479526#value}";
+            // PORTILLO change.
+            if (zz[0] === ''){ yy = 0; }
+            else { yy = zz.length; }
+            if (yy > 0) {
+            buff   += '
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;'+serv+'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number:</td>
+                            <td>&nbsp;'+docum+'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>'+yy+' MDEs</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            ';
+            for (var k = 0; k < zz.length; k++) {
+            j = j + 1;
+            var arr1 = rbv_api.selectQuery("SELECT name, Title, Description FROM Master_MDE1 WHERE name=?", 1, zz[k]);
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">MDEs Code: <b>'+j+'</b> </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][0]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Title:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Description:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            ';  
+            }  }
+            return buff;
+            ]           
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Master Products and Materials Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--   Informacion de Master Products and Materials - Master_SRP - (R2157860) -->
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <!-- Iterates through Job related Service -->
+            {!#LOOP_BEGIN.R107796}
+            #EVAL[
+            var j=0;
+            var zz = "{!R2157860#value}".split(", ");  // Get all Job's Service related Master Products and Materials.
+            var yy;
+            var buff ;
+            var serv = "{!R107796.name}";
+            docum = "{!R1479526#value}";
+            // PORTILLO change.
+            if (zz[0] === ''){ yy = 0; }
+            else { yy = zz.length; }
+            if (yy > 0) {
+            buff   += '
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Service Number: </td>
+                            <td>&nbsp;'+serv+'</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Document Number:</td>
+                            <td>&nbsp;'+docum+'</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 0px solid black;"><font color=#f00><b>'+yy+' Product/Material</b></font></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: black;height:1px;">
+                </td>
+            </tr>
+            ';
+            for (var k = 0; k < zz.length; k++) {
+            j = j + 1;
+            var arr1 = rbv_api.selectQuery("SELECT name, Title, Description FROM  Master_SRP WHERE name=?", 1, zz[k]);
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Products : <b>'+j+'</b> </td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][0]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Title :</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][1]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td width="15%" valign="top">Description:</td>
+                <td width="85%">
+                    <table style="border: 0px solid black;" width="100%">
+                        <tr>
+                            <td  style="border: 0px solid black;">
+                                <p align=justify style=" margin-left: 5px;margin-right: 5px;">'+arr1[0][2]+'</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            ';
+            buff   += '
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            ';
+            }
+            }
+            return buff;
+            ]
+            {!#LOOP_END.R107796}
+        </table>
+        <pd4ml:page.break>
+        <br>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Well information - JOB: {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table  style="border: 0px solid black;"width = "100%">
+            <!--  Sección del Pozo  --> 
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Well Type:</td>
+                            <td>&nbsp;{!Well_Type}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Well Classification:</td>
+                            <td>&nbsp;{!Type_of_Location}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Operation Type:</td>
+                            <td>&nbsp;{!Operation_Type}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Max Deviation:</td>
+                            <td>&nbsp;{!Max_Deviation_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Max Dogleg:</td>
+                            <td>&nbsp;{!Max_Dogleg_Severity_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >CITHP:</td>
+                            <td>&nbsp;{!CITHP_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">CIBHP:</td>
+                            <td>&nbsp;{!CIBHP_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >CITHT:</td>
+                            <td>&nbsp;{!CITHT_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">CIBHT:</td>
+                            <td>&nbsp;{!CIBHT_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >MAASP:</td>
+                            <td>&nbsp;{!MAASP_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">TVD:<br>&nbsp;{!TVD}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">MD:<br>&nbsp;{!MD}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Well Conditions:<br>&nbsp;{!Loses}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Well Conditions Other:<br>&nbsp;{!Well_Conditions_Other}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Operation Type Other:<br>&nbsp;{!Operation_Type_Other}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Type of Completion:<br>&nbsp;{!Type_of_Completion}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Type Completion Other:<br>&nbsp;{!Type_of_Completion_Other}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">MUD Type:<br>&nbsp;{!MUD_Type}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Type Completion Fluid:<br>&nbsp;{!Type_of_Completion_Fluid}</td>
+                        </tr>
+                    </table>
+                </td>
+        </table>
+        <pd4ml:page.break>
+        <br>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Operational Parameters - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table  style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Minimum ID:</td>
+                            <td>&nbsp;{!Minimum_ID_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Max Tool ID:</td>
+                            <td>&nbsp;{!Max_Tool_ID_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Max.Pumping rate:</td>
+                            <td>&nbsp;{!Pumping_rate_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >TVD Perforation:</td>
+                            <td>&nbsp;{!Top_of_Perforation_Expression}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Well Pressure Condition:</td>
+                            <td>&nbsp;{!Interv_Status}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Operation scope:</td>
+                            <td>&nbsp;{!Operation_scope}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">BOP Rating:</td>
+                            <td>&nbsp;{!BOP_Rating}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Well Condition:</td>
+                            <td>&nbsp;{!Well_Condition}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">BOP configuration:<br>&nbsp;{!BOP_configuration}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">PCE PT:<br>&nbsp;{!PCE_PT}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Main Pay Zones:<br>&nbsp;{!Reservoir_Name}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Short names:<br>&nbsp;{!Short_names}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">BOP Configuration Other:<br>&nbsp;{!BOP_Configuration_Other}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">BOP Rating Other:<br>&nbsp;{!BOP_Rating_Other}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Well Condition Other:<br>&nbsp;{!Well_Condition_Other}</td>
+                        </tr>
+                    </table>
+                </td>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Operation scope Other:<br>&nbsp;{!Operation_scope_Other}</td>
+                        </tr>
+                    </table>
+                </td>
+        </table>
+        <pd4ml:page.break>
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5> Additional JOB Test Information - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--   Informacion Adicional de Test del JOB - (R149059) -->
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Customer: </td>
+                            <td>{!Customer_Name}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Contract Number: </td>
+                            <td>{!Contract_ID}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            // Iterates through Job related Tests
+            {!#LOOP_BEGIN.R149059}
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Test Number: </td>
+                            <td>{!name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Test Pass or Not:</td>
+                            <td>{!Test_Pass_No_Pass#value}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Test By: </td>
+                            <td>{!Test_By}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Witness By:</td>
+                            <td>{!Witness_By}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Test Description:<br>&nbsp;{!Test_Description}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: 0px solid black;">
+                    <table width="100%">
+                        <td width="100%">Test Results<br>&nbsp;{!Test_Results}</td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td  style="border: 1px solid black;"></td>
+                <td  style="border: 0px solid black;" >
+                    <hr style="color: #f00;background-color: #f00;height:1px;">
+                    <br>
+                </td>
+            </tr>
+            return buff;        
+            {!#LOOP_END.R149059}
+        </table>
+        <pd4ml:page.break>
+        <!--------------------------------------------------------------------------------->
+        <!--                   PERSONNEL RESPONSABLE & CREW SECTION                      -->
+        <!--------------------------------------------------------------------------------->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5> Personnel Information - JOB {!Job_Number_no_hyperlink}</h5>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- RESPONSABLE PERSONNEL INFORMATION -->
+        <!-- Iterates through Job related Job Service Responsables. -->
+        {!#LOOP_BEGIN.R2158038}
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Responsable: </td>
+                            <td>{!Responsible}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Position: </td>
+                            <td>{!Related_Position}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="50%">
+                        <tr>
+                            <td width="30%">Service: </td>
+                            <td>{!Service_Read_Only}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%"> Responsable Training Information </td>
+                        </tr>
+                    </table>
+                </td>
+                <td> 
+                </td>
+            </tr>
+            <!-- Iterates through Job's Job Service Responsable related Personnel -->
+            {!#LOOP_BEGIN.R2158031}
+            <!-- Iterates through Responsable Training's Training Personnel -->
+            {!#LOOP_BEGIN.R112459}
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Training: </td>
+                            <td>{!name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Start Date: </td>
+                            <td>{!Start_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Expiration Date: </td>
+                            <td>{!Expiration_DateF}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            {!#LOOP_END.R112459}
+            {!#LOOP_END.R2158031}
+        </table>
+        {!#LOOP_END.R2158038}
+        <br>
+        <!-- CREW PERSONNEL INFORMATION -->
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%" style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">
+                                <h5> Crew</h5>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td> 
+                </td>
+            </tr>
+        </table>
+        <!-- Iterates through Job related Job Service Responsables (now for Crew Personnel) -->
+        {!#LOOP_BEGIN.R2158038}
+        <!-- Get Job Service Responsable's Crew (Personnel) information -->
+        {!#LOOP_BEGIN.R4691576}
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Crew Member: </td>
+                            <td>{!Capitalized_Name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Position: </td>
+                            <td>{!Position_no_hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%"> Crew Member Training Information</td>
+                <td> 
+                </td>
+            </tr>
+            <!-- Iterates through Responsable Training's Training Personnel -->
+            {!#LOOP_BEGIN.R112459}
+            <tr>
+                <td width="30%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="50%" >Training:</td>
+                            <td>{!name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="35%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="50%" >Start:</td>
+                            <td>{!Start_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="35%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="50%" >Expiration:</td>
+                            <td>{!Expiration_DateF}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Start Date: </td>
+                            <td>{!Start_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Expiration Date: </td>
+                            <td>{!Expiration_DateF}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            {!#LOOP_END.R112459}
+        </table>
+        <br>
+        {!#LOOP_END.R4691576}
+        {!#LOOP_END.R2158038}
+        <pd4ml:page.break>
+        <!--------------------------------------------------------------------------------->
+        <!--                               SUPPLIERS SECTION                             -->
+        <!--------------------------------------------------------------------------------->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5> Suppliers - JOB {!Job_Number_no_hyperlink}</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Iterates through Job related Suppliers. -->
+        {!#LOOP_BEGIN.R107896}
+        <table style="border: 0px solid black;" width="100%">
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Supplier: </td>
+                            <td>{!Supplier_Name}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Supplier Number: </td>
+                            <td>{!name}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">City: </td>
+                            <td>{!City}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Country: </td>
+                            <td>{!Country_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%">Supplier Type: </td>
+                            <td>{!Supplier_Type_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+                <td width="50%"  style="border: 0px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="30%" >Category: </td>
+                            <td>{!Category_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+        </table>
+        {!#LOOP_END.R107896}
+    </body>
+</html>
