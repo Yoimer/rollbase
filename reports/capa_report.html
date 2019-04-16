@@ -527,10 +527,12 @@ Effectiveness of Actions Taken
 
                 <!-- we only want to get the name of the attached file. -->
 
-                var rejection = rbv_api.selectQuery("SELECT Title_READ_ONLY, Observations, Attachment_Read_Only FROM Rejection WHERE name= '{!R226176#value}'", 999);
+                <!-- var rejection = rbv_api.selectQuery("SELECT Title_READ_ONLY, Observations, Attachment_Read_Only FROM Rejection WHERE name= '{!R226176#value}'", 999); -->
+
+                var arr = rbv_api.selectQuery("select Title_READ_ONLY, Attachment_Read_Only, Observations from Rejection where R226176=?", 100, {!id});
 
                 <!-- if there is any rejection, show fields values on report, else don't do it -->
-                if(rejection.length > 0) {
+                if(arr.length > 0) {
 
                     <!-- Rejection Header -->
                     var build_report = '<!-- Rejection Header -->'+
@@ -538,7 +540,7 @@ Effectiveness of Actions Taken
                     '    <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
                     '        <tr>'+
                     '            <td align=center>'+
-                    '                <h5>Rejection</h5>'+
+                    '                <h5>Rejectionuuu</h5>'+
                     '                <br>'+
                     '            </td>'+
                     '        </tr>'+
@@ -546,6 +548,59 @@ Effectiveness of Actions Taken
                     '</div>'+
                     '<br>';
 
+                    var report_body = ' ';
+                    var i = -1;
+
+                    for (i = 0; i < arr.length; ++i) {
+
+                       <!-- report body -->
+                        report_body += '<div style="line-height: 80%; margin-bottom: 2px;"><strong>Rejection 1</strong></div>'+
+                        ''+
+                        '<!(title, attachment, observation) -->'+
+                        '<table style="border: 0px solid black;"width = "100%">'+
+                        '    <tr>'+
+                        '        <td width="50%" style="border: 1px solid black;">'+
+                        '            <table width="100%">'+
+                        '                <tr>'+
+                        '                    <td width="60%">Title: &nbsp;' +arr[i][0]+ '</td>'+
+                        '                </tr>'+
+                        '            </table>'+
+                        '        </td>'+
+                        '        <td  width="50%" style="border: 1px solid black;">'+
+                        '            <table width="100%">'+
+                        '                <tr>'+
+                        '                    <td width="63%">Attachment: &nbsp;' +arr[i][1]+ '</td>'+
+                        '                </tr>'+
+                        '            </table>'+
+                        '        </td>'+
+                        '    </tr>'+
+                        '</table>'+
+                        ''+
+                        '<div style="line-height:25%;">'+
+                        '    <br>'+
+                        '</div>'+
+                        ''+
+                        '<table style="border: 0px solid black;"width = "100%">'+
+                        '    <tr>'+
+                        '        <td width="26%" style="border: 1px solid black;">'+
+                        '            <table width="100%">'+
+                        '                <tr>'+
+                        '                    <td width="60%">Observations: &nbsp;' +arr[i][2]+ '</td>'+
+                        '                 </tr>'+
+                        '            </table>'+
+                        '        </td>'+
+                        '    </tr>'+
+                        '</table>';
+
+                        var separator = '<!-- smaller br -->'+
+                        '<div style="line-height:25%;">'+
+                        '    <br>'+
+                        '</div>';
+
+                        report_body += separator;
+                    }
+
+                    build_report += report_body;
                     build_report += '';
                     return build_report;
                 } else {
