@@ -540,7 +540,7 @@ Effectiveness of Actions Taken
                     '    <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
                     '        <tr>'+
                     '            <td align=center>'+
-                    '                <h5>Rejectionuuu</h5>'+
+                    '                <h5>Rejection</h5>'+
                     '                <br>'+
                     '            </td>'+
                     '        </tr>'+
@@ -550,11 +550,13 @@ Effectiveness of Actions Taken
 
                     var report_body = ' ';
                     var i = -1;
+                    var j = 0;
 
                     for (i = 0; i < arr.length; ++i) {
 
+                       j = j + 1;
                        <!-- report body -->
-                        report_body += '<div style="line-height: 80%; margin-bottom: 2px;"><strong>Rejection 1</strong></div>'+
+                        report_body += '<div style="line-height: 80%; margin-bottom: 2px;"><strong>Rejection ' +j+ '</strong></div>'+
                         ''+
                         '<!(title, attachment, observation) -->'+
                         '<table style="border: 0px solid black;"width = "100%">'+
