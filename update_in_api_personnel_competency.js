@@ -24,27 +24,28 @@ if (employeeID.length > 0){
     arr["name"]                                     = "{!name#value}";
     arr["Date_Transfer"]                            = ActualDate;
     arr["Expiration_Date"]                          = new Date("{!Expiration_Date_F}");
-    arr["Operation"]                                = "I";
+    arr["Operation"]                                = "U";
     arr["Sent"]                                     = "True";
+    arr["Competency_Start_Date"] =  new Date("{!Start_Date}");
 
     rbv_api.println ("arr[Competency_Code] " + arr["Competency_Code"]);
     rbv_api.println ("arr[name] " + arr["name"]);
     rbv_api.println ("arr[Date_Transfer] " + arr["Date_Transfer"]);
-    rbv_api.println ("arr[Expiration_Date] " + arr["Expiration_Date"]); 
+    rbv_api.println ("arr[Expiration_Date] " + arr["Expiration_Date"]);
+    rbv_api.println ("arr[Competency_Start_Date] " + arr["Competency_Start_Date"]);
     rbv_api.println ("arr[Operation]" + arr["Operation"]);
     rbv_api.println ("arr[Sent] " + arr["Sent"]);
 
-    if (rbv_api.isUpdate()) {
-        //Employee Code  is Lookup (API Personnel) R6739733 in API_Personnel_Competency 
-        // checks if it matches
-        var api_personnel_competency_id = rbv_api.selectQuery("SELECT id FROM API_Personnel_Competency WHERE Employee_Code_EXP= '" + employeeNo[0] + "'", 1);
-        rbv_api.println ("api_personnel_competency_id " + api_personnel_competency_id.length);
-        rbv_api.println ("----- " + api_personnel_competency_id[0][0]);
+    //Employee Code  is Lookup (API Personnel) R6739733 in API_Personnel_Competency 
+    // checks if it matches
+    var api_personnel_competency_id = rbv_api.selectQuery("SELECT id FROM API_Personnel_Competency WHERE Employee_Code_EXP= '" + employeeNo[0] + "'", 1);
+    rbv_api.println ("api_personnel_competency_id " + api_personnel_competency_id.length);
+    rbv_api.println ("----- " + api_personnel_competency_id[0][0]);
+    rbv_api.println ("..... " + arr["Operation"]);
 
-        if(api_personnel_competency_id > 0) {
-            rbv_api.updateRecord("API_Personnel_Competency", api_personnel_competency_id[0][0], arr);
-            rbv_api.println ("update personnel competency ");
-        }
+    if(api_personnel_competency_id.length > 0) {
+        rbv_api.updateRecord("API_Personnel_Competency", api_personnel_competency_id[0][0], arr);
+        rbv_api.println ("update personnel competency ");
     }
 
   }
