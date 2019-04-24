@@ -24,9 +24,8 @@ if (employeeID.length > 0) {
     arr["name"] = "{!name#value}";
     arr["Date_Transfer"]= ActualDate;
     arr["Competency_Start_Date"] =  new Date("{!Start_Date}");
-    arr["Expiration_Date"]= new Date("{!Expiration_Date_F}");
+    arr["Expiration_Date"]= new Date("{!Expiration_Date_Expression}");
     arr["Sent"] = "True";
-    arr["Competency_Start_Date"] =  new Date("{!Start_Date}");
 
     // if updates record
     if (rbv_api.isUpdate()) {
