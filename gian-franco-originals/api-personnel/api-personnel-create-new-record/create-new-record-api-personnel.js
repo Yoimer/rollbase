@@ -14,7 +14,14 @@ arr["middleName"] = "{!middleName#value}";
 arr["Date_Transfer"]     = ActualDate;
 arr["Sent"] = "True";
 arr["Operation"] = "I";
+arr["Is_Inspector"] = "{!Is_Inspector#value}";
+var Is_Inspector = "{!Is_Inspector#value}";
 
-rbv_api.log("debug", "create API Personnel");
+rbv_api.println ("arr[Is_Inspector] " + arr["Is_Inspector"]);
+rbv_api.println ("Is_Inspector " + Is_Inspector);
 
-rbv_api.createRecord("API_Personnel", arr);
+//if it is an inspector, then creates
+if(Is_Inspector === 'true') {
+    rbv_api.println ("create record");
+    rbv_api.createRecord("API_Personnel", arr);
+}

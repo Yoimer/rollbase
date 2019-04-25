@@ -18,10 +18,16 @@ arr["middleName"] = "{!middleName#value}";
 arr["Date_Transfer"]     = ActualDate;
 arr["Sent"] = "True";
 arr["Operation"] = "U";
+arr["Is_Inspector"] = "{!Is_Inspector#value}";
+var Is_Inspector = "{!Is_Inspector#value}";
+
+rbv_api.println ("arr[Is_Inspector] " + arr["Is_Inspector"]);
+rbv_api.println ("Is_Inspector " + Is_Inspector);
 
 rbv_api.log("debug", "update API Personnel");
-  
-if (personnelId.length > 0) {
-  
-  rbv_api.updateRecord("API_Personnel", personnelId[0][0], arr);
+
+// if exists on API_Personnel and it is an inspector
+if ((personnelId.length > 0) && Is_Inspector === 'true'){
+    rbv_api.println ("update record");
+    rbv_api.updateRecord("API_Personnel", personnelId[0][0], arr);
 }
