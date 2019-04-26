@@ -4,7 +4,7 @@ var customerName =  "{!name#value}";
 
 var ActualDate = new Date(rbv_api.getCurrentDate());
 
-var customerId = rbv_api.selectQuery("SELECT id FROM API_Customer WHERE name#value= '"+customerName+"'",1);
+var customerId = rbv_api.selectQuery("SELECT id FROM API_Customer1 WHERE name#value= '"+customerName+"'",1);
 
 arr["Client_Address"]    = "{!streetAddr1#value}";
 arr["Client_Address1"]   = "{!streetAddr2#value}";
@@ -21,12 +21,12 @@ if (rbv_api.isUpdate()) {
     rbv_api.println("Customer Update");
 
     if (customerId.length > 0){
-        rbv_api.updateRecord("API_Customer",customerId[0][0], arr);
+        rbv_api.updateRecord("API_Customer1",customerId[0][0], arr);
     }
 
 //if creates records
 } else if(rbv_api.isCreate()) {
     arr["Operation"] = "I";
     rbv_api.println("Customer Create");
-    rbv_api.createRecord("API_Customer", arr);
+    rbv_api.createRecord("API_Customer1", arr);
 }
