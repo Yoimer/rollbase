@@ -23,5 +23,5 @@ rbv_api.println ("Is_Inspector " + Is_Inspector);
 //if it is an inspector, then creates
 if(Is_Inspector === 'true') {
     rbv_api.println ("create record");
-    rbv_api.createRecord("API_Personnel", arr);
+    rbv_api.createRecord("API_Personnel1", arr);
 }
