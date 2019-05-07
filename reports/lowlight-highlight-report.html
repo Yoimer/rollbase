@@ -113,76 +113,93 @@ Description
 {!Description}
         </textarea>
 
-        <!-- smaller br -->
-        <div style="line-height:25%;">
-            <br>
-        </div>
+        #EVAL[
 
-        <!(CAPA Number, Notify CAR/PAR to) -->
-        <table style="border: 0px solid black;"width = "100%">
-        <tr>
-            <td width="50%" style="border: 1px solid black;">
-                <table width="100%">
-                    <tr>
-                        <td width="60%">&nbsp;CAPA Number: &nbsp;{!CAPA}</td>
-                    </tr>
-                </table>
-            </td>
-            <td  width="50%" style="border: 1px solid black;">
-                <table width="100%">
-                    <tr>
-                        <td width="63%">&nbsp;Notify CAR/PAR to: &nbsp;{!Notify_CAR_PAR_To}</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        </table>
+            <!-- check existing capa function -->
+            function check_existing_capa() {
 
-        <!-- smaller br -->
-        <div style="line-height:25%;">
-            <br>
-        </div>
+                <!-- if capa is CAR or PAR, show capa section fields on report, else don't do it -->
 
-        <!(Personnel Name, Position, Corporate Mail, Is Approver, Is CAPA Admin) -->
-        <table style="border: 0px solid black;"width = "100%">
-        <tr>
-            <td width="20%" style="border: 1px solid black;">
-                <table width="100%">
-                    <tr>
-                        <td width="60%">&nbsp;Personnel Name: &nbsp;{!}</td>
-                    </tr>
-                </table>
-            </td>
-            <td  width="20%" style="border: 1px solid black;">
-                <table width="100%">
-                    <tr>
-                        <td width="63%">&nbsp;Position: &nbsp;{!}</td>
-                    </tr>
-                </table>
-            </td>
-            <td  width="20%" style="border: 1px solid black;">
-                <table width="100%">
-                    <tr>
-                        <td width="63%">&nbsp;Corporate Mail: &nbsp;{!}</td>
-                    </tr>
-                </table>
-            </td>
-            <td  width="20%" style="border: 1px solid black;">
-                <table width="100%">
-                    <tr>
-                        <td width="63%">&nbsp;Is Approver: &nbsp;{!}</td>
-                    </tr>
-                </table>
-            </td>
-            <td  width="20%" style="border: 1px solid black;">
-                <table width="100%">
-                    <tr>
-                        <td width="63%">&nbsp;Is CAPA Admin: &nbsp;{!}</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        </table>
+                var check_capa = '{!Require_CAR_PAR}';
+                if(check_capa !== 'NO') {
+
+                    var capa_section = '<!-- smaller br -->'+
+                    '        <div style="line-height:25%;">'+
+                    '            <br>'+
+                    '        </div>'+
+                    ''+
+                    '        <!(CAPA Number, Notify CAR/PAR to) -->'+
+                    '        <table style="border: 0px solid black;"width = "100%">'+
+                    '        <tr>'+
+                    '            <td width="50%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="60%"> CAPA Number:  {!CAPA}</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '            <td  width="50%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="63%"> Notify CAR/PAR to:  {!Notify_CAR_PAR_To}</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '        </tr>'+
+                    '        </table>'+
+                    ''+
+                    '        <!-- smaller br -->'+
+                    '        <div style="line-height:25%;">'+
+                    '            <br>'+
+                    '        </div>'+
+                    ''+
+                    '        <!(Personnel Name, Position, Corporate Mail, Is Approver, Is CAPA Admin) -->'+
+                    '        <table style="border: 0px solid black;"width = "100%">'+
+                    '        <tr>'+
+                    '            <td width="20%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="60%"> Personnel Name:  {!}</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '            <td  width="20%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="63%"> Position:  {!}</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '            <td  width="20%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="63%"> Corporate Mail:  {!}</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '            <td  width="20%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="63%"> Is Approver:  {!}</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '            <td  width="20%" style="border: 1px solid black;">'+
+                    '                <table width="100%">'+
+                    '                    <tr>'+
+                    '                        <td width="63%"> Is CAPA Admin:  {!}</td>'+
+                    '                    </tr>'+
+                    '                </table>'+
+                    '            </td>'+
+                    '        </tr>'+
+                    '        </table>';
+                    return capa_section;
+                } else {
+                    return '';
+                }
+            }
+            check_existing_capa();
+        ]
 
     </body>
 </html>
