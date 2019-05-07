@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>LowLight - HighLight Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- start -->
+        <!-------  DATOS SOS --------->
+        <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+            <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>CAPA Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+        </table>
+        <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>LowLight - HighLight Report Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(Lowlight o HighLight, Type, Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="34%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Lowlight o HighLight: &nbsp;{!L_Light___H_Light__PICKLIST}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Type: &nbsp;{!Type_PICKLIST}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Date: &nbsp;{!Date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Reported By, Location ,Require CAR/PAR?) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="34%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Reported By: &nbsp;{!Reported_By_Formula}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Location: &nbsp;{!Location_Formula}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Require CAR/PAR/NO?: &nbsp;{!Require_CAR_PAR}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Description
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Description}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(CAPA Number, Notify CAR/PAR to) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;CAPA Number: &nbsp;{!CAPA}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Notify CAR/PAR to: &nbsp;{!Notify_CAR_PAR_To}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Personnel Name, Position, Corporate Mail, Is Approver, Is CAPA Admin) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="20%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Personnel Name: &nbsp;{!}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="20%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Position: &nbsp;{!}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="20%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Corporate Mail: &nbsp;{!}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="20%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Is Approver: &nbsp;{!}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="20%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Is CAPA Admin: &nbsp;{!}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+    </body>
+</html>
