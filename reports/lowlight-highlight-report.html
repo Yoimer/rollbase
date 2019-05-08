@@ -50,7 +50,7 @@
             <td width="34%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
-                        <td width="60%">&nbsp;Lowlight o HighLight: &nbsp;{!L_Light___H_Light__PICKLIST}</td>
+                        <td width="60%">&nbsp;{!L_Light___H_Light__PICKLIST}</td>
                     </tr>
                 </table>
             </td>
@@ -82,14 +82,14 @@
             <td width="34%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
-                        <td width="60%">&nbsp;Reported By: &nbsp;{!Reported_By_Formula}</td>
+                        <td width="60%">&nbsp;Reported By: &nbsp;{!Employ_name_READ_ONLY}</td>
                     </tr>
                 </table>
             </td>
             <td  width="33%" style="border: 1px solid black;">
                 <table width="100%">
                     <tr>
-                        <td width="63%">&nbsp;Location: &nbsp;{!Location_Formula}</td>
+                        <td width="63%">&nbsp;Location: &nbsp;{!Title}</td>
                     </tr>
                 </table>
             </td>
@@ -118,10 +118,24 @@ Description
             <!-- check existing capa function -->
             function check_existing_capa() {
 
-                <!-- if capa is CAR or PAR, show capa section fields on report, else don't do it -->
+                <!-- gets info from Personnel -->
+                var arr = rbv_api.selectQuery( "select name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Is_Approver, Is_CAPA_Admin from Personnel where R2139201=?", 100, {!id});
 
+                <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
+                <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
+                if(arr[0][3] == '0' || arr[0][4] == '0') {
+                    arr[0][3] = arr[0][4] ='NO';
+                }
+                
+                if(arr[0][3] == '1' || arr[0][4] == '1') {
+                    arr[0][3] = arr[0][4] = 'Yes';
+                }
+
+                <!-- gets CAPA info -->
                 var check_capa = '{!Require_CAR_PAR}';
-                if(check_capa !== 'NO') {
+
+                <!-- if capa comes with CAR or PAR and there is info from personnel, shows capa fields in report -->
+                if((check_capa !== 'NO') && (arr.length > 0)) {
 
                     var capa_section = '<!-- smaller br -->'+
                     '        <div style="line-height:25%;">'+
@@ -159,35 +173,35 @@ Description
                     '            <td width="20%" style="border: 1px solid black;">'+
                     '                <table width="100%">'+
                     '                    <tr>'+
-                    '                        <td width="60%"> Personnel Name:  {!}</td>'+
+                    '                        <td width="60%"> Personnel Name:' +arr[0][0]+ '</td>'+
                     '                    </tr>'+
                     '                </table>'+
                     '            </td>'+
                     '            <td  width="20%" style="border: 1px solid black;">'+
                     '                <table width="100%">'+
                     '                    <tr>'+
-                    '                        <td width="63%"> Position:  {!}</td>'+
+                    '                        <td width="63%"> Position:' +arr[0][1]+ '</td>'+
                     '                    </tr>'+
                     '                </table>'+
                     '            </td>'+
                     '            <td  width="20%" style="border: 1px solid black;">'+
                     '                <table width="100%">'+
                     '                    <tr>'+
-                    '                        <td width="63%"> Corporate Mail:  {!}</td>'+
+                    '                        <td width="63%"> Corporate Mail:' +arr[0][2]+ '</td>'+
                     '                    </tr>'+
                     '                </table>'+
                     '            </td>'+
                     '            <td  width="20%" style="border: 1px solid black;">'+
                     '                <table width="100%">'+
                     '                    <tr>'+
-                    '                        <td width="63%"> Is Approver:  {!}</td>'+
+                    '                        <td width="63%"> Is Approver:' +arr[0][3]+ '</td>'+
                     '                    </tr>'+
                     '                </table>'+
                     '            </td>'+
                     '            <td  width="20%" style="border: 1px solid black;">'+
                     '                <table width="100%">'+
                     '                    <tr>'+
-                    '                        <td width="63%"> Is CAPA Admin:  {!}</td>'+
+                    '                        <td width="63%"> Is CAPA Admin:' +arr[0][4]+ '</td>'+
                     '                    </tr>'+
                     '                </table>'+
                     '            </td>'+
