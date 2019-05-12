@@ -16,6 +16,7 @@
             {
             font: normal 10px Verdana, Arial, sans-serif;
             }
+
         </style>
     </head>
     <body>
@@ -72,7 +73,7 @@
         </table>
 
         <!-- smaller br -->
-        <div style="line-height:25%;">
+        <div style="line-height:125%;">
             <br>
         </div>
 
@@ -112,102 +113,64 @@ Description
         <textarea style="overflow:hidden" rows="02" cols="73">
 {!Description}
         </textarea>
+        <br>
 
         #EVAL[
 
             <!-- check existing capa function -->
             function check_existing_capa() {
 
-                <!-- gets info from Personnel -->
-                var arr = rbv_api.selectQuery( "select name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Is_Approver, Is_CAPA_Admin from Personnel where R2139201=?", 100, {!id});
-
-                <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
-                <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
-                if(arr[0][3] == '0' || arr[0][4] == '0') {
-                    arr[0][3] = arr[0][4] ='NO';
-                }
-                
-                if(arr[0][3] == '1' || arr[0][4] == '1') {
-                    arr[0][3] = arr[0][4] = 'Yes';
-                }
-
                 <!-- gets CAPA info -->
                 var check_capa = '{!Require_CAR_PAR}';
+
+                <!-- checks how many personnel are assigned to Notify CAP/PAR to -->
+                var arr = rbv_api.getRelatedIds("R2139201", '{!id}');
 
                 <!-- if capa comes with CAR or PAR and there is info from personnel, shows capa fields in report -->
                 if((check_capa !== 'NO') && (arr.length > 0)) {
 
-                    var capa_section = '<!-- smaller br -->'+
-                    '        <div style="line-height:25%;">'+
+                    var build_report = '<!-- smaller br 50%-->'+
+                    '        <div style="line-height:50%;">'+
                     '            <br>'+
                     '        </div>'+
                     ''+
-                    '        <!(CAPA Number, Notify CAR/PAR to) -->'+
+                    '        <!(CAPA Number, Notify CAR/PAR To) -->'+
                     '        <table style="border: 0px solid black;"width = "100%">'+
-                    '        <tr>'+
-                    '            <td width="50%" style="border: 1px solid black;">'+
-                    '                <table width="100%">'+
-                    '                    <tr>'+
-                    '                        <td width="60%"> CAPA Number:  {!CAPA}</td>'+
-                    '                    </tr>'+
-                    '                </table>'+
-                    '            </td>'+
-                    '            <td  width="50%" style="border: 1px solid black;">'+
-                    '                <table width="100%">'+
-                    '                    <tr>'+
-                    '                        <td width="63%"> Notify CAR/PAR to:  {!Notify_CAR_PAR_To}</td>'+
-                    '                    </tr>'+
-                    '                </table>'+
-                    '            </td>'+
-                    '        </tr>'+
+                    '            <tr>'+
+                    '                <td width="30%" style="border: 1px solid black;">'+
+                    '                    <table width="100%">'+
+                    '                        <tr>'+
+                    '                            <td width="60%"> CAPA Number:  {!CAPA}</td>'+
+                    '                        </tr>'+
+                    '                    </table>'+
+                    '                </td>'+
+                    '                <td  width="80%" style="border: 1px solid black;">'+
+                    '                    <table width="100%">'+
+                    '                        <tr>'+
+                    '                            <td width="63%"> Notify CAR/PAR To:  {!Notify_CAR_PAR_To}</td>'+
+                    '                        </tr>'+
+                    '                    </table>'+
+                    '                </td>'+
+                    '            </tr>'+
                     '        </table>'+
                     ''+
-                    '        <!-- smaller br -->'+
-                    '        <div style="line-height:25%;">'+
+                    '        <!-- smaller br 50%-->'+
+                    '        <div style="line-height:50%;">'+
                     '            <br>'+
                     '        </div>'+
                     ''+
-                    '        <!(Personnel Name, Position, Corporate Mail, Is Approver, Is CAPA Admin) -->'+
                     '        <table style="border: 0px solid black;"width = "100%">'+
-                    '        <tr>'+
-                    '            <td width="20%" style="border: 1px solid black;">'+
-                    '                <table width="100%">'+
-                    '                    <tr>'+
-                    '                        <td width="60%"> Personnel Name:' +arr[0][0]+ '</td>'+
-                    '                    </tr>'+
-                    '                </table>'+
-                    '            </td>'+
-                    '            <td  width="20%" style="border: 1px solid black;">'+
-                    '                <table width="100%">'+
-                    '                    <tr>'+
-                    '                        <td width="63%"> Position:' +arr[0][1]+ '</td>'+
-                    '                    </tr>'+
-                    '                </table>'+
-                    '            </td>'+
-                    '            <td  width="20%" style="border: 1px solid black;">'+
-                    '                <table width="100%">'+
-                    '                    <tr>'+
-                    '                        <td width="63%"> Corporate Mail:' +arr[0][2]+ '</td>'+
-                    '                    </tr>'+
-                    '                </table>'+
-                    '            </td>'+
-                    '            <td  width="20%" style="border: 1px solid black;">'+
-                    '                <table width="100%">'+
-                    '                    <tr>'+
-                    '                        <td width="63%"> Is Approver:' +arr[0][3]+ '</td>'+
-                    '                    </tr>'+
-                    '                </table>'+
-                    '            </td>'+
-                    '            <td  width="20%" style="border: 1px solid black;">'+
-                    '                <table width="100%">'+
-                    '                    <tr>'+
-                    '                        <td width="63%"> Is CAPA Admin:' +arr[0][4]+ '</td>'+
-                    '                    </tr>'+
-                    '                </table>'+
-                    '            </td>'+
-                    '        </tr>'+
+                    '            <tr>'+
+                    '                <th style="text-align:left">Personnel Name</th>'+
+                    '                <th style="text-align:left">Position</th>'+
+                    '                <th style="text-align:left">Corporate Email</th>'+
+                    '                <th style="text-align:left">Is Approver</th>'+
+                    '                <th style="text-align:left">Is CAPA Admin</th>'+
+                    '            </tr>'+
                     '        </table>';
-                    return capa_section;
+
+                    return build_report;
+
                 } else {
                     return '';
                 }
