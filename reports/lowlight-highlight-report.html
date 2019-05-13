@@ -129,7 +129,11 @@ Description
                 <!-- if capa comes with CAR or PAR and there is info from personnel, shows capa fields in report -->
                 if((check_capa !== 'NO') && (arr.length > 0)) {
 
-                    var build_report = '<table style="border: 0px solid black;"width = "100%">'+
+                    var build_report = '<div style="line-height:50%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
                     '    <tr>'+
                     '        <td width="50%" style="border: 1px solid black;">'+
                     '            <table width="100%">'+
@@ -202,10 +206,135 @@ Description
 
                     personnel_info += '</tr>'+'</table>';
                     build_report += personnel_info;
+
+                    build_report += '<div style="line-height:50%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="100%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">  JOB Number: {!Job_Number_related}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%"> Customer Name: {!Customer_Name}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Customer Contact: {!Customer_Contact}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Well: {!Well}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Services Lines: {!Service_Lines_expression} </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>';
+
                     return build_report;
 
+                <!-- there is no CAPA but there is JOB (always will be JOB since is required when creating a new highlight-lowlight) -->
                 } else {
-                    return ' ';
+
+                    var build_report = '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="100%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">JOB Number: {!Job_Number_related}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Customer Name: {!Customer_Name}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Customer Contact: {!Customer_Contact}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Well: {!Well}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Services Lines: {!Service_Lines_expression}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>';
+
+                    return build_report;
                 }
             }
             check_existing_capa();
