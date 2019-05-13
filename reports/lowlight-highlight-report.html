@@ -160,43 +160,29 @@ Description
                     '        <th style="text-align:left">Is Approver</th>'+
                     '        <th style="text-align:left">Is CAPA Admin</th>';
 
-                    var personnel_info_from_db = rbv_api.selectQuery( "select name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Is_Approver, Is_CAPA_Admin from  Personnel where R2139201=?", 100, {!id});
-
-
                     var personnel_info  = ' ';
 
                     for (var i = 0; i < arr.length; ++i) {
 
-                        <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
-                        <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
-                        if(personnel_info_from_db[i][3] == '0' || personnel_info_from_db[i][4] == '0') {
-                            personnel_info_from_db[i][3] = personnel_info_from_db[i][4] ='NO';
+                        var values = "select name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Is_Approver, Is_CAPA_Admin from  Personnel where id=" + arr[i];
+
+                        var personnel_info_from_db = rbv_api.selectQuery(values, 100, {!id});
+
+                        for (var j = 0; j <  personnel_info_from_db.length; ++j) {
+                            personnel_info += '<tr>';
+                            for(var w = 0; w < 5; ++w) {
+                                personnel_info += ' <td width="20%" style="border: 1px solid black; ">' +personnel_info_from_db[j][w]+ '.</td>';
+                            }
+                            personnel_info += '</tr>';
                         }
 
-                        if(personnel_info_from_db[i][3] == '1' || personnel_info_from_db[i][4] == '1') {
-                            personnel_info_from_db[i][3] = personnel_info_from_db[i][4] = 'Yes';
-                        }
-
-                        <!-- if Is_Approver or Is_CAPA_Admin comes with null, changes to 'NO'-->
-                        if(personnel_info_from_db[i][3] === null || personnel_info_from_db[i][4] === null) {
-                            personnel_info_from_db[i][3] = personnel_info_from_db[i][4] ='NO'
-                        }
-
-                        personnel_info += '<tr>'+
-                        '            <td width="20%" style="border: 1px solid black; ">' +personnel_info_from_db[i][0]+ '.</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][1]+ '.</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][2]+ '.</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][3]+ '.</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][4]+ '.</td>'+
-                        '        </tr>';
-
-                        build_report += personnel_info;
+                        
                     }
-
+                    build_report += personnel_info;
                     return build_report;
 
                 } else {
-                    return '';
+                    return ' ';
                 }
             }
             check_existing_capa();
