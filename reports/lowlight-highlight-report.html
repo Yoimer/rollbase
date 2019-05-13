@@ -154,22 +154,40 @@ Description
                     ''+
                     '<table style="border: 0px solid black;"width = "100%">'+
                     '    <tr>'+
-                    '        <th style="text-align:left">Personnel Name 1</th>'+
-                    '        <th style="text-align:left">Position 2</th>'+
-                    '        <th style="text-align:left">Corporate Email 3</th>'+
-                    '        <th style="text-align:left">Is Approver 4</th>'+
-                    '        <th style="text-align:left">Is CAPA Admin 5</th>';
+                    '        <th style="text-align:left">Personnel Name</th>'+
+                    '        <th style="text-align:left">Position</th>'+
+                    '        <th style="text-align:left">Corporate Email</th>'+
+                    '        <th style="text-align:left">Is Approver</th>'+
+                    '        <th style="text-align:left">Is CAPA Admin</th>';
+
+                    var personnel_info_from_db = rbv_api.selectQuery( "select name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Is_Approver, Is_CAPA_Admin from  Personnel where R2139201=?", 100, {!id});
+
 
                     var personnel_info  = ' ';
 
                     for (var i = 0; i < arr.length; ++i) {
 
+                        <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
+                        <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
+                        if(personnel_info_from_db[i][3] == '0' || personnel_info_from_db[i][4] == '0') {
+                            personnel_info_from_db[i][3] = personnel_info_from_db[i][4] ='NO';
+                        }
+
+                        if(personnel_info_from_db[i][3] == '1' || personnel_info_from_db[i][4] == '1') {
+                            personnel_info_from_db[i][3] = personnel_info_from_db[i][4] = 'Yes';
+                        }
+
+                        <!-- if Is_Approver or Is_CAPA_Admin comes with null, changes to 'NO'-->
+                        if(personnel_info_from_db[i][3] === null || personnel_info_from_db[i][4] === null) {
+                            personnel_info_from_db[i][3] = personnel_info_from_db[i][4] ='NO'
+                        }
+
                         personnel_info += '<tr>'+
-                        '            <td width="20%" style="border: 1px solid black; ">Product&Material{!hh}</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">A{!AA}</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">B{!BB}</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">C{!CC}</td>'+
-                        '            <td width="20%" style="border: 1px solid black;">D{!DD}</td>'+
+                        '            <td width="20%" style="border: 1px solid black; ">' +personnel_info_from_db[i][0]+ '.</td>'+
+                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][1]+ '.</td>'+
+                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][2]+ '.</td>'+
+                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][3]+ '.</td>'+
+                        '            <td width="20%" style="border: 1px solid black;">' +personnel_info_from_db[i][4]+ '.</td>'+
                         '        </tr>';
 
                         build_report += personnel_info;
