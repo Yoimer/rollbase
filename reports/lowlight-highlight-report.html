@@ -164,20 +164,43 @@ Description
 
                     for (var i = 0; i < arr.length; ++i) {
 
+                        <!-- query to db -->
                         var values = "select name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Is_Approver, Is_CAPA_Admin from  Personnel where id=" + arr[i];
 
+                        <!-- array from db -->
                         var personnel_info_from_db = rbv_api.selectQuery(values, 100, {!id});
 
+                        <!-- fill table with values from db-->
                         for (var j = 0; j <  personnel_info_from_db.length; ++j) {
                             personnel_info += '<tr>';
                             for(var w = 0; w < 5; ++w) {
+
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
+                                if(personnel_info_from_db[j][w] == '0' || personnel_info_from_db[j][w] == '0') {
+
+                                    personnel_info_from_db[j][w] = 'NO';
+                                }
+
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
+                                if(personnel_info_from_db[j][w] == '1' || personnel_info_from_db[j][w] == '1') {
+
+                                    personnel_info_from_db[j][w] = 'YES';
+                                }
+
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with null, changes to 'NO'-->
+                                if(personnel_info_from_db[j][w] === null || personnel_info_from_db[j][w] === null) {
+                                    personnel_info_from_db[j][w] = 'NO';
+                                }
+
                                 personnel_info += ' <td width="20%" style="border: 1px solid black; ">' +personnel_info_from_db[j][w]+ '.</td>';
                             }
                             personnel_info += '</tr>';
                         }
-
-                        
                     }
+
+                    personnel_info += '</tr>'+'</table>';
                     build_report += personnel_info;
                     return build_report;
 
