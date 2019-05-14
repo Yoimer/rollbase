@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Job Safety Analysis Information Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- start -->
+        <!-------  DATOS SOS --------->
+            <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+               <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>Job Safety Analysis Information Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+            </table>
+        <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Job Safety Analysis Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+Task Description
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Task_Description}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Analysis Made By, Analisys Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Analysis Made By: &nbsp;{!Analysis_made_by}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Analysis Date: &nbsp;{!Analysis_date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Analysis Reviewed By, Analysis Reviewed Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Analysis Reviewed By: &nbsp;{!Analysis_reviewed_by}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Analysis Reviewed Date: &nbsp;{!Analysis_reviewed_date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+        <br>
+
+        <!-- Job Information Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Job Information</h5>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(Job Number, Service Lines, Well, RIG/Hoist/Unit) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="25%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Job Number: &nbsp;{!Job_number_READ_ONLY}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="25%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Service Lines: &nbsp;{!Job_Service_Line_text}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="25%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Well: &nbsp;{!Well}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="25%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;RIG/Hoist/Unit: &nbsp;{!RIG_Hoist_unit}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Customer Name, Contract Name) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Customer Name: &nbsp;{!Customer_Name}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Contract Name: &nbsp;{!Customer_Contract}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Location, Project Title) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Location: &nbsp;{!Title}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Project Title: &nbsp;{!Project_Title}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+    </body>
+</html>
