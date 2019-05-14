@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Stop Card Information Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- start -->
+        <!-------  DATOS SOS --------->
+            <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+               <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>Stop Card Information Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+            </table>
+            <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Stop Card Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(Stop Card No, Stop Card Date, Type of Stop Card) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Stop Card No: &nbsp;{!Stop_card_number_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Stop Card Date: &nbsp;{!Date_and_Time}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Type of Stop Card: &nbsp;{!Type_of_Stop_Card_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Job Number, Location, Service Line, Requiere CAR/PAR/NO) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Job Number: &nbsp;{!Job_number_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Location: &nbsp;{!Title}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Service Line: &nbsp;{!Service_Lines_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Requiere CAR/PAR/NO: &nbsp;{!Require_CAR__PAR}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Work Area, Observer Name) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Work Area: &nbsp;{!Work_area}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Observer Name: &nbsp;{!Observer_name_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Unit Manager, Responsible Person) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Unit Manager: &nbsp;{!Unit_manager}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Responsible Person: &nbsp;{!Responsible_person}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Reaction Of People, PPE) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Reaction Of People: &nbsp;{!Reaction_of_people}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;PPE: &nbsp;{!PPE}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Position Of People, Tools & Equipment) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Position Of People: &nbsp;{!Position_of_People}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Tools & Equipment: &nbsp;{!Tools___Equipments}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
