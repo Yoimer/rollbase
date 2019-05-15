@@ -331,6 +331,7 @@ Behavior Description
                 <!-- if capa comes with CAR or PAR and there is info from personnel, shows capa fields in report -->
                 if((check_capa !== 'NO') && (arr.length > 0)) {
 
+                    <!-- Supervisor(s) & Manager(s) info -->
                     var build_report = '<div style="line-height:25%;">'+
                     '    <br>'+
                     '</div>'+
@@ -365,6 +366,70 @@ Behavior Description
 
                     personnel_info += '</tr>'+'</table>';
                     build_report += personnel_info;
+
+                    <!-- CAPA information -->
+                    build_report += '<br>'+
+                    '<div style="background:#d5d5d5;" align=center>'+
+                    '    <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
+                    '        <tr>'+
+                    '            <td align=center>'+
+                    '                <h5>CAPA Information</h5>'+
+                    '                <br> '+
+                    '            </td>'+
+                    '        </tr>'+
+                    '    </table>'+
+                    '</div>'+
+                    '<br>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="25%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%"> CAPA No {!CAPA_number}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="25%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Created At{!createdAt}: </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="25%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Reason for the CAPA{!}: </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="25%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Target Date{!}: </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>';
+
+                    <!-- two textareas -->
+                    <!-- Description of the Problem and Actions Implemented-->
+
+                    build_report += '   Description of the Problem  '  + 
+                    '   <textarea style="overflow:hidden" rows="02" cols="73">{!CAPA_number}  '  + 
+                    '   </textarea>  '  + 
+                    '     '  + 
+                    '     '  + 
+                    '   <!-- smaller br -->  '  + 
+                    '   <div style="line-height:25%;">  '  + 
+                    '       <br>  '  + 
+                    '   </div>  '  + 
+                    '     '  + 
+                    '   Actions Implemented  '  + 
+                    '   <textarea style="overflow:hidden" rows="02" cols="73">{!CAPA_number}  '  + 
+                    '  </textarea>  ' ; 
 
                     return build_report;
 
