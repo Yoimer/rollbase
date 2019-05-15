@@ -370,6 +370,19 @@ Behavior Description
                     <!-- get CAPA info -->
                     var capa_info_from_db = rbv_api.selectQuery( "SELECT CAPA_number, createdAt, _Reason_for_the_CAPA, Target_Date, Description_of_the_Problem, Actions_Implemented FROM CAPA where R2349494=?", 100, {!id});
 
+                    if ((capa_info_from_db[0][1] !== ' ') || (capa_info_from_db[0][3] !== ' ')) {
+                        capa_info_from_db[0][1] = rbv_api.formatDate(capa_info_from_db[0][1], "MM/dd/YYYY");
+                        capa_info_from_db[0][3] = rbv_api.formatDate(capa_info_from_db, "MM/dd/YYYY");
+                    }
+
+                    if (capa_info_from_db[0][3] === null) {
+                        capa_info_from_db[0][3] = ' ';
+                    }
+
+                    if (capa_info_from_db[0][5] === null) {
+                        capa_info_from_db[0][5] = ' ';
+                    }
+
                     <!-- CAPA information -->
                     build_report += '<br>'+
                     '<div style="background:#d5d5d5;" align=center>'+
