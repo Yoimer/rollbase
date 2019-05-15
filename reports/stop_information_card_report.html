@@ -316,7 +316,66 @@ Behavior Description
                 </td>
             </tr>
         </table>
-        <br>
+
+        #EVAL[
+
+            <!-- check existing capa function -->
+            function check_existing_capa() {
+
+                <!-- gets CAPA info -->
+                var check_capa = '{!Require_CAR__PAR}';
+
+                <!-- checks how many personnel are assigned to Notify CAP/PAR to -->
+                var arr = rbv_api.getRelatedIds("R1927637", '{!id}');
+
+                <!-- if capa comes with CAR or PAR and there is info from personnel, shows capa fields in report -->
+                if((check_capa !== 'NO') && (arr.length > 0)) {
+
+                    var build_report = '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <th style="text-align:left">Personnel Name</th>'+
+                    '        <th style="text-align:left">Position</th>'+
+                    '        <th style="text-align:left">Corporate Email</th>'+
+                    '        <th style="text-align:left">Department</th>';
+
+                    var personnel_info  = ' ';
+
+                    for (var i = 0; i < arr.length; ++i) {
+
+                        <!-- query to db -->
+                        var values = "select Capitalized_Name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Department_No_Hyperlink from Personnel where id=" + arr[i];
+
+                        <!-- array from db -->
+                        var personnel_info_from_db = rbv_api.selectQuery(values, 100, {!id});
+
+                        <!-- fill table with values from db-->
+                        for (var j = 0; j <  personnel_info_from_db.length; ++j) {
+                            personnel_info += '<tr>';
+                            for(var w = 0; w < 4; ++w) {
+
+                                personnel_info += ' <td width="20%" style="border: 1px solid black; ">' +personnel_info_from_db[j][w]+ '.</td>';
+                            }
+                            personnel_info += '</tr>';
+                        }
+                    }
+
+                    personnel_info += '</tr>'+'</table>';
+                    build_report += personnel_info;
+
+                    return build_report;
+
+                <!-- there is no CAPA -->
+                } else {
+
+                    return ' ';
+                }
+            }
+            check_existing_capa();
+        ]
 
     </body>
 </html>
