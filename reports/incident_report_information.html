@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Incedent Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- start -->
+        <!-------  DATOS SOS --------->
+            <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+               <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>Incedent Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+            </table>
+            <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Incedent Report Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(Incident No, Incident Date & Time, Department) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Incident No: &nbsp;{!Incident_ID_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Incident Date & Time: &nbsp;{!Incident_date_time}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Department: &nbsp;{!Department_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Incident Type, Location, Require CAR/PAR/NO) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Incident Type: &nbsp;{!Incident_Type_Related}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Location: &nbsp;{!Title}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Require CAR/PAR/NO: &nbsp;{!Require_CAR___PAR}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Description Of Injury Damage
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Description_of_injury_damage}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Inmediate Cause) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Inmediate Cause: &nbsp;{!Inmediate_cause}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Names Of Any IP, Potencial Risk Rating No, Actual Severity Rating) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Names Of Any IP: &nbsp;{!Names_of_any_IP}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Potencial Risk Rating: &nbsp;{!Potencial_risk_rating__Number}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Actual Severity Rating: &nbsp;{!Actual_severity_rating}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Third Party Name) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Third Party Name:&nbsp;{!Third_party_name}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Incident Owner Manager & HSE Manager
+
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+    </body>
+</html>
