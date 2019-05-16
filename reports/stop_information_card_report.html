@@ -368,7 +368,7 @@ Behavior Description
                     build_report += personnel_info;
 
                     <!-- get CAPA info -->
-                    var capa_info_from_db = rbv_api.selectQuery( "SELECT CAPA_number, createdAt, Reason_for_the_CAPA_Expression, Target_Date, Description_of_the_Problem, Actions_Implemented FROM CAPA where R2349494=?", 100, {!id});
+                    var capa_info_from_db = rbv_api.selectQuery( "SELECT CAPA_number, createdAt, Reason_for_CAPA, Target_Date, Description_of_the_Problem, Actions_Implemented FROM CAPA where R2349494=?", 100, {!id});
 
                     <!-- change data format  in Created At, Target Date and also replaces any null remaining by empty -->
                     for (var i=0; i < capa_info_from_db.length; i++) {
