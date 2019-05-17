@@ -183,7 +183,7 @@ Description Of Injury Damage
         </table>
 
         <!-- smaller br -->
-        <div style="line-height:25%;">
+        <div style="line-height:50%;">
             <br>
         </div>
 
@@ -192,6 +192,111 @@ Incident Owner Manager & HSE Manager
         <div style="line-height:25%;">
             <br>
         </div>
+
+        #EVAL[
+
+            <!-- check existing capa function -->
+            function show_incident_owner_service_line_and_check_capa() {
+
+                <!-- gets CAPA info -->
+                var check_capa = '{!Require_CAR___PAR}';
+
+                <!-- gets hom many incedent owner manager & hse manager there are-->
+                var arr = rbv_api.getRelatedIds("R1265939", '{!id}');
+
+                if(arr.length > 0) {
+
+                    var build_report = '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <th style="text-align:left">Personnel Name</th>'+
+                    '        <th style="text-align:left">Position</th>'+
+                    '        <th style="text-align:left">Corporate Email</th>'+
+                    '        <th style="text-align:left">Department</th>';
+
+                    <!-- gets personnel information -->
+                    var personnel_info  = ' ';
+
+                    for (var i = 0; i < arr.length; ++i) {
+
+                        <!-- query to db -->
+                        var values = "select Capitalized_Name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Department_No_Hyperlink from Personnel where id=" + arr[i];
+
+                        <!-- array from db -->
+                        var personnel_info_from_db = rbv_api.selectQuery(values, 100, {!id});
+
+                        <!-- fill table with values from db-->
+                        for (var j = 0; j <  personnel_info_from_db.length; ++j) {
+                            personnel_info += '<tr>';
+                            for(var w = 0; w < 4; ++w) {
+
+                                personnel_info += ' <td width="20%" style="border: 1px solid black; ">' +personnel_info_from_db[j][w]+ '.</td>';
+                            }
+                            personnel_info += '</tr>';
+                        }
+                    }
+
+                    personnel_info += '</tr>'+'</table>';
+
+                    build_report += personnel_info;
+
+                    build_report += '<div style="line-height:50%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    'Service Lines'+
+                    ''+
+                    '<div style="line-height:50%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <th style="text-align:left">Service Line ID</th>'+
+                    '        <th style="text-align:left">Type</th>'+
+                    '        <th style="text-align:left">Title</th>';
+
+                    <!-- checks how many services line there are-->
+                    var service_line = rbv_api.getRelatedIds("R1150472", '{!id}');
+
+                    var service_line_info  = ' ';
+
+                    for (var i = 0; i < service_line.length; ++i) {
+
+                        <!-- query to db -->
+                        var values = "SELECT Service_Line_ID_Expression, Service_Line_Type_Value,  Title FROM Service_Line where id=" + service_line[i];
+
+                        <!-- service_line array from db -->
+                        var service_line_info_from_db = rbv_api.selectQuery(values, 100, {!id});
+
+                        <!-- fill table with values from db-->
+                        for (var j = 0; j <  service_line_info_from_db.length; ++j) {
+                            service_line_info += '<tr>';
+                            for(var w = 0; w < 3; ++w) {
+
+                                service_line_info += ' <td width="20%" style="border: 1px solid black; ">' +service_line_info_from_db[j][w]+ '.</td>';
+                            }
+                            service_line_info += '</tr>';
+                        }
+                    }
+
+                    service_line_info += '</tr>'+'</table>';
+
+                    build_report += service_line_info;
+
+                    return build_report;
+                }
+                <!--  -->
+                else {
+
+                    return ' ';
+                }
+            }
+            show_incident_owner_service_line_and_check_capa();
+        ]
 
     </body>
 </html>
