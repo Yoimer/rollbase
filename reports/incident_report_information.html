@@ -196,7 +196,7 @@ Incident Owner Manager & HSE Manager
         #EVAL[
 
             <!-- check existing capa function -->
-            function show_incident_owner_service_line_and_check_capa() {
+            function show_incident_owner_service_line_check_capa_and_show_incident_information() {
 
                 <!-- gets hom many incedent owner manager & hse manager there are-->
                 var arr = rbv_api.getRelatedIds("R1265939", '{!id}');
@@ -372,8 +372,79 @@ Incident Owner Manager & HSE Manager
                         '     '  + 
                         '   Actions Implemented  '  + 
                         '   <textarea style="overflow:hidden" rows="02" cols="73">' +capa_info_from_db[0][5]+ '  '  + 
-                        '  </textarea>  ' ; 
+                        '  </textarea>  ' ;
+
+                    build_report +=  '<pd4ml:page.break>'+
+                    '        <!-- Title Header -->'+
+                    '        <div style="background:#d5d5d5;" align=center>'+
+                    '            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
+                    '                <tr>'+
+                    '                    <td align=center>'+
+                    '                        <h5>Close Incident Information</h5>'+
+                    '                        <br> '+
+                    '                    </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </div>'+
+                    '        <br>'+
+                    ''+
+                    '        <!(Incident Close, Date Of Close) -->'+
+                    '        <table style="border: 0px solid black;"width = "100%">'+
+                    '            <tr>'+
+                    '                <td width="34%" style="border: 1px solid black;">'+
+                    '                    <table width="100%">'+
+                    '                        <tr>'+
+                    '                            <td width="60%"> Incident Close:  {!Incident_closed_by_READ_ONLY}</td>'+
+                    '                        </tr>'+
+                    '                    </table>'+
+                    '                </td>'+
+                    '                <td  width="33%" style="border: 1px solid black;">'+
+                    '                    <table width="100%">'+
+                    '                        <tr>'+
+                    '                            <td width="63%"> Date Of Close:  {!Date_of_close}</td>'+
+                    '                        </tr>'+
+                    '                    </table>'+
+                    '                </td>'+
+                    '            </tr>'+
+                    '        </table>';
+
+                    return build_report;
                     }
+
+
+                    build_report += '<br>'+
+                    '        <!-- Title Header -->'+
+                    '        <div style="background:#d5d5d5;" align=center>'+
+                    '            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
+                    '                <tr>'+
+                    '                    <td align=center>'+
+                    '                        <h5>Close Incident Information</h5>'+
+                    '                        <br> '+
+                    '                    </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </div>'+
+                    '        <br>'+
+                    ''+
+                    '        <!(Incident Close, Date Of Close) -->'+
+                    '        <table style="border: 0px solid black;"width = "100%">'+
+                    '            <tr>'+
+                    '                <td width="34%" style="border: 1px solid black;">'+
+                    '                    <table width="100%">'+
+                    '                        <tr>'+
+                    '                            <td width="60%"> Incident Close:  {!Incident_closed_by_READ_ONLY}</td>'+
+                    '                        </tr>'+
+                    '                    </table>'+
+                    '                </td>'+
+                    '                <td  width="33%" style="border: 1px solid black;">'+
+                    '                    <table width="100%">'+
+                    '                        <tr>'+
+                    '                            <td width="63%"> Date Of Close:  {!Date_of_close}</td>'+
+                    '                        </tr>'+
+                    '                    </table>'+
+                    '                </td>'+
+                    '            </tr>'+
+                    '        </table>';
 
                     return build_report;
                 }
@@ -383,7 +454,7 @@ Incident Owner Manager & HSE Manager
                     return ' ';
                 }
             }
-            show_incident_owner_service_line_and_check_capa();
+            show_incident_owner_service_line_check_capa_and_show_incident_information();
         ]
 
     </body>
