@@ -195,9 +195,9 @@ Incident Owner Manager & HSE Manager
 
         #EVAL[
 
-            <!-- check existing capa function -->
             function show_incident_owner_service_line_check_capa_and_show_incident_information() {
 
+                <!-------------------------------personnel table -------------------------------------------------->
                 <!-- gets hom many incedent owner manager & hse manager there are-->
                 var arr = rbv_api.getRelatedIds("R1265939", '{!id}');
 
@@ -240,6 +240,7 @@ Incident Owner Manager & HSE Manager
 
                     build_report += personnel_info;
 
+                    <!--------------------------------service line table -------------------------------------------------------------->
                     build_report += '<div style="line-height:50%;">'+
                     '    <br>'+
                     '</div>'+
@@ -311,6 +312,7 @@ Incident Owner Manager & HSE Manager
 
                         }
 
+                        <!----------------------------------------------capa table------------------------------------------------------->
                         <!-- CAPA information -->
                         build_report += '<br>'+
                         '<div style="background:#d5d5d5;" align=center>'+
@@ -373,7 +375,8 @@ Incident Owner Manager & HSE Manager
                         '   Actions Implemented  '  + 
                         '   <textarea style="overflow:hidden" rows="02" cols="73">' +capa_info_from_db[0][5]+ '  '  + 
                         '  </textarea>  ' ;
-
+                    
+                    <!-- ---------------------------------------close incedent table when there is capa---------------------- -->
                     build_report +=  '<pd4ml:page.break>'+
                     '        <!-- Title Header -->'+
                     '        <div style="background:#d5d5d5;" align=center>'+
@@ -411,7 +414,7 @@ Incident Owner Manager & HSE Manager
                     return build_report;
                     }
 
-
+                    <!-- ---------------------------------------close incedent table when there is no capa---------------------- -->
                     build_report += '<br>'+
                     '        <!-- Title Header -->'+
                     '        <div style="background:#d5d5d5;" align=center>'+
