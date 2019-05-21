@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Preventive Maintenance Order Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- start -->
+        <!-------  DATOS SOS --------->
+            <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+               <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>Preventive Maintenance Order Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+            </table>
+        <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Preventive Maintenance Order Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Preventive Order, Object Type, Object Code) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="40%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Preventive Order: &nbsp;{!Preventive_Maintenance_Order_Read_Only}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="30%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Object Type:&nbsp;{!Object_Type}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="30%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Object Code: &nbsp;{!Unit_Value}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Priority Order, External System) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Priority Order: &nbsp;{!Priority_Order}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="75%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;External System:&nbsp;{!External_System_Order}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Remarks
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Remarks}
+        </textarea>
+
+
+        #EVAL[
+
+            <!-- check existing capa function -->
+            function show_maintenance_information() {
+
+                <!-- gets maintenance info -->
+                var maintenance_info_from_db = rbv_api.selectQuery( "select name, Object_Type, Master_Code, Frequency, Counter_Value, Description, Type_Preventive_Maintenance, Reviewed_By, Approved_By from Maintenance_Plan1 where R4812801=?", 100, {!id});
+
+                <!-- changes any null by empty-->
+                for (var i=0; i < maintenance_info_from_db.length; i++) {
+
+                    for (var j=0; j < 8; j++) {
+                        if(maintenance_info_from_db[i][j] === null) {
+                            maintenance_info_from_db[i][j] = ' ';
+                        }
+                    }
+                }
+
+                <!-- if there is maintenace plan, create and fill maintenace plan fields -->
+                if(maintenance_info_from_db.length > 0) {
+
+                    var build_report = '<div style="line-height:100%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<!-- Title Header -->'+
+                    '<div style="background:#d5d5d5;" align=center>'+
+                    '    <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">'+
+                    '        <tr>'+
+                    '            <td align=center>'+
+                    '                <h5>Maintenance Plan Information</h5>'+
+                    '                <br>'+
+                    '            </td>'+
+                    '        </tr>'+
+                    '    </table>'+
+                    '</div>'+
+                    '<br>'+
+                    ''+
+                    '<!(Maintenace Plan, Object Type, Master Code) -->'+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="40%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Maintenace Plan:' +maintenance_info_from_db[0][0]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="30%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Object Type: ' +maintenance_info_from_db[0][1]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="30%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Master Code: ' +maintenance_info_from_db[0][2]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>'+
+                    ''+
+                    '<!-- smaller br -->'+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<!(Frecuency, Counter Value, Remarks) -->'+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="15%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Frecuency: ' +maintenance_info_from_db[0][3]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="15%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Counter Value: ' +maintenance_info_from_db[0][4]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="70%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Remarks: ' +maintenance_info_from_db[0][5]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>'+
+                    ''+
+                    '<!-- smaller br -->'+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<!(Type Preventive Maintenance, Reviewed By, Approved By) -->'+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="34%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Type Preventive Maintenance: ' +maintenance_info_from_db[0][6]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="33%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Reviewed By: ' +maintenance_info_from_db[0][7]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="33%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Approved By: ' +maintenance_info_from_db[0][8]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>';
+
+                    return build_report;
+
+                <!-- there is no maintenace plan -->
+                } else {
+
+                    return ' ';
+                }
+            }
+            show_maintenance_information();
+        ]
+
+    </body>
+</html>
