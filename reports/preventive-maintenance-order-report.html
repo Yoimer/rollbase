@@ -133,6 +133,7 @@ Remarks
                 <!-- if there is maintenace plan, create and fill maintenace plan fields -->
                 if(maintenance_info_from_db.length > 0) {
 
+                    <!-- Maintenance Plan Information -->
                     var build_report = '<div style="line-height:100%;">'+
                     '    <br>'+
                     '</div>'+
@@ -235,6 +236,112 @@ Remarks
                     '            <table width="100%">'+
                     '                <tr>'+
                     '                    <td width="63%">Approved By: ' +maintenance_info_from_db[0][8]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>';
+
+                    <!-- gets object type information-->
+                    var name = '';
+
+                    <!-- if Equipment is selected -->
+                    if('{!Equipment_Read_Only}' !== '') {
+
+                        name = '{!Equipment_Read_Only}';
+                        var arr = rbv_api.selectQuery("SELECT serial_number, Description FROM Equipment1 WHERE name='{!Equipment_Read_Only}'", 100, {!id});
+
+                        <!-- changes any null by empty -->
+                        for (var i=0; i < arr.length; i++) {
+
+                            for (var j=0; j < 2; j++) {
+                                if(arr[i][j] === null) {
+                                    arr[i][j] = ' ';
+                                }
+                            }
+                        }
+
+                    <!-- if Service Tool is selected -->
+                    } else if ('{!Service_Tool_Read_Only}' !== '') {
+
+                        name = '{!Service_Tool_Read_Only}';
+                        var arr = rbv_api.selectQuery("SELECT serial_number, Description FROM Service_Tools WHERE name='{!Service_Tool_Read_Only}'", 100, {!id});
+
+                        <!-- changes any null by empty -->
+                        for (var i=0; i < arr.length; i++) {
+
+                            for (var j=0; j < 2; j++) {
+                                if(arr[i][j] === null) {
+                                    arr[i][j] = ' ';
+                                }
+                            }
+                        }
+
+                    <!-- if Tool is selected -->
+                    } else if ('{!Tool_Read_Only}' !== '') {
+
+                        name = '{!Tool_Read_Only}';
+                        var arr = rbv_api.selectQuery("SELECT Serial_Number, Description FROM Tool WHERE name='{!Tool_Read_Only}'", 100, {!id});
+
+                        <!-- changes any null by empty -->
+                        for (var i=0; i < arr.length; i++) {
+
+                            for (var j=0; j < 2; j++) {
+                                if(arr[i][j] === null) {
+                                    arr[i][j] = ' ';
+                                }
+                            }
+                        }
+
+                    <!-- if MDE is selected -->
+                    } else if ('{!MDE_Read_Only}' !== '') {
+
+                        name = '{!MDE_Read_Only}';
+                        var arr = rbv_api.selectQuery("SELECT Serial_Number, Description FROM MDE WHERE name='{!MDE_Read_Only}'", 100, {!id});
+
+                        <!-- changes any null by empty -->
+                        for (var i=0; i < arr.length; i++) {
+
+                            for (var j=0; j < 2; j++) {
+                                if(arr[i][j] === null) {
+                                    arr[i][j] = ' ';
+                                }
+                            }
+                        }
+                    }
+
+                    <!-- object type -->
+                    build_report += '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    'Object Type'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<!(Name, Serial Number, Description) -->'+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="25%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Name: ' +name+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="25%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Serial: ' +arr[0][1]+ '</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Description: ' +arr[0][2]+ '</td>'+
                     '                </tr>'+
                     '            </table>'+
                     '        </td>'+
