@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Risk Information Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- start -->
+        <!-------  DATOS SOS --------->
+            <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+               <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>Risk Information Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+            </table>
+            <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Risk Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(Risk Number, Risk Type, Key Words) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Risk Number: &nbsp;{!Risk_Number_no_hyperlink1}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Risk Type: &nbsp;{!Risk_Type_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Key Words: &nbsp;{!Key_words_No_Hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Task or Proposed Changed: 
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Task_or_Proposed_Change}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Hazard: 
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Risk_Hazard}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Service Line, Asset) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Service Line: &nbsp;{!Service_Line_No_Hyperlinked}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="75%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Asset: &nbsp;{!Asset_Related} - {!Asset_Short_Description} </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Approvers List: 
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Approvers_No_Hyperlinked}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+Risk Assessment Parameters
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Impact (C), Probability (F)) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Impact (C): &nbsp;{!Impact_C}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Probability (F): &nbsp;{!Probability_F}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Proposed Controls: 
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Proposed_Controls}
+        </textarea>
+
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Residual Probability (F), Residual Impact (C), Residual Risk Value (CxF)) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Residual Probability (F): &nbsp;{!Residual_Probability_F}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Residual Impact (C): &nbsp;{!Residual_Impact_C}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Residual Risk Value (CxF): &nbsp;{!Residual_Risk_Value_CxF}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Approval Comments: 
+        <textarea style="overflow:hidden" rows="02" cols="73">
+{!Approval_Comments}
+        </textarea>
+
+    </body>
+</html>
