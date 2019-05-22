@@ -106,11 +106,35 @@
             <br>
         </div>
 
-Remarks
+PM Remarks
         <textarea style="overflow:hidden" rows="02" cols="73">
-{!Remarks}
+{!PM_Remarks}
         </textarea>
 
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Reviewed By, Approved By) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Reviewed By: &nbsp;{!Reviewed_By_no_Hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Approved By:&nbsp;{!Approved_By_no_Hyperlink}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
 
         #EVAL[
 
@@ -118,7 +142,7 @@ Remarks
             function show_maintenance_information() {
 
                 <!-- gets maintenance info -->
-                var maintenance_info_from_db = rbv_api.selectQuery( "select name, Object_Type, Master_Code, Frequency, Counter_Value, Description, Type_Preventive_Maintenance, Reviewed_By, Approved_By from Maintenance_Plan1 where R4812801=?", 100, {!id});
+                var maintenance_info_from_db = rbv_api.selectQuery( "select name, Object_Type, Master_Code, Frequency#value, Counter_Value, Description, Type_Preventive_Maintenance#value, Reviewed_By, Approved_By from Maintenance_Plan1 where R4812801=?", 100, {!id});
 
                 <!-- changes any null by empty-->
                 for (var i=0; i < maintenance_info_from_db.length; i++) {
@@ -157,7 +181,7 @@ Remarks
                     '        <td width="40%" style="border: 1px solid black;">'+
                     '            <table width="100%">'+
                     '                <tr>'+
-                    '                    <td width="60%">Maintenace Plan:' +maintenance_info_from_db[0][0]+ '</td>'+
+                    '                    <td width="60%">Maintenace Plan: ' +maintenance_info_from_db[0][0]+ '</td>'+
                     '                </tr>'+
                     '            </table>'+
                     '        </td>'+
@@ -186,7 +210,7 @@ Remarks
                     '<!(Frecuency, Counter Value, Remarks) -->'+
                     '<table style="border: 0px solid black;"width = "100%">'+
                     '    <tr>'+
-                    '        <td width="15%" style="border: 1px solid black;">'+
+                    '        <td width="25%" style="border: 1px solid black;">'+
                     '            <table width="100%">'+
                     '                <tr>'+
                     '                    <td width="60%">Frecuency: ' +maintenance_info_from_db[0][3]+ '</td>'+
@@ -200,7 +224,7 @@ Remarks
                     '                </tr>'+
                     '            </table>'+
                     '        </td>'+
-                    '        <td  width="70%" style="border: 1px solid black;">'+
+                    '        <td  width="60%" style="border: 1px solid black;">'+
                     '            <table width="100%">'+
                     '                <tr>'+
                     '                    <td width="63%">Remarks: ' +maintenance_info_from_db[0][5]+ '</td>'+
@@ -334,14 +358,14 @@ Remarks
                     '        <td  width="25%" style="border: 1px solid black;">'+
                     '            <table width="100%">'+
                     '                <tr>'+
-                    '                    <td width="63%">Serial: ' +arr[0][1]+ '</td>'+
+                    '                    <td width="63%">Serial: ' +arr[0][0]+ '</td>'+
                     '                </tr>'+
                     '            </table>'+
                     '        </td>'+
                     '        <td  width="50%" style="border: 1px solid black;">'+
                     '            <table width="100%">'+
                     '                <tr>'+
-                    '                    <td width="63%">Description: ' +arr[0][2]+ '</td>'+
+                    '                    <td width="63%">Description: ' +arr[0][1]+ '</td>'+
                     '                </tr>'+
                     '            </table>'+
                     '        </td>'+
