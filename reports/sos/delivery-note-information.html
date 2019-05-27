@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Delivery Note Information Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- start -->
+            <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+               <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>Delivery Note Information Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+            </table>
+        <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Delivery Note Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(Delivery Note Number, Type of Delivery) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Delivery Note Number: &nbsp;{!Delivery_note_number_READ_ONLY}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Type Of Delivery: &nbsp;{!Type_of_delivery_READ_ONLY}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Original Delivery Note #, Delivery Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Original Delivery Note #: &nbsp;{!Original_Delivery_Note_number}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Delivery Date:&nbsp;{!Delivery_date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Delivery By, Delivery Location) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Delivery By: &nbsp;{!Delivery_by_READ_ONLY}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Delivery Location: &nbsp;{!Delivery_Location_Formula}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Number of Items, Type Of Items) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Number of Items: &nbsp;{!Number_of_items}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Type Of Items: &nbsp;{!Type_of_items_READ_ONLY}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(QA/QC Inspector, Inspected Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;QA/QC Inspector: &nbsp;{!QA_QC_Inspector_READ_ONLY}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Inspected Date: &nbsp;{!Inspected_date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Received By, Received Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Received By: &nbsp;{!Received_By_Formula}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="50%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Received Date: &nbsp;{!Received_date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Receiver Detail
+        <textarea style="overflow:hidden" rows="04" cols="73">
+{!Receiver_s_detail}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Reasons for Rejection
+        <textarea style="overflow:hidden" rows="04" cols="73">
+{!Rejection_Reasons}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Approver Comments
+        <textarea style="overflow:hidden" rows="04" cols="73">
+{!Approver_Comments}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Closing Comments
+        <textarea style="overflow:hidden" rows="04" cols="73">
+{!Closing_Comments}
+        </textarea>
+
+    </body>
+</html>
