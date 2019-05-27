@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Material Reception Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- start -->
+        <!-------  DATOS RAY --------->
+        <table style="border: 0px solid black;" width="100%" bgcolor="#7BD2F6">
+            <tr>
+                <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1794941&fileName=tmp_9205817000344785515.png&contentType=image%2Fpng&suggestedName=Ray+logo+original.png" width=20% ></td>
+                <td  style="border: 0px solid black;">
+                    <div align=center> <b>Ray International Oil & gas<br>Material Reception Report<br>
+                        <font color=red>{!name}</font></b> 
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Material Reception Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Shipment Number, Delivery Date, PO Number, Material ID) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Shipment Number: &nbsp;{!Shipment_Number}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Delivery Date:&nbsp;{!Delivery_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;PO Number: &nbsp;{!PO_Number}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Material ID:&nbsp;{!Matrial_ID}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+        <!-- Origin Approval QA/QC Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Origin Approval QA/QC</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Date, Supplier, Commercial Phone, Mail Address) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Date:&nbsp;{!Origin_Approval_QA_QC_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Supplier:&nbsp;{!Origin_supplier_QA_QC_Approver}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Commercial Phone:&nbsp;{!Origin_commercial_telephone_number}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Mail Address:&nbsp;{!Origin_Approver_mail_address}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Delivery Location, Receiving Location, Quantity Shipped/Received, Unit) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Delivery Location:&nbsp;{!Delivery_Location_Formula}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Receiving Location:&nbsp;{!Receiving_Location_Formula}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Quantity Shipped/Received:&nbsp;{!Quantity_shipped_received}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="25%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Unit:&nbsp;{!Unit}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Received By, Received Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Received By: &nbsp;{!Received_By}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="50%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Received Date:&nbsp;{!Receive_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+        </table>
+        <br>
+
+        <!-- Internal Approval QA/QC Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>Internal Approval QA/QC</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+        <!(Internal QA/QC, Approval QA/QC, Receiver Approval) -->
+        <table style="border: 0px solid black;"width = "100%">
+            <tr>
+                <td width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">&nbsp;Internal QA/QC: &nbsp;{!Internal_QA_QC_Approver_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="33%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Approval QA/QC Date:&nbsp;{!Approval_QA_QC_Date}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td  width="34%" style="border: 1px solid black;">
+                    <table width="100%">
+                        <tr>
+                            <td width="63%">&nbsp;Receiver Approval:&nbsp;{!Receiver_Approval_READ_ONLY}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Supplier Description
+        <textarea style="overflow:hidden" rows="04" cols="73">
+{!Supplier_description}
+        </textarea>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Acceptance Criteria
+        <textarea style="overflow:hidden" rows="04" cols="73">
+{!Acceptance_Criteria}
+        </textarea>
+
+    </body>
+</html>
