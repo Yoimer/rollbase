@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>LowLight - HighLight Report {!name#text} </title>
+        <style>
+            td , th 
+            {
+            border: 0px solid black;
+            }
+            .det
+            {
+            font-weight: bold;
+            } 
+            body
+            {
+            font: normal 10px Verdana, Arial, sans-serif;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- start -->
+        <!-------  DATOS SOS --------->
+        <table style="border: 0px solid black;" width="100%" bgcolor="#FBE5D6"> 
+            <tr> 
+               <td width="60%" style="border: 0px solid black;"><img src="http://www.dev01.nextwells.com/storage/servlet/Image?c=1988012&fileName=tmp_4811332897568722777.png&contentType=image%2Fpng&suggestedName=SOS+logo.png" width=20% ></td>
+               <td  style="border: 0px solid black;"><div align=center> <b>Special Oilfield Services Co.LLC<br>LowLight - HighLight Report<br>
+               <font color=red>{!name}</font></b> 
+               </div></td>
+               </tr>
+        </table>
+        <br>
+
+        <!-- Title Header -->
+        <div style="background:#d5d5d5;" align=center>
+            <table  style="border: 0px solid black; margin-top: 20px;"width = "100%">
+                <tr>
+                    <td align=center>
+                        <h5>LowLight - HighLight Report Information</h5>
+                        <br> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <!(Lowlight o HighLight, Type, Date) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="34%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;{!L_Light___H_Light__PICKLIST}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Type: &nbsp;{!Type_PICKLIST}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Date: &nbsp;{!Date}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:125%;">
+            <br>
+        </div>
+
+        <!(Reported By, Location ,Require CAR/PAR?) -->
+        <table style="border: 0px solid black;"width = "100%">
+        <tr>
+            <td width="34%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="60%">&nbsp;Reported By: &nbsp;{!Employ_name_READ_ONLY}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Location: &nbsp;{!Title}</td>
+                    </tr>
+                </table>
+            </td>
+            <td  width="33%" style="border: 1px solid black;">
+                <table width="100%">
+                    <tr>
+                        <td width="63%">&nbsp;Require CAR/PAR/NO?: &nbsp;{!Require_CAR_PAR}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+        <!-- smaller br -->
+        <div style="line-height:25%;">
+            <br>
+        </div>
+
+Description
+        <textarea style="overflow:hidden" rows="04" cols="73">
+{!Description}
+        </textarea>
+        <br>
+
+        #EVAL[
+
+            <!-- check existing capa function -->
+            function check_existing_capa() {
+
+                <!-- gets CAPA info -->
+                var check_capa = '{!Require_CAR_PAR}';
+
+                <!-- checks how many personnel are assigned to Notify CAP/PAR to -->
+                var arr = rbv_api.getRelatedIds("R2139201", '{!id}');
+
+                <!-- if capa comes with CAR or PAR and there is info from personnel, shows capa fields in report -->
+                if((check_capa !== 'NO') && (arr.length > 0)) {
+
+                    var build_report = '<div style="line-height:50%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">  CAPA Number: {!CAPA}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%"> Notify CAR/PAR To: </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <th style="text-align:left">Personnel Name</th>'+
+                    '        <th style="text-align:left">Position</th>'+
+                    '        <th style="text-align:left">Corporate Email</th>'+
+                    '        <th style="text-align:left">Is Approver</th>'+
+                    '        <th style="text-align:left">Is CAPA Admin</th>';
+
+                    var personnel_info  = ' ';
+
+                    for (var i = 0; i < arr.length; ++i) {
+
+                        <!-- query to db -->
+                        var values = "select name, Position_no_hyperlink, Personal_Email_No_hyperlinked, Is_Approver, Is_CAPA_Admin from  Personnel where id=" + arr[i];
+
+                        <!-- array from db -->
+                        var personnel_info_from_db = rbv_api.selectQuery(values, 100, {!id});
+
+                        <!-- fill table with values from db-->
+                        for (var j = 0; j <  personnel_info_from_db.length; ++j) {
+                            personnel_info += '<tr>';
+                            for(var w = 0; w < 5; ++w) {
+
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
+                                if(personnel_info_from_db[j][w] == '0' || personnel_info_from_db[j][w] == '0') {
+
+                                    personnel_info_from_db[j][w] = 'NO';
+                                }
+
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 0, changes to 'NO'-->
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with 1, changes to 'Yes'-->
+                                if(personnel_info_from_db[j][w] == '1' || personnel_info_from_db[j][w] == '1') {
+
+                                    personnel_info_from_db[j][w] = 'YES';
+                                }
+
+                                <!-- if Is_Approver or Is_CAPA_Admin comes with null, changes to 'NO'-->
+                                if(personnel_info_from_db[j][w] === null || personnel_info_from_db[j][w] === null) {
+                                    personnel_info_from_db[j][w] = 'NO';
+                                }
+
+                                personnel_info += ' <td width="20%" style="border: 1px solid black; ">' +personnel_info_from_db[j][w]+ '.</td>';
+                            }
+                            personnel_info += '</tr>';
+                        }
+                    }
+
+                    personnel_info += '</tr>'+'</table>';
+                    build_report += personnel_info;
+
+                    build_report += '<div style="line-height:50%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="100%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">  JOB Number: {!Job_Number_related}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%"> Customer Name: {!Customer_Name}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Customer Contact: {!Customer_Contact}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Well: {!Well}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Services Lines: {!Service_Lines_expression} </td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>';
+
+                    return build_report;
+
+                <!-- there is no CAPA but there is JOB (always will be JOB since is required when creating a new highlight-lowlight) -->
+                } else {
+
+                    var build_report = '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="100%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">JOB Number: {!Job_Number_related}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Customer Name: {!Customer_Name}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Customer Contact: {!Customer_Contact}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>'+
+                    ''+
+                    '<div style="line-height:25%;">'+
+                    '    <br>'+
+                    '</div>'+
+                    ''+
+                    '<table style="border: 0px solid black;"width = "100%">'+
+                    '    <tr>'+
+                    '        <td width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="60%">Well: {!Well}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '        <td  width="50%" style="border: 1px solid black;">'+
+                    '            <table width="100%">'+
+                    '                <tr>'+
+                    '                    <td width="63%">Services Lines: {!Service_Lines_expression}</td>'+
+                    '                </tr>'+
+                    '            </table>'+
+                    '        </td>'+
+                    '    </tr>'+
+                    '</table>';
+
+                    return build_report;
+                }
+            }
+            check_existing_capa();
+        ]
+
+    </body>
+</html>
