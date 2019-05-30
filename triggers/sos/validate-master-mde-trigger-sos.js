@@ -2,15 +2,21 @@
 var MasterName = "{!name#text}";
 
 var existsMDE = rbv_api.selectQuery("SELECT id FROM MDE WHERE Master_MDE_No_Hyperlink = '" + MasterName + "'", 999);
-var existsMPMDE = rbv_api.selectQuery("SELECT id FROM Maintenance_Plan1 WHERE Master_MDE_Read_Only = '" + MasterName + "'", 999);
+
+//var existsMPMDE = rbv_api.selectQuery("SELECT status#value FROM Maintenance_Plan1 WHERE Master_MDE_Read_Only = '" + MasterName + "'", 999);
+var existsMPMDE = rbv_api.selectQuery("SELECT status#value FROM Maintenance_Plan1 WHERE (status#value != 'Created - Need Review' AND Master_MDE_Read_Only='" + MasterName + "')",999);
+
+//var existsMPMDE = rbv_api.selectQuery("SELECT status#value FROM Maintenance_Plan1 WHERE Master_MDE_Read_Only = '" + MasterName + "'", 999);
+
+
 
 // Validate MDE
 if (existsMDE.length > 0) return MasterName + " has " + existsMDE.length + " MDEs attached";
 
 
-//Validate Service
+// //Validate Service
 
-//gets how many services exists in DB
+// //gets how many services exists in DB
 var existsMasterMDEFromService = rbv_api.getRelatedIds("R2157847", '{!id}');
 rbv_api.println("existsMasterMDEFromService " + existsMasterMDEFromService.length);
 
@@ -50,7 +56,8 @@ for (var i = 0; i < existsMasterMDEFromService.length; ++i) {
     }
 }
 
-
-
 // Validate Maintenance Plan
-if (existsMPMDE.length > 0) return MasterName + " has " + existsMPMDE.length + " Maintenance Plan attached";
+rbv_api.println("existsMPMDE.length " + existsMPMDE.length);
+if (existsMPMDE.length > 0) {
+    return MasterName + " has " + existsMPMDE.length + " Maintenance Plan attached";
+}
