@@ -1,3 +1,6 @@
+// takes all the fields value from a call out when workflow status is Draft
+// create new entry on call out db cloning all the previous fields
+
 var arr = new Array();
 
 arr["Start_Date"] = new Date("{!Start_Date}");
@@ -41,8 +44,5 @@ arr["RIG_Hoist_Unit"] = "{!RIG_Hoist_Unit#text}";
 // approve
 arr["Approve"] ="True";
 
-// create record
-// rbv_api.createRecord("Call_Out", arr);
-
-// clone record
+// clone record 
 rbv_api.cloneRecord("Call_Out", {!id}, arr);
