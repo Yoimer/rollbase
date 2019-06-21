@@ -24,7 +24,7 @@ arr["Work_Description"] = "{!Work_Description#text}";
 arr["Project_title"] = "{!Project_title#text}";
 
 // approver
-arr["Approver"] = "{!Approver_no_hyperlink}";
+arr["Approver_no_hyperlink"] = "{!Approver_no_hyperlink}";
 
 // afe number
 arr["AFE_Number"] = "{!AFE_Number#text}";
@@ -42,4 +42,7 @@ arr["RIG_Hoist_Unit"] = "{!RIG_Hoist_Unit#text}";
 arr["Approve"] ="True";
 
 // create record
-rbv_api.createRecord("Call_Out", arr);
+// rbv_api.createRecord("Call_Out", arr);
+
+// clone record
+rbv_api.cloneRecord("Call_Out", {!id}, arr);
