@@ -7,5 +7,8 @@ var arr = new Array();
 // this avoids error on date of request validation
 arr["Date_of_Request"] = new Date("{!Start_Date}");
 
+// sends blank value to Attachment relationship
+arr["R122797"] = " ";
+
 // clone record 
 rbv_api.cloneRecord("Call_Out", {!id}, arr);
