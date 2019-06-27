@@ -125,8 +125,6 @@ var cloneAndAttachRisk = function cloneAndAttachRisk(obj) {
   , "R784933" // Contingency
   , "R126189" // Deliverables
   , "R124231" // Moc
-  , "R121561" // Procedure
-  , "R151606" // Responsible for Communication
   , "R134107" // Service
   , "R742882" // Service Line
   , "R106496" // Work Enviroments
@@ -172,10 +170,9 @@ var cloneAndAttachRisk = function cloneAndAttachRisk(obj) {
       id: attached[0][2],
       //R392036: attached[0][2],//Key_Word 
       Risk_Hazard: attached[0][1],
-      status: "CREATED",
-      R151562: 0, //Set approver to null
-      R151606: 0 //Set responsible for communication to null
-      , isLocked: false //UnLock the object
+      status: "APPROVED",
+
+       isLocked: false //UnLock the object
     };
     //sendDebugData(`This is the new risk to create: ${JSON.stringify(risk)}`)
 
