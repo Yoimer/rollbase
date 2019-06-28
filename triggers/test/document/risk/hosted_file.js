@@ -172,7 +172,7 @@ var cloneAndAttachRisk = function cloneAndAttachRisk(obj) {
       Risk_Hazard: attached[0][1],
       status: "APPROVED",
 
-       isLocked: true //Lock the object
+       isLocked: false //Lock the object
     };
     //sendDebugData(`This is the new risk to create: ${JSON.stringify(risk)}`)
 
