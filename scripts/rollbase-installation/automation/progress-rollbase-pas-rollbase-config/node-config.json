@@ -1,0 +1,311 @@
+/*
+Rollbase configuration file
+---------------------------
+Allows for configuring Rollbase and its node. Many sections are based on node role and are not required in
+all node-config.json, while some are required for all nodes. Various sections and their details are as follows
+
+Section: serverUrl
+Role: ALL
+Mandatory: Yes
+Description: The base url for the web container where Rollbase is deployed. e.g. tomcat, jboss, etc. The url is specific
+to the node where the configuration file resides.
+
+
+Section: components
+Role: ALL
+Mandatory: Yes
+Description: List of components that are to be deployed on this node. This list is considered definitive and if a module
+is found that does not have entry in the components list, it will not be functional. Each entry in the list defines a
+component as follows:
+
+name - Name of component. E.g. MASTER, PROD1, prodacme, storageAcme, etc. The names of default Rollbase components
+are fixed and should be used as is. Custom components can have any name. The list of default components is MASTER, REST,
+ROUTER, WEBAPI, STORAGE, SEARCH. Production servers (PRODn) don't need to have a default and can be named as desired.
+
+type - Type of component. The list of types is predefined and is case-sensitive.
+       MASTER
+       PROD
+       ROUTER
+       REST
+       WEBAPI
+       STORAGE
+       SEARCH
+
+internalRoot - Relative path to the deployed webapp in the application container. Used when constructing urls for
+internal communication between nodes. E.g. If deploying storageAcme.war in tomcat webapps (default location),
+internalRoot should be "/storageAcme"
+
+externalRoot - Relative path to the deployed webapp (similar to internalRoot). This is used when constructing urls that
+will be accessed from public location. E.g. Permalink to an image is constructed using externalRoot. This is more often
+than not the same as internalRoot.
+
+
+Section: masterDB
+Role: MASTER
+Mandatory: Yes
+Description: Connection details to access the master database. This section is required only in nodes that have master
+module deployed. This info is considered the up-to-date details for accessing the master database and is updated every
+time a master is started.
+p455 represents the password which is stored back in encrypted form if not already encrypted.
+
+Drivers shown below are data direct drivers (except MySQL) bundled with Rollbase. Sample urls for various databases:
+MySQL
+    url: jdbc:mysql://localhost:3306/RB_DBO
+    driver: com.mysql.jdbc.Driver
+
+Oracle
+    url: jdbc:rollbase:oracle://localhost:1521;ServiceName=RB_DBO;ConnectionRetryCount=10;ConnectionRetryDelay=10;identifySystemTables=false
+    driver: com.rb.jdbc.oracle.OracleDriver
+
+SQLServer
+    url: jdbc:rollbase:sqlserver://localhost:1433;databaseName=RB_DBO;integratedSecurity=true;ConnectionRetryCount=10;ConnectionRetryDelay=10
+    driver: com.rb.jdbc.sqlserver.SQLServerDriver
+
+OpenEdge
+    url: jdbc:datadirect:openedge://localhost:9100;databaseName=RB_DBO
+    driver: com.ddtek.jdbc.openedge.OpenEdgeDriver
+
+DataDirectCloud
+    url: jdbc:datadirect:ddcloud://service.datadirectcloud.com:443;databaseName=RB_DBO
+    driver: com.ddtek.jdbc.ddcloud.DDCloudDriver
+
+
+Section: updateSharedProps
+Role: MASTER
+Mandatory: Yes (First-time setup only)
+Description: Allows specifying a set of shared properties that should be consumed on system start. Although changes to
+shared properties is allowed using editor in system console app, when a property needs to be effected at system start,
+use this section. The properties specified here are consumed at system initialization and updated in database.
+NOTE: Once consumed, the properties are cleared from this section which is normal.
+
+
+Section: nodeProps
+Role: ALL
+Mandatory: No
+Description: Allows specifying properties that apply to a particular node. E.g. location of storage directory on disk
+applicable to nodes that have STORAGE module deployed.
+
+
+Section: webProxies
+Role: MASTER
+Mandatory: No
+Description: Allows adding web proxies to the list. This is consumed at system start which makes it helpful for first
+time configuration but can be used on existing systems when say, your hostname is changing. For adding more proxies to
+an existing system, the Add Server option in system console can also be used. Each entry in the list has the following
+properties:
+url - Url of the web proxy. E.g. { "url": "http://localhost:9080" }
+
+
+Section: databases
+Role: MASTER
+Mandatory: No
+Description: Allows adding/updating databases. Each entry in the list has the following
+properties:
+name - Database name. Use same name when updating existing database information
+driver - Database driver class (full package info)
+url - Database connection URL. See masterDB section above for suggested URLs for each type
+user - Credentials for the account to use
+p455 - Password for the account
+isExternal - Is this an external database
+txIsolation - Transaction isolation, The degree of locking that occurs when selecting data. Ignore property, to effect defaults, if unsure about this setting
+poolType - The type of JDBC connection pooling mechanism to implement for managing JDBC connections. 0 for Rollbase default, 1 for Tomcat pool
+minConnections - Minimum number of connections in the pool
+maxConnections - Maximum number of connections in the pool
+maxInUseTimeMins - The maximum time (in minutes) allowed for the database connection to be in use
+maxNotUsedConnTimeMins - The maximum time (in minutes) allowed for the database connection in a pool to be idle
+maxConnLifetimeMins - The maximum connection lifetime before closure (in minutes)
+connTimeoutSec - The time allowed for a new database connection to be established
+
+
+Sample configuration
+{
+    "serverUrl": "http://localhost:8080",
+    "components": [{
+        "name": "PROD1",
+        "type": "PROD",
+        "internalRoot": "/prod1",
+        "externalRoot": "/prod1"
+    }, {
+        "name": "SEARCH",
+        "type": "SEARCH",
+        "internalRoot": "/search",
+        "externalRoot": "/search"
+    }, {
+        "name": "STORAGE",
+        "type": "STORAGE",
+        "internalRoot": "/storage",
+        "externalRoot": "/storage"
+    }],
+    "masterDB": {
+        "driver": "com.mysql.jdbc.Driver",
+        "url": "jdbc:mysql://localhost:3306/RB_DBO",
+        "user": "admin",
+        "p455": ""
+    },
+    "updateSharedProps": {  },
+    "nodeProps": {
+        "FontDirs": "",
+        "StorageDir": "",
+        "LogDir": "",
+        "IndexDir": ""
+    },
+    "webProxies": [],
+    "databases": []
+}
+*/
+
+// {
+//  "serverUrl": "http://localhost:8830",
+//  "components": [{
+//      "name": "MASTER",
+//      "type": "MASTER",
+//      "internalRoot": "/master",
+//      "externalRoot": "/master"
+//  }, {
+//      "name": "PROD1",
+//      "type": "PROD",
+//      "internalRoot": "/prod1",
+//      "externalRoot": "/prod1"
+//  }, {
+//      "name": "REST",
+//      "type": "REST",
+//      "internalRoot": "/rest",
+//      "externalRoot": "/rest"
+//  }, {
+//      "name": "ROUTER",
+//      "type": "ROUTER",
+//      "internalRoot": "/router",
+//      "externalRoot": "/router"
+//  }, {
+//      "name": "SEARCH",
+//      "type": "SEARCH",
+//      "internalRoot": "/search",
+//      "externalRoot": "/search"
+//  }, {
+//      "name": "STORAGE",
+//      "type": "STORAGE",
+//      "internalRoot": "/storage",
+//      "externalRoot": "/storage"
+//  }, {
+//      "name": "WEBAPI",
+//      "type": "WEBAPI",
+//      "internalRoot": "/webapi",
+//      "externalRoot": "/webapi"
+//  }],
+//  "masterDB": {
+//      "driver": "com.ddtek.jdbc.openedge.OpenEdgeDriver",
+//      "url": "jdbc:datadirect:openedge://localhost:8911;databaseName=rbdb",
+//      "user": "dbadmin",
+//      "p455": "root"
+//  },
+//  "updateSharedProps": {
+//      "AdminEmail": "test@gmail.com",
+//      "MailPort": "25",
+//      "MailUseSSL": "1",
+//      "MailTimeoutSec": "10",
+//      "MailHost": "test",
+//      "MailUser": "test",
+//      "MailPassword": "test",
+//      "GoogleUserName": "",
+//      "GoogleRefreshToken": "",
+//      "GoogleClientId": "",
+//      "GoogleClientSecretKey": "",
+//      "AutoReplyAddress": "",
+//      "EmergencyAddress": "",
+//      "Copyright": "Copyright \u00A9 1993-2017 Progress Software Corporation. All rights reserved.",
+//      "ForumURL": "https://community.progress.com/technicalusers/f/25.aspx",
+//      "FastTrackPage": "http://documentation.progress.com/output/rb",
+//      "SupportURL": "http://www.progress.com/support-and-services",
+//      "LinkPrivacy": "http://www.progress.com/privacy",
+//      "LinkTerms": "http://www.progress.com/terms-of-use",
+//      "TitleTemplate": "{!R} | {!O} | {!S}",
+//      "WebSiteHTTP": "http://localhost:8830",
+//      "WebSiteHTTPS": "https://localhost:8831",
+//      "CleanupMins": "30",
+//      "SQLKeywords": "FUNCTION,MULTISET,CASCADED,ROW,PRECISION,CURRENT_TRANSFORM_GROUP_FOR_TYPE,CONTAINS,DEREF,DO,CONDITION,NOT,UNDO,EXCEPT,FOREIGN,PRIVILEGES,ACTION,CHARACTER,MONTH,CREATE,ARE,USING,TIMEZONE_MINUTE,BEGIN,LOOP,RETURN,ELEMENT,GET,GOTO,HANDLER,BLOB,PRESERVE,ASC,GROUPING,STATIC,TRANSACTION,KEY,ELSE,TRAILING,CATALOG,INT,RECURSIVE,VALUE,ROLLBACK,BREADTH,TRANSLATE,SQL-99,DEPTH,TABLESAMPLE,RESTRICT,LEADING,SQL-92,RESIGNAL,REAL,GENERAL,GROUP,INTERSECT,LANGUAGE,FETCH,OUT,LEVEL,READ,INSENSITIVE,NONE,CURRENT_ROLE,USER,TRIM,DESCRIBE,WITHIN,SEARCH,REPEAT,SYSTEM_USER,CALL,LOWER,GO,END,CONSTRAINT,CONSTRUCTOR,SIZE,DYNAMIC,TIMEZONE_HOUR,ALTER,OPTION,IDENTITY,NCHAR,CURRENT_USER,ONLY,EXECUTE,ASSERTION,CLOB,INPUT,TABLE,VARCHAR,SESSION_USER,FLOAT,ASYMMETRIC,SUM,CURRENT_PATH,CHAR_LENGTH,POSITION,NCLOB,ASENSITIVE,INOUT,AT,TIME,DESCRIPTOR,AS,FREE,THEN,COLLATION,SQLEXCEPTION,AVG,LEFT,ZONE,SIGNAL,COLUMN,EXISTS,RETURNS,LIKE,COLLATE,ADD,INTEGER,OUTER,STATE,BY,DEFERRABLE,WHENEVER,TO,OVERLAPS,DISCONNECT,MERGE,CHARACTER_LENGTH,SET,RIGHT,RESULT,RELATIVE,EXEC,HAVING,SESSION,MIN,HOUR,MODULE,UNION,CURRENT,COMMIT,ITERATE,SCHEMA,DECIMAL,CLOSE,DROP,BIGINT,WHEN,SQLCODE,READS,ROWS,START,DECLARE,ROUTINE,BIT,LARGE,REVOKE,NATURAL,PUBLIC,BETWEEN,PRIOR,FIRST,CAST,PREPARE,EXTERNAL,WHILE,ALLOCATE,SETS,DETERMINISTIC,VARYING,TRIGGER,CURRENT_TIME,SPECIFICTYPE,CASE,SQLERROR,NEW,CHAR,DEALLOCATE,MODIFIES,DAY,COUNT,BIT_LENGTH,EQUALS,CASCADE,false,RELEASE,LEAVE,SQL,CONNECTION,FULL,SQLWARNING,ESCAPE,INSERT,SYSTEM,CONNECT,PATH,SAVEPOINT,PARAMETER,CURRENT_DEFAULT_TRANSFORM_GROUP,BOTH,DOUBLE,SYMMETRIC,EACH,LAST,WORK,SELECT,INTO,ARRAY,EXCEPTION,EXIT,UNIQUE,COALESCE,SECOND,VIEW,ROLE,SECTION,ROLLUP,WITHOUT,NULL,PAD,NO,ON,OLD,SENSITIVE,MATCH,PRIMARY,DELETE,NUMERIC,LOCAL,OF,NAMES,ORDINALITY,SPECIFIC,CUBE,true,UNTIL,NATIONAL,CALLED,OR,FILTER,CHECK,FROM,TEMPORARY,CURSOR,DISTINCT,UNNEST,OUTPUT,TIMESTAMP,CURRENT_DATE,ATOMIC,UPPER,OVER,WHERE,DEC,CONSTRAINTS,NULLIF,DIAGNOSTICS,MEMBER,INNER,YEAR,ORDER,AUTHORIZATION,CYCLE,UPDATE,MAX,SQLSTATE,DEFERRED,FOR,HOLD,AND,SPACE,SCROLL,CROSS,LOCALTIMESTAMP,INTERVAL,USAGE,OCTET_LENGTH,IF,UNDER,BOOLEAN,IN,UNKNOWN,SCOPE,OBJECT,CONTINUE,LOCATOR,REFERENCES,PARTITION,IS,SOME,ALL,NEXT,EXTRACT,CURRENT_TIMESTAMP,SUBMULTISET,PARTIAL,WITH,INITIALLY,ISOLATION,SQL-2003,GRANT,LATERAL,CONVERT,INDICATOR,DEFAULT,VALUES,RANGE,BEFORE,AFTER,TRANSLATION,WRITE,PROCEDURE,JOIN,LOCALTIME,SIMILAR,DOMAIN,CORRESPONDING,SUBSTRING,REFERENCING,REF,ELSEIF,OPEN,ANY,MAP,FOUND,IMMEDIATE,WINDOW,DESC,BINARY,DATE,GLOBAL,MINUTE,ABSOLUTE,METHOD,TREAT,DATA,SMALLINT",
+//      "MarketplaceURL": "http://localhost:8830/master/marketplace/",
+//      "CreateNewAppVideoURL": "https://documentation.progress.com/output/ua/redir/RB_quick_create.html",
+//      "CustomizeAppVideoURL": "https://documentation.progress.com/output/ua/redir/RB_customize_ovr.html",
+//      "NavAppVideoURL": "https://documentation.progress.com/output/ua/redir/RB_ux_ovr.html",
+//      "ShareYouAppVideoURL": "https://documentation.progress.com/output/ua/redir/RB_share_ovr.html",
+//      "VideosWebinarsURL": "https://documentation.progress.com/output/ua/redir/RB_nav_ovr.html",
+//      "ProgressDataServiceCORSHost": "",
+//      "HostName" : "localhost:8830"
+//  },
+//  "nodeProps": {
+//      "FontDirs": "",
+//      "StorageDir": "",
+//      "LogDir": "",
+//      "IndexDir": ""
+//  },
+//  "webProxies": [],
+//  "databases": []
+// }
+
+
+{
+    "serverUrl": "http://localhost:$HTTP_PORT$", 
+    "components": [{
+        "name": "MASTER",
+        "type": "MASTER",
+        "internalRoot": "/master",
+        "externalRoot": "/master"
+    }, {
+        "name": "PROD1",
+        "type": "PROD",
+        "internalRoot": "/prod1",
+        "externalRoot": "/prod1"
+    }, {
+        "name": "REST",
+        "type": "REST",
+        "internalRoot": "/rest",
+        "externalRoot": "/rest"
+    }, {
+        "name": "ROUTER",
+        "type": "ROUTER",
+        "internalRoot": "/router",
+        "externalRoot": "/router"
+    }, {
+        "name": "SEARCH",
+        "type": "SEARCH",
+        "internalRoot": "/search",
+        "externalRoot": "/search"
+    }, {
+        "name": "STORAGE",
+        "type": "STORAGE",
+        "internalRoot": "/storage",
+        "externalRoot": "/storage"
+    }, {
+        "name": "WEBAPI",
+        "type": "WEBAPI",
+        "internalRoot": "/webapi",
+        "externalRoot": "/webapi"
+    }],
+    "masterDB": {
+        "driver": "$DB_DRIVER$",
+        "url": "$DB_URL$",
+        "user": "$DB_USER_NAME$",
+        "p455": "$DB_PASSWORD$"
+    },
+    "updateSharedProps": {
+        "AdminEmail": "$MAIL_ADMIN_ADDRESS$",
+        "MailPort": "$MAIL_PORT_NUMBER$",
+        "MailUseSSL": "$MAIL_USE_SSL_STRING$",
+        "MailTimeoutSec": "10",
+        "MailHost": "$MAIL_HOST_NAME$",
+        "MailUser": "$MAIL_USER_NAME$",
+        "MailPassword": "$MAIL_PASSWORD$",
+        "WebSiteHTTP": "http://localhost:$HTTP_PORT$",
+        "WebSiteHTTPS": "https://localhost:$HTTPS_PORT$",
+        "MarketplaceURL": "http://localhost:$HTTP_PORT$/master/marketplace/",
+        "HostName" : "$HOST_NAME$"
+    },
+    "nodeProps": {
+        "FontDirs": "",
+        "StorageDir": "",
+        "LogDir": "",
+        "IndexDir": ""
+    },
+    "webProxies": [],
+    "databases": []
+}

@@ -1,0 +1,37 @@
+get rollbase 5.0 from 
+
+install with the tipical next, next (keep settings as they are)
+
+https://s3.amazonaws.com/rlb-prod-public/live-prod/private-kits/5.0/PROGRESS_ROLLBASE_FULL_INSTALLER_5.0_WIN_64.zip
+
+install java jdk-8u60-windows-x64.exe (186MB)
+
+https://sourceforge.net/projects/nichea/files/JDK/jdk-8u60-windows-x64.exe/download
+
+install with the tipical next, next (keep settings as they are)
+
+create JRE_HOME enviroment variable: as C:\Program Files\Java\jre1.8.0_60
+
+after installing: 
+
+create ROLLBASE_HOME enviroment variable: as C:\Progress\Rollbase\Pas_Instance\rollbase
+
+change node-config.json located in C:\Progress\Rollbase\pas\rollbase\config as
+it is on progress-rollbase-pas-rollbase-config folder (I am not positive about it, but let's change it)
+
+run the scrips on the automation folder in the next order:
+
+1) stopdb-rollbase.bat
+2) startdb-rollbase.bat
+3) startdb-tcman.bat
+
+it should prompt a DOS screen always.
+when installing for the first time it will take longer (it will show which part of the
+installation is doing)
+
+these are the links which has to be put on browser
+https://localhost:8831/router/login/loginPrivate.jsp
+http://localhost:8830/router/login/loginPrivate.jsp
+
+user:admin2
+password:welcome
