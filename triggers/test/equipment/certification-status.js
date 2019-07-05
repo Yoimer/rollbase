@@ -31,19 +31,19 @@ var logTimed = function logTimed(tag) {
     };
 };
 
-var getCalibrationsFromIds = function getCalibrationsFromIds(calibrationIds) {
-    if (!calibrationIds.length) {
+var getCertificationsFromIds = function getCertificationsFromIds(CertificationIds) {
+    if (!CertificationIds.length) {
         return [];
     }
     var fields = ["id", "start_date", "validity_time", "validity_time_unit#code","status#code"];
-    var query = "SELECT " + fields.join(",") + " FROM Certification WHERE status#code='APPROVED' AND id IN (" + calibrationIds.join(",") + ")";
+    var query = "SELECT " + fields.join(",") + " FROM Certification WHERE status#code='APPROVED' AND id IN (" + CertificationIds.join(",") + ")";
     rbv_api.println("Debug query: " + query);
-    var calibrationSql = rbv_api.selectQuery(query, 999);
-    if (calibrationSql.length==0) {
+    var CertificationSql = rbv_api.selectQuery(query, 999);
+    if (CertificationSql.length==0) {
         return null;
     }else{
-    rbv_api.println("calibrations SQL found: " + calibrationSql.length);
-    return calibrationSql.map(function (c) {
+    rbv_api.println("Certifications SQL found: " + CertificationSql.length);
+    return CertificationSql.map(function (c) {
         
             return {
             id: c[0],
@@ -54,7 +54,7 @@ var getCalibrationsFromIds = function getCalibrationsFromIds(calibrationIds) {
             }; 
     
        
-    }).map(logTimed("CalibrationSQL")).map(addExpirationDate).map(logTimed("After Addign expirations")).sort(sortTimedDescend).map(logTimed("Sorted"));}
+    }).map(logTimed("CertificationSQL")).map(addExpirationDate).map(logTimed("After Addign expirations")).sort(sortTimedDescend).map(logTimed("Sorted"));}
 
 };
 
@@ -223,32 +223,32 @@ var getData = function getData(timed) {
 };
 
 //Real logic
-var calibrationComponent = function calibrationComponent(id) {
-    var calibrationIds = rbv_api.getRelatedIds("R2814431", id);
+var CertificationComponent = function CertificationComponent(id) {
+    var CertificationIds = rbv_api.getRelatedIds("R2814431", id);
 
-    calibrationIds.map(function (a) {
+    CertificationIds.map(function (a) {
         return rbv_api.println(a);
     });
-    if (!calibrationIds.length) {
+    if (!CertificationIds.length) {
         return null;
     }
 
-    var calibrations = getCalibrationsFromIds(calibrationIds);
-if(calibrations===null){
+    var Certifications = getCertificationsFromIds(CertificationIds);
+if(Certifications===null){
 return null;}
-    calibrations.map(function (c) {
+    Certifications.map(function (c) {
         return rbv_api.println(c.expirationDate);
     });
 
-    var lastCalibration = safeHead(calibrations);
+    var lastCertification = safeHead(Certifications);
 
-    rbv_api.println("Last calibration: " + lastCalibration.expirationDate);
+    rbv_api.println("Last Certification: " + lastCertification.expirationDate);
 
-    var data = getData(lastCalibration);
+    var data = getData(lastCertification);
 
     log("Resulting Message: " + data.message);
 
     return getHtml(data);
 };
 
-calibrationComponent("{!id}");
+CertificationComponent("{!id}");
