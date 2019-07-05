@@ -1,6 +1,38 @@
 "use strict";
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+var _slicedToArray = function() {
+    function sliceIterator(arr, i) {
+        var _arr = [];
+        var _n = true;
+        var _d = false;
+        var _e = undefined;
+        try {
+            for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+                _arr.push(_s.value);
+                if (i && _arr.length === i) break;
+            }
+        } catch (err) {
+            _d = true;
+            _e = err;
+        } finally {
+            try {
+                if (!_n && _i["return"]) _i["return"]();
+            } finally {
+                if (_d) throw _e;
+            }
+        }
+        return _arr;
+    }
+    return function(arr, i) {
+        if (Array.isArray(arr)) {
+            return arr;
+        } else if (Symbol.iterator in Object(arr)) {
+            return sliceIterator(arr, i);
+        } else {
+            throw new TypeError("Invalid attempt to destructure non-iterable instance");
+        }
+    };
+}();
 
 var parseDate = function parseDate(date) {
     return new Date(date);
@@ -31,31 +63,24 @@ var logTimed = function logTimed(tag) {
     };
 };
 
-var getCertificationsFromIds = function getCertificationsFromIds(CertificationIds) {
-    if (!CertificationIds.length) {
+var getcertificationsFromIds = function getcertificationsFromIds(certificationIds) {
+    if (!certificationIds.length) {
         return [];
     }
-    var fields = ["id", "start_date", "validity_time", "validity_time_unit#code","status#code"];
-    var query = "SELECT " + fields.join(",") + " FROM Certification WHERE status#code='APPROVED' AND id IN (" + CertificationIds.join(",") + ")";
+    var fields = ["id", "start_date", "validity_time", "validity_time_unit#code"];
+    var query = "SELECT " + fields.join(",") + " FROM Certification WHERE id IN (" + certificationIds.join(",") + ")";
     rbv_api.println("Debug query: " + query);
-    var CertificationSql = rbv_api.selectQuery(query, 999);
-    if (CertificationSql.length==0) {
-        return null;
-    }else{
-    rbv_api.println("Certifications SQL found: " + CertificationSql.length);
-    return CertificationSql.map(function (c) {
-        
-            return {
+    var certificationSql = rbv_api.selectQuery(query, 999);
+    rbv_api.println("certifications SQL found: " + certificationSql.length);
+    return certificationSql.map(function (c) {
+        return {
             id: c[0],
             startDate: new Date(c[1]),
             validityTime: c[2],
             validityTimeUnit: c[3],
             expirationDate: null
-            }; 
-    
-       
-    }).map(logTimed("CertificationSQL")).map(addExpirationDate).map(logTimed("After Addign expirations")).sort(sortTimedDescend).map(logTimed("Sorted"));}
-
+        };
+    }).map(logTimed("certificationSQL")).map(addExpirationDate).map(logTimed("After Addign expirations")).sort(sortTimedDescend).map(logTimed("Sorted"));
 };
 
 var addExpirationDate = function addExpirationDate(timed) {
@@ -179,15 +204,13 @@ var humanTime = function humanTime(_ref2) {
     var plural = Math.abs(time) > 1;
     var humanUnit = unitToString(unit);
     humanUnit += plural ? "s" : "";
-    return Math.abs(time) + " " + humanUnit;
+    return Math.abs(time);
 };
 
 var getExpiredClassName = function getExpiredClassName(status) {
     switch (status) {
         case "TO_EXPIRE":
-            {
-                return "to-be-expired";
-            }
+            return "to-be-expired";
         case "EXPIRED":
             return "expired";
         case "VALID":
@@ -199,56 +222,50 @@ var getExpiredClassName = function getExpiredClassName(status) {
 
 var getHtml = function getHtml(data) {
     var className = getExpiredClassName(data.status);
-    return "\n    <div class=\"timed " + className + "\">\n        <span> " + data.message + " </span>\n    </div>\n    ";
+    return  data.message;
 };
 
 var getData = function getData(timed) {
     var delta = humanTimeDelta(new Date(), timed.expirationDate);
-    if (delta.unit === "D" && delta.time > 0 && delta.time <= 15) {
-        return {
-            status: "TO_EXPIRE",
-            message: "Expires in: " + humanTime(delta)
-        };
-    } else if (delta.time > 0) {
-        return {
-            status: "VALID",
-            message: "VALID (Expires in: " + humanTime(delta) + ")"
-        };
-    } else if (delta.time <= 0) {
+     if (delta.time <= 0) {
         return {
             status: "EXPIRED",
-            message: humanTime(delta) + " EXPIRED"
+            message: humanTime(delta)
+        };
+    } else{
+      return {
+            status:"Valid",
+            message:0
         };
     }
 };
 
 //Real logic
-var CertificationComponent = function CertificationComponent(id) {
-    var CertificationIds = rbv_api.getRelatedIds("R2814431", id);
+var certificationComponent = function certificationComponent(id) {
+    var certificationIds = rbv_api.getRelatedIds("R2814431", id);
 
-    CertificationIds.map(function (a) {
+    certificationIds.map(function (a) {
         return rbv_api.println(a);
     });
-    if (!CertificationIds.length) {
+    if (!certificationIds.length) {
         return null;
     }
 
-    var Certifications = getCertificationsFromIds(CertificationIds);
-if(Certifications===null){
-return null;}
-    Certifications.map(function (c) {
+    var certifications = getcertificationsFromIds(certificationIds);
+
+    certifications.map(function (c) {
         return rbv_api.println(c.expirationDate);
     });
 
-    var lastCertification = safeHead(Certifications);
+    var lastcertification = safeHead(certifications);
 
-    rbv_api.println("Last Certification: " + lastCertification.expirationDate);
+    rbv_api.println("Last certification: " + lastcertification.expirationDate);
 
-    var data = getData(lastCertification);
+    var data = getData(lastcertification);
 
     log("Resulting Message: " + data.message);
 
     return getHtml(data);
 };
 
-CertificationComponent("{!id}");
+certificationComponent("{!id}");
