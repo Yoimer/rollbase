@@ -20,7 +20,7 @@ if (customerName_validated.length > 0) {
     arr["contractdescr_"] = "{!Description}";
     arr["contractname_"] = "{!Contract_Name}";
     arr["datetransfer_"] = ActualDate;
-    arr["id_"] = "{!id}";
+    // arr["id_"] = "{!id}";
     arr["operation_"] = "I";
     arr["sent_"] = "True";
     arr["validfrom_"] = new Date("{!Starting_Date}");
