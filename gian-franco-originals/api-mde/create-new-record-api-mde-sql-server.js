@@ -7,8 +7,10 @@ arr["name"] = "{!name#value}";
 var ActualDate = new Date(rbv_api.getCurrentDate());
 arr["datetransfer_"] = ActualDate;
 arr["sent_"] = "True";
-arr["nextcalibdate_"] = "{!Expiration_Date}";
-arr["mdecode_"]=mdeName;
+arr["nextcalibdate_"] = new Date("{!Expiration_Date}");
+arr["mdecode_"] = mdeName;
+arr["mstrmdecode_"] = "{!Master_MDE_No_Hyperlink}";
+arr["insptype_"] = "{!Type_READ_ONLY}";
 
 // if updates record
 if (rbv_api.isUpdate()) {
